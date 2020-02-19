@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
+import { LoginForm, LoginInput, LoginContainer } from './style';
+
 import api from '../../services/api'
 
 import logo from '../../img/logo.png';
-import './login.css';
 
 export default function Login({ history }) {
 
@@ -24,12 +25,13 @@ export default function Login({ history }) {
     }
 
     return (
-        <div id="container-login">
-            <form onSubmit={loginUser}>
+        
+        <LoginContainer>
+            <LoginForm onSubmit={loginUser}>
 
                 <img src={ logo } alt="logo"/>
 
-                <input type="text" 
+                <LoginInput type="text" 
                        placeholder="Login" 
                        id="login" 
                        name="login" 
@@ -37,7 +39,7 @@ export default function Login({ history }) {
                        onChange={ e => setLogin(e.target.value) }
                 />
 
-                <input type="password" 
+                <LoginInput type="password" 
                        placeholder="Password" 
                        id="password" 
                        name="password"
@@ -47,8 +49,8 @@ export default function Login({ history }) {
 
                 <button>Enviar</button>
 
-            </form>
-        </div>
+            </LoginForm>
+        </LoginContainer>
     );
 
 }
