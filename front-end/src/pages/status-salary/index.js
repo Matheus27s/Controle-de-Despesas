@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { ContainerStatus } from './styles';
+
 import { BarChart, PieChart } from 'react-chartkick'
 import 'chart.js'
 
@@ -7,7 +9,6 @@ import api from '../../services/api';
 
 import Header from '../../components/header';
 
-import './status-salary.css';
 
 export default function StateSalary( { match, history } ) {
 
@@ -41,7 +42,7 @@ export default function StateSalary( { match, history } ) {
 
         <>
             <Header title={ 'Status' }/>
-            <div id="container-main">
+            <ContainerStatus>
 
                 <PieChart data={
 
@@ -57,7 +58,7 @@ export default function StateSalary( { match, history } ) {
                     )) } 
                 />
 
-            </div>
+            </ContainerStatus>
         </>          
     );
 

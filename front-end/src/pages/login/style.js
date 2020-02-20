@@ -48,10 +48,14 @@ export const LoginForm = styled.form`
         border-radius: 3px;
         height: 48px;
         font-size: 16px;
-        background-color:#B6CD41;
         font-weight: bold;
         color: #fff;
-        cursor: pointer;
+        background-color: rgba(0,0,0,0.1);
+
+    }
+
+    button:hover {
+        background-color:#B6CD41;
     }
 
 `;
@@ -65,10 +69,5 @@ export const LoginInput = styled.input`
     padding: 0 20px;
     font-size: 16px;
     color: #666;
-
-    :placeholder {
-        color:#999;
-    }
-
 `;
 

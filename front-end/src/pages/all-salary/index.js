@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
+import { ContainerSalaries } from './styles';
+
 import api from '../../services/api';
 
 import Button from '../../components/button';
 import Header from '../../components/header';
-
-import './salary.css';
 
 export default function AllSalary( { match, history } ) {
     
@@ -33,15 +33,15 @@ export default function AllSalary( { match, history } ) {
         <>
             <Header title={ 'Insira um novo valor' }/>
 
-            <div id="container-main">
+            <ContainerSalaries>
 
                 { salaries.map( salary => (
-                    <button className="btn-salary" onClick={ () => allExpenses(salary) } key={ salary.id }>{ salary.data }</button>
+                    <button onClick={ () => allExpenses(salary) } key={ salary.id }>{ salary.data }</button>
                 ))}
 
                 <Button addExpense = { addSalary }/>
 
-            </div>
+            </ContainerSalaries>
 
 
         </>

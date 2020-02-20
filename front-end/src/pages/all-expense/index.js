@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
+import { ContainerExpenses, ExpensesUl, ExpensesLi } from './styles';
+
 import api from '../../services/api';
 
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Button from '../../components/button';
-import ButtonLogout from '../../components/button-logout';
-
-import './main.css';
 
 export default function Main( { match, history } ) {
 
@@ -51,14 +50,14 @@ export default function Main( { match, history } ) {
         <>
             <Header title={ salary.data } />
 
-            <div id="container-main">
+            <ContainerExpenses>
                 
                 <Button addExpense = { addExpense } />
 
-                <ul>
+                <ExpensesUl>
 
                     { expenses.map( expense => (
-                    <li className="expense-item" key={ expense.id }>
+                    <ExpensesLi key={ expense.id }>
 
                             <header>
                                 <strong>{ expense.name }</strong>
@@ -77,13 +76,13 @@ export default function Main( { match, history } ) {
                                 <strong>R$</strong> 
                                 <p>{ decreaseSalary(expense.value) }</p>                          
                             </footer>
-                    </li>
+                    </ExpensesLi>
                     ))}
-                </ul>
+                </ExpensesUl>
 
                 <Footer salary={ salary } history={ history } salaryAtual={ valorParcial } />
                 
-            </div>
+            </ContainerExpenses>
 
         </>
     );

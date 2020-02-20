@@ -1,4 +1,7 @@
-button.btn-plux {
+import styled from 'styled-components';
+
+export const Buttons = styled.button`
+
     border: none;
     cursor: pointer;
     width: 50px;
@@ -8,9 +11,11 @@ button.btn-plux {
     font-weight: bolder;
     transition: 0.5s;
     color: #ccc;
-}
-
-button.btn-plux:hover {
-    background-color: #00A859;
-    color: #fff;
-}
+    
+    :hover {
+        
+        background-color: #00A859;
+        color: #fff;
+    }
+ 
+`

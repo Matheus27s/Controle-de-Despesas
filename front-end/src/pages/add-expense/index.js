@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 import Select from 'react-select'
 
+import { ContainerExpense, ExpenseUl, ExpenseForm } from './styles';
+
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import pt from 'date-fns/locale/pt-BR';
 import "react-datepicker/dist/react-datepicker.css";
 
-import '../form.css';
 import api from '../../services/api'
 import Header from '../../components/header';
 
@@ -79,14 +80,16 @@ export default function AddExpense( { match, history } ) {
 
         <>
             <Header title={ salary.data }/>
-            <div id="container-main">
-                <div className="ul">
+            <ContainerExpense id="container-main">
+
+                <ExpenseUl>
 
                     <h4>Inserir uma nova despesa</h4>
 
-                    <form onSubmit={insertExpense}>
+                    <ExpenseForm onSubmit={insertExpense}>
 
-                        <input 
+                        <input
+                            type="text"
                             placeholder="Nome"
                             id="name"
                             name="name"
@@ -95,7 +98,8 @@ export default function AddExpense( { match, history } ) {
                             required  
                         />
 
-                        <input 
+                        <input
+                            type="text"
                             placeholder="Valor"
                             id="value"
                             name="value"
@@ -105,6 +109,7 @@ export default function AddExpense( { match, history } ) {
                         />
 
                         <Select
+                            type="select"
                             options={ categories }
                             onChange={ handleChange }
                             placeholder={'Escolha uma opção!'}
@@ -112,6 +117,7 @@ export default function AddExpense( { match, history } ) {
                         />
 
                         <DatePicker 
+                            type="date" 
                             selected={ startDate } 
                             onChange={date => setStartDate(date)}
                             dateFormat="dd/MM/yyyy"
@@ -121,9 +127,9 @@ export default function AddExpense( { match, history } ) {
                         <button>Cadastrar</button>
                         <button>Cancelar</button>
 
-                    </form>
-                </div>
-            </div>
+                    </ExpenseForm>
+                </ExpenseUl>
+            </ContainerExpense>
         </>
     );
 }

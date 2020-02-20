@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import pt from 'date-fns/locale/pt-BR';
 
+import { ContainerSalary, SalaryUl, SalaryForm } from './styles';
+
 import api from '../../services/api';
 
 import Button from '../../components/button';
 import Header from '../../components/header';
-
-import '../form.css';
 
 export default function AddSalary( { match, history } ) {
 
@@ -48,13 +48,13 @@ export default function AddSalary( { match, history } ) {
 
         <>
         <Header title={ 'Adicionando um novo salário' }/>
-        <div id="container-main">
+        <ContainerSalary>
 
-                 <div className="ul">
+                 <SalaryUl>
 
                  <h4>Informações do mês em trabalho</h4>
 
-                    <form onSubmit = { addSalary }>
+                    <SalaryForm onSubmit = { addSalary }>
                         
                         <DatePicker 
                             selected={ startDate } 
@@ -68,16 +68,15 @@ export default function AddSalary( { match, history } ) {
                             id="value"
                             name="value"
                             onChange={ e => setValue(e.target.value) }
-                            value={ value }
-                            
+                            value={ value }  
                         />
 
                         <button>Cadastrar</button>
                         <button>Cancelar</button>
-                    </form>
+                    </SalaryForm>
 
-                    </div>
-            </div> 
+                    </SalaryUl>
+            </ContainerSalary> 
 
         </>          
     );

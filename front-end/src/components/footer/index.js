@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './footer.css';
+import { Footers } from './styles';
 
 export default function Footer( { salaryAtual, salary, history  } ) {
 
@@ -9,9 +9,9 @@ export default function Footer( { salaryAtual, salary, history  } ) {
     }
 
     return(
-        <footer className="footer">
+        <Footers>
             <h2><a href="#" onClick={ statusSalary }>{ salary.value } / { salaryAtual }</a></h2>
-        </footer>
+        </Footers>
 
     );
 }
