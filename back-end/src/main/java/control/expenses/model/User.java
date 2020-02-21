@@ -28,7 +28,7 @@ public class User implements Serializable {
 	private String password;
 	
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+	@OneToMany( mappedBy = "user", cascade = CascadeType.ALL )
 	@JsonManagedReference
 	private List<Salary> salaries = new ArrayList<Salary>();
 

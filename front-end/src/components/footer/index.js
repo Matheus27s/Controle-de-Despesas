@@ -5,7 +5,7 @@ import { Footers } from './styles';
 export default function Footer( { salaryAtual, salary, history  } ) {
 
     function statusSalary() {
-        history.push(`/state-salary/${ salary.id }`);
+        history.push(`/status/${ salary.id }`);
     }
 
     return(

@@ -1,10 +1,10 @@
 package control.expenses;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import control.expenses.model.Category;
 import control.expenses.model.Expense;
 import control.expenses.model.Salary;
 import control.expenses.model.User;
+import control.expenses.modelUtil.CategoryStatus;
 import control.expenses.repository.CategoryRepository;
 import control.expenses.repository.ExpenseRepository;
 import control.expenses.repository.SalaryRepository;
@@ -40,11 +41,13 @@ class ApplicationTests {
 	
 	@Test
 	void contextLoads() {
+		Optional<User> user = userRepository.findById(1L);
+		System.out.println(user.get());
 	}
 	
 	@Test
 	void init() {
-		System.out.println("Olá Mundo!");
+		
 	}
 	
 	@Test
@@ -185,6 +188,76 @@ class ApplicationTests {
 		
 	}
 	
-	
+	@Test
+	void showExpenseForCategory() { //( recebo somente o id do salary )
+		
+//		Pegar a categoria de cada expense
+		
+		Optional<Salary> salary = salaryRepository.findById(2L);
+		List<CategoryStatus> allCategoryStatus = new ArrayList<CategoryStatus>();
+		float aux = 0;
+		
+		System.out.println("Expenses do salário " + salary.get().getId());
+		
+		for(Expense expense : salary.get().getExpenses()) {
+			System.out.println(expense.getName());
+		}
+		
+		System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+		
+		Set<Category> semRepeticao = new HashSet<Category>();
+
+		
+		for(Expense expense : salary.get().getExpenses()) {
+			
+			System.out.println("Despesa: " + expense.getName());
+			System.out.println("Usuário: " + salary.get().getUser().getName());
+			System.out.println("Salário: " + salary.get().getValue());
+			System.out.println("Categoria: " + expense.getCategory().getName());
+			System.out.println("- -");
+			
+			semRepeticao.add(expense.getCategory());
+
+		}
+		
+		System.out.println("Categoria sem repetição -------------");
+		
+		for( Category category : semRepeticao ) {
+			
+			System.out.println("Categoria: " + category.getName());
+			
+			for(Expense expense : category.getExpenses()) {
+				 
+				
+				if(expense.getSalary().getId() == salary.get().getId()) {
+					
+					aux = aux + expense.getValue();
+					System.out.println("Valor somando: " + aux);				
+				} 
+				
+			}
+			
+			
+			CategoryStatus categoryStatus = new CategoryStatus();
+			categoryStatus.setName(category.getName());
+			categoryStatus.setValue(aux);
+			
+			allCategoryStatus.add(categoryStatus);
+			
+			aux = 0;
+
+			
+		}
+		
+		for(CategoryStatus categoryStatus : allCategoryStatus) {
+			
+			System.out.println(categoryStatus.getName());
+			System.out.println(categoryStatus.getValue());
+			
+		}
+			
+			
+	}
+			
 
 }

@@ -17,7 +17,7 @@ const Routes = () => (
         <Route path="/users/:id" component = { AllSalary }/>
         <Route path="/salary/:id" component = { AddSalary } />
 
-        <Route path="/state-salary/:id" component = { StateSalary } />
+        <Route path="/status/:id" component = { StateSalary } />
 
         <Route path="/salaries/:id" component = { AllExpense } />
         <Route path="/add-expense/:id" component = { AddExpense } />

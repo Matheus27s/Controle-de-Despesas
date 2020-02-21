@@ -38,7 +38,7 @@ public class Salary implements Serializable {
 	private User user;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "salary", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+	@OneToMany( mappedBy = "salary", cascade = CascadeType.ALL )
 	private List<Expense> expenses = new ArrayList<Expense>();
 	
 	public Long getId() {
@@ -47,9 +47,6 @@ public class Salary implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	
-	
 	
 	public String getData() {
 		return data;

@@ -12,31 +12,18 @@ import Header from '../../components/header';
 
 export default function StateSalary( { match, history } ) {
 
-//  Preciso somar o valor de cada despesa de uma determinada categoria
-
-/*
-    
-
- */ 
-
     const [ categories, setCategories ] = useState([]);
 
     useEffect( () => {
 
+        async function loadCategory(){
+            const response = await api.get(`status/${ match.params.id }`);
+            setCategories(response.data);
+        }
+    
+        loadCategory();
 
-
-    },[])
-
-    async function loadCategory(){
-
-        const response = await api.get('/categories');
-        setCategories(response.data);
-
-        //<PieChart data={[["Conta", 44], ["Lazer", 23], ["Estudo", 20]]} />
-
-    }
-
-    loadCategory();
+    },[]);
 
     return(
 
@@ -47,14 +34,14 @@ export default function StateSalary( { match, history } ) {
                 <PieChart data={
 
                     categories.map( category =>  (
-                        [ category.name, category.id ] 
+                        [ category.name, category.value ] 
                     )) } 
                 />
 
                 <BarChart data={
 
                     categories.map( category =>  (
-                        [ category.name, category.id ] 
+                        [ category.name, category.value ] 
                     )) } 
                 />
 

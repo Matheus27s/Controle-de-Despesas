@@ -29,7 +29,7 @@ public class Category implements Serializable {
 	private String icon;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY,orphanRemoval = true)
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL )
 	private List<Expense> expenses = new ArrayList<Expense>();
 
 	public Long getId() {
