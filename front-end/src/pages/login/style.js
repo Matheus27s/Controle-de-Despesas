@@ -25,8 +25,7 @@ export const LoginContainer = styled.div`
   align-items: center;
   background-color: #00A859;
   width: 100%;
-  height: 603px;
-
+  height: 611px;
 `;
 
 export const LoginForm = styled.form`
@@ -43,7 +42,7 @@ export const LoginForm = styled.form`
     }
 
     button {
-        margin-top: 15px;
+        margin-top: 10px;
         border: 0;
         border-radius: 3px;
         height: 48px;
