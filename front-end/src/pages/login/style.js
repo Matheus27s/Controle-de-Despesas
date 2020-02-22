@@ -26,7 +26,12 @@ export const LoginContainer = styled.div`
   background-color: #00A859;
   width: 100%;
   height: 611px;
+
+    @media( min-width: 800px ) {
+        height:625px
+    }
 `;
+
 
 export const LoginForm = styled.form`
 
@@ -50,7 +55,7 @@ export const LoginForm = styled.form`
         font-weight: bold;
         color: #fff;
         background-color: rgba(0,0,0,0.1);
-
+        cursor: pointer;
     }
 
     button:hover {

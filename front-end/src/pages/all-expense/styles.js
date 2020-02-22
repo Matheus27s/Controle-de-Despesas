@@ -51,12 +51,12 @@ export const ExpensesLi = styled.li`
 
     header button {
 
-        border: none;
+        border: 1px solid rgba(0,0,0,0.1);
         margin-left: 85%;
         cursor: pointer;
         color: #ccc;
         border-radius: 50%;
-        max-width: 35px;
+        padding: 8px;
     
     }
 
@@ -69,6 +69,7 @@ export const ExpensesLi = styled.li`
 
     article {
 
+        padding: 10px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
