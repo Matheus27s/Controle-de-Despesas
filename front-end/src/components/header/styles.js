@@ -4,7 +4,7 @@ export const Headers = styled.header`
 
     margin-bottom: 20px;
     display: inline-grid;
-    grid-template-columns: 1fr 4fr 1fr; /* ( fr - unidade fracional ) A proporção será de 1/4 */
+    grid-template-columns: 1fr 3fr 1fr; /* ( fr - unidade fracional ) A proporção será de 1/4 */
 
     /*grid-template-columns: repeat(3, 1fr); - a mesma coisa de grid-template-columns: 1fr, 1fr, 1fr*/
     background-color: #00A859;
@@ -31,8 +31,19 @@ export const Headers = styled.header`
 
     button {
         border: none;
-        background-color: #00A859;
         cursor: pointer;
+        font-weight: bold;
+        color: rgba(0,0,0,0.1);
+        font-size: 17px;
+        background-color: #00A859;
+        padding: 3px;
+        
+    }
+
+    button:hover {
+
+        border-radius: 5%;
+        color: #fff;
     }
  
 `

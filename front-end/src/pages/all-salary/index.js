@@ -31,7 +31,7 @@ export default function AllSalary( { match, history } ) {
 
     return(
         <>
-            <Header title={ 'Insira um novo valor' }/>
+            <Header title={ 'Mês' } history={ history }/>
 
             <ContainerSalaries>
 
@@ -39,10 +39,9 @@ export default function AllSalary( { match, history } ) {
                     <button onClick={ () => allExpenses(salary) } key={ salary.id }>{ salary.data }</button>
                 ))}
 
-                <Button addExpense = { addSalary }/>
-
             </ContainerSalaries>
-
+            
+            <Button addExpense = { addSalary }/>
 
         </>
     );

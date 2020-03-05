@@ -79,7 +79,7 @@ export default function AddExpense( { match, history } ) {
     return(
 
         <>
-            <Header title={ salary.data }/>
+            <Header title={ salary.data } history={ history }/>
             <ContainerExpense id="container-main">
 
                 <ExpenseUl>

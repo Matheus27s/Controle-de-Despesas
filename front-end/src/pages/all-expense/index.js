@@ -48,7 +48,7 @@ export default function Main( { match, history } ) {
     return (
 
         <>
-            <Header title={ salary.data } />
+            <Header title={ salary.data } history={ history }/>
 
             <ContainerExpenses>
                 
@@ -68,12 +68,13 @@ export default function Main( { match, history } ) {
                                     <img src={ expense.category.icon }/>
                                     <strong> { expense.category.name }</strong>
                                     <strong> { expense.data } </strong>
-                                    <strong> - { expense.value }</strong>
+                                    <h4> - { expense.value }</h4>
 
                             </article>
 
                             <footer>
-                                <strong>R$</strong> 
+                                <strong>$</strong>
+                                <p> - </p>
                                 <p>{ decreaseSalary(expense.value) }</p>                          
                             </footer>
                     </ExpensesLi>

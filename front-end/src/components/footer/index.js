@@ -10,7 +10,7 @@ export default function Footer( { salaryAtual, salary, history  } ) {
 
     return(
         <Footers>
-            <h2><a href="#" onClick={ statusSalary }>{ salary.value } / { salaryAtual }</a></h2>
+            <h2><a href="#" onClick={ statusSalary }>{ salary.value } / { salaryAtual } $</a></h2>
         </Footers>
 
     );

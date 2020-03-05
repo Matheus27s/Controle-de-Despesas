@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { ContainerStatus } from './styles';
+import { ContainerStatus, ContainerPie, ContainerBar } from './styles';
 
 import { BarChart, PieChart } from 'react-chartkick'
 import 'chart.js'
@@ -28,22 +28,34 @@ export default function StateSalary( { match, history } ) {
     return(
 
         <>
-            <Header title={ 'Status' }/>
+            <Header title={ 'Status' } history={ history }/>
             <ContainerStatus>
 
-                <PieChart data={
+                <ContainerPie>
+                        <PieChart 
+                            donut={true}
+                            suffix=" R$" 
+                            legend="bottom"
+                            thousands=","
+                            dataset={{borderWidth: 3}}
 
-                    categories.map( category =>  (
-                        [ category.name, category.value ] 
-                    )) } 
-                />
+                            data={
 
-                <BarChart data={
+                            categories.map( category =>  (
+                                [ category.name, category.value ] 
+                            )) } 
+                        />
+                </ContainerPie>
 
-                    categories.map( category =>  (
-                        [ category.name, category.value ] 
-                    )) } 
-                />
+                <ContainerBar>
+                    <BarChart data={
+
+                        categories.map( category =>  (
+                            [ category.name, category.value ] 
+                        )) } 
+                    />
+
+                </ContainerBar>
 
             </ContainerStatus>
         </>          

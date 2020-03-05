@@ -47,7 +47,7 @@ export default function AddSalary( { match, history } ) {
     return(
 
         <>
-        <Header title={ 'Adicionando um novo salário' }/>
+        <Header title={ 'Adicionando um novo salário' } history={ history }/>
         <ContainerSalary>
 
                  <SalaryUl>

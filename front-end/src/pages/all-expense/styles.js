@@ -4,74 +4,78 @@ export const ContainerExpenses = styled.div`
 
     display: flex;
     flex-direction: column;
-    justify-content: center; /*Alinha horizontalmente*/
-    align-items: center; /*Alinha verticalmente*/
+    justify-content: center; 
+    align-items: center;
     width: 100%;
     height: 100%;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
 
 `
 
 export const ExpensesUl = styled.ul`
 
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Duas colunas */
-    gap: 10px; /* Espaçamento */
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 10px;
     list-style: none;
     padding: 12px;
     margin: 0 auto;
     width: 100%;
-    max-width: 800px;
+    margin-bottom: 50px;
 
 `
 
 export const ExpensesLi = styled.li`
 
     background-color: #FFF;
-    border-radius: 2px;
-    height: 170px;
+    border-radius: 5px;
     margin: 0 auto;
     width: 100%;
     border: 1px solid rgba(0,0,0,0.1);
+    margin-top: 10px;
 
     header {
 
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        display: inline-grid;
+        grid-template-columns: 95% 5%;
         border-bottom: 1px solid rgba(0,0,0,0.1);
         padding: 10px;
 
     }
 
-    header h3 {
-
-        text-align: left;
-        font-size: 25px;
-
-    }
-
     header button {
 
-        border: 1px solid rgba(0,0,0,0.1);
-        margin-left: 85%;
+        border: none;
         cursor: pointer;
-        color: #ccc;
-        border-radius: 50%;
-        padding: 8px;
-    
+        color: rgba(0,0,0,0.1);
+        background-color: #fff;
+        font-size: 17px;
+        font-weight: bold;
     }
 
     header button:hover {
 
-        color: #fff;
+        color: red;
         font-weight: bolder;
-    
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 10%;
+
     }
 
     article {
 
+        width: 100%;
+        display: inline-grid;
+        grid-template-columns: 10% 12% 60% 18%;
+        align-items: center;
+        text-align: center;
         padding: 10px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        color: 666;
+
     }
 
     article img {
@@ -81,7 +85,7 @@ export const ExpensesLi = styled.li`
         border-radius: 50%;
         background-color: #eeeded;
         padding: 5px;
-
+        margin: 0 auto;
     } 
 
     article button {
@@ -91,6 +95,10 @@ export const ExpensesLi = styled.li`
         background-color: red;
         cursor: pointer;
 
+    }
+
+    article h4 {
+        color: red;
     }
 
     article button:hover {
@@ -103,29 +111,26 @@ export const ExpensesLi = styled.li`
     footer {
 
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 90%; /* Espaçamento */
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
         font-size: 18px;
         font-weight: bold;
-        padding: 5px;
-        border-top: 1px solid rgba(0,0,0,0.1);
-        background-color: #B6CD41;
-        color: #fff;
+        padding: 5px 20px;
+        background-color: #eeeded;
+        color: #666;
+        text-align: center;
+        border-bottom: 5px;
+        gap: 40%;
+
 
     }
 
     footer strong {
-
         color: green;
-
     }
 
-    @media( max-width: 800px ) {
-
-        footer {
-            gap: 40%;
-        }
-    }                                                                   
-
+    footer p { 
+        color: green;
+    }
+    
 `

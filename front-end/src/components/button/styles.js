@@ -6,8 +6,8 @@ export const Buttons = styled.button`
     cursor: pointer;
     width: 50px;
     height: 50px;
-    margin: 0 auto;
     border-radius: 50%;
+    margin: 0 auto;
     font-weight: bolder;
     transition: 0.5s;
     color: #ccc;
