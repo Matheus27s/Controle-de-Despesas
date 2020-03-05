@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
+
 import pt from 'date-fns/locale/pt-BR';
 
-import { ContainerSalary, SalaryUl, SalaryForm } from './styles';
+import { ContainerForm, FormUl, Form, Button } from '../../components/form/styles';
 
 import api from '../../services/api';
 
-import Button from '../../components/button';
 import Header from '../../components/header';
+
 
 export default function AddSalary( { match, history } ) {
 
@@ -48,35 +49,43 @@ export default function AddSalary( { match, history } ) {
 
         <>
         <Header title={ 'Adicionando um novo salário' } history={ history }/>
-        <ContainerSalary>
+        
+        <ContainerForm>
 
-                 <SalaryUl>
+                 <FormUl>
 
                  <h4>Informações do mês em trabalho</h4>
 
-                    <SalaryForm onSubmit = { addSalary }>
-                        
-                        <DatePicker 
+                    <Form onSubmit = { addSalary }>
+
+                        <DatePicker
+
+                            type="number"
                             selected={ startDate } 
                             onChange={date => setStartDate(date)}
-                            dateFormat="dd/MM/yyyy"
+                            dateFormat="MM/yyyy"
                             locale="pt"
+                            required
                         />
 
                         <input 
+
+                            type="text"
                             placeholder="Valor" 
                             id="value"
                             name="value"
                             onChange={ e => setValue(e.target.value) }
-                            value={ value }  
+                            value={ value }
+                            required
                         />
 
-                        <button>Cadastrar</button>
-                        <button>Cancelar</button>
-                    </SalaryForm>
+                        <Button type="submit">Cadastrar</Button>
+                        <Button type="error">{"< Voltar"}</Button>
 
-                    </SalaryUl>
-            </ContainerSalary> 
+                    </Form>
+
+                    </FormUl>
+            </ContainerForm> 
 
         </>          
     );

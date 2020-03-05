@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Select from 'react-select'
 
-import { ContainerExpense, ExpenseUl, ExpenseForm } from './styles';
+import { ContainerForm, FormUl, Form, Button } from '../../components/form/styles';
 
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import pt from 'date-fns/locale/pt-BR';
@@ -76,17 +76,41 @@ export default function AddExpense( { match, history } ) {
         history.push(`/salaries/${ salary.id }`);
     }
 
+    const customStyles = {
+
+        option: (provided, state) => ({
+          ...provided,
+          borderBottom: '1px solid rgba(0,0,0,0.1)',
+          color: state.isSelected ? 'green' : 'grey',
+          backgroundColor: state.isSelected ? 'rgba(50,150,50,0.1)' : '#fff',
+        }),
+
+        control: () => ({
+          display: "flex",
+          padding: 10,
+          borderBottom: "2px solid rgba(0,0,0,0.1)"
+
+        }),
+
+        singleValue: (provided, state) => {
+          const opacity = state.isDisabled ? 0.5 : 1;
+          const transition = 'opacity 300ms';
+      
+          return { ...provided, opacity, transition };
+        }
+      }
+
     return(
 
         <>
             <Header title={ salary.data } history={ history }/>
-            <ContainerExpense id="container-main">
+            <ContainerForm>
 
-                <ExpenseUl>
+                <FormUl>
 
                     <h4>Inserir uma nova despesa</h4>
 
-                    <ExpenseForm onSubmit={insertExpense}>
+                    <Form onSubmit={insertExpense}>
 
                         <input
                             type="text"
@@ -95,7 +119,8 @@ export default function AddExpense( { match, history } ) {
                             name="name"
                             onChange={ e => setName(e.target.value) }
                             value={ name } 
-                            required  
+                            required 
+                            width="100%"
                         />
 
                         <input
@@ -109,27 +134,26 @@ export default function AddExpense( { match, history } ) {
                         />
 
                         <Select
-                            type="select"
                             options={ categories }
                             onChange={ handleChange }
-                            placeholder={'Escolha uma opção!'}
-                            styles={selectStyle}
+                            placeholder={ 'Escolha uma opção!' }
+                            styles={ customStyles }
+
                         />
 
                         <DatePicker 
-                            type="date" 
                             selected={ startDate } 
                             onChange={date => setStartDate(date)}
                             dateFormat="dd/MM/yyyy"
                             locale="pt"
                         />
 
-                        <button>Cadastrar</button>
-                        <button>Cancelar</button>
+                        <Button type="submit">Cadastrar</Button>
+                        <Button type="error">{"< Voltar"}</Button>
 
-                    </ExpenseForm>
-                </ExpenseUl>
-            </ContainerExpense>
+                    </Form>
+                </FormUl>
+            </ContainerForm>
         </>
     );
 }
