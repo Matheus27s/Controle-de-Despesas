@@ -36,7 +36,7 @@ export default function AllSalary( { match, history } ) {
             <ContainerSalaries>
 
                 { salaries.map( salary => (
-                    <button onClick={ () => allExpenses(salary) } key={ salary.id }>{ salary.data }</button>
+                    <button onClick={ () => allExpenses(salary) } key={ salary.id }>{ salary.data.substr( salary.data.length - 7 ) }</button>
                 ))}
 
             </ContainerSalaries>

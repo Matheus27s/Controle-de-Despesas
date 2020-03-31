@@ -16,7 +16,7 @@ export default function Header( { title, history } ) {
         <Headers>
             <img src={ Logo } />
             <h3>{ title }</h3>
-            <button onClick={ logout }>Logout</button>
+    <button onClick={ logout }>{'< Logout'}</button>
         </Headers>
     );
     

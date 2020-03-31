@@ -1,77 +1,98 @@
 import styled from 'styled-components';
 
-export const Title = styled.h1`
-    color: red;
-
-    font-size: ${ props =>  `${ props.fontSize }px`};
-/*  - Função que recebe todas as 'props' do meu componente como parametro*/
-
-    background-color: black;
-
-    span {
-        font-size: 16px
-    }
-`;
-
-export const TitleSmall = styled(Title)`
-    color: #00f;
-    font-size: 16px;
-`;
-
-export const LoginContainer = styled.div`
+export const ContainerLogin = styled.div`
 
   display: flex;
-  justify-content: center; 
+  justify-content: space-between; 
   align-items: center;
-  background-color: #00A859;
+  flex-direction: row;
+  max-width: 1200px;
   width: 100%;
-  height: 611px;
-
-    @media( min-width: 800px ) {
-        height:625px
-    }
+  margin: 0 auto;
+  height: 100vh;/* cobre a altura toda do corpo*/
 `;
 
-
-export const LoginForm = styled.form`
+export const ContainerLeft = styled.div`
 
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    width: 300px;
+    border-right: 2px solid #29B573;
+    flex: 2;
 
-    img {
-        width: 100px;
-        height: 150px;
-        margin: 0 auto;
+
+    p {
+        font-size: 24px;
+        font-weight: bold;
+        color: #FFF;
+    }
+
+`;
+
+
+export const ContainerRight = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    padding: 15px;
+
+    h2 {
+        text-align: center;
+        font-size: 36px;
+        color: #29B573;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
     button {
-        margin-top: 10px;
-        border: 0;
-        border-radius: 3px;
-        height: 48px;
-        font-size: 16px;
+        width: 179.98px;
+        font-size: 20px;
         font-weight: bold;
-        color: #fff;
-        background-color: rgba(0,0,0,0.1);
+        background-color: #29B573;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 3px;
         cursor: pointer;
+        transition-duration: 0.2s;
+        color: #48887B;
     }
 
     button:hover {
-        background-color:#B6CD41;
+        transform: translateY(-2px);
+        box-shadow: 0px 5px 2px #25443D;
     }
 
 `;
 
 export const LoginInput = styled.input`
-
+    background-color: #FFF;
+    font-size: 18px;
+    width: 179.98px;
+    height: 34px;
+    border-radius: 5px;
+    border: none;
     margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    height: 48px;
-    padding: 0 20px;
-    font-size: 16px;
-    color: #666;
+    padding: 10px;
+`;
+
+export const Register = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 179.98px;
+
+    strong {
+        font-size: 24px;
+        color: #29B573;
+    }
 `;
 
