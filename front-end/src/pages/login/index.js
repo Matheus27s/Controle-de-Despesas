@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, Register } from './style';
+import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerRegister } from './style';
 import { FiChevronRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api'
 
@@ -22,7 +23,7 @@ export default function Login({ history }) {
         })
 
         const { id } = response.data;
-        history.push(`users/${ id }`)
+        history.push("dashboard");
     }
 
     return (
@@ -59,9 +60,12 @@ export default function Login({ history }) {
 
                 <button>Login</button>
 
-                <Register>
-                    <strong>Register</strong><a href="https://www.google.com.br" ><FiChevronRight size={ 30 } color="#29B573"/></a>
-                </Register>
+                <ContainerRegister>
+                    <strong>Register</strong>
+                    <Link to="/register" >
+                        <FiChevronRight size={ 30 } color="#29B573"/>
+                    </Link>
+                </ContainerRegister>
 
 
             </form>

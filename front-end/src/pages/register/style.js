@@ -43,12 +43,10 @@ export const ContainerRight = styled.div`
         }
     }
 
-    animation: show-login 1s ease-in-out forwards;
+    animation: show-login 1s ease-in-out forwards; 
     display: flex;
     flex-direction: column;
     flex: 2;
-    padding: 15px;
-
     padding: 15px;
 
     h2 {
@@ -109,5 +107,11 @@ export const ContainerRegister = styled.div `
         font-size: 24px;
         color: #29B573;
     }
+`;
+
+export const ContainerAdress = styled.div`
+    
+    display: flex;
+    flex-direction: column;
 `;
 

@@ -49,10 +49,10 @@ export default function StateSalary( { match, history } ) {
 
                 <ContainerBar>
                     <BarChart data={
-
-                        categories.map( category =>  (
-                            [ category.name, category.value ] 
-                        )) } 
+categories.map( category =>  (
+    [ category.name, category.value ] 
+)) }
+                        
                     />
 
                 </ContainerBar>
