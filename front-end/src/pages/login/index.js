@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerRegister } from './style';
 import { FiChevronRight } from 'react-icons/fi';
@@ -23,7 +23,13 @@ export default function Login({ history }) {
         })
 
         const { id } = response.data;
-        history.push("dashboard");
+
+        if(id) {
+            history.push(`dashboard/${ id }`);
+
+        } else {
+            alert("Login erro!!");
+        };
     }
 
     return (

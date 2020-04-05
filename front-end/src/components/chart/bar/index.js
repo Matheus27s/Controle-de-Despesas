@@ -1,30 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
 
-class Bar extends Component {
-  constructor(props) {
-    super(props);
+export default function Bar({ salaryStatus }) {
 
-    this.state = {
-      options: {
-        chart: {
-          id: 'apexchart-example'
-        },
-        xaxis: {
-          categories: ['Lazer', 'Gasolina', 'Comida', 'Estudo', 'Trabalho']
-        }
-      },
-      series: [{
-        name: 'series-1',
-        data: [44, 55, 13, 43, 22],
-      }]
-    }
+   const [ options, setOptions ] = useState({ 
+
+     xaxis: { 
+       categories: [],
+      } 
+
+    });
+
+   const [ series, setSeries ] = useState([
+
+    { name: '',  data: [] },
+
+   ]);
+
+  useEffect(() => {
+    showStatus();
+  }, [salaryStatus]);
+
+  function showStatus() {
+
+    const aux = [];
+    const labels = [];
+
+    salaryStatus.map( item => (
+      aux.push(item.value),
+      labels.push(item.name)
+    ));
+
+    setOptions({ xaxis: { categories: labels } });
+    setSeries([ { name: 'Olá, Mundo!',data: aux } ])
   }
-  render() {
-    return (
-      <Chart options={this.state.options} series={this.state.series} type="bar"/>
-    )
-  }
+
+  return (
+    <Chart options={ options } series={ series } type="bar"/>
+  );
 }
-
-export default Bar;

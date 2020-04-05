@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerRegister, ContainerAdress } from './style';
 import { FiChevronLeft } from 'react-icons/fi';

@@ -1,47 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
 
-class Pie extends Component {
-    constructor(props) {
-      super(props);
+export default function Pies({ salaryStatus }) {
 
-      this.state = {
-      
-        series: [44, 55, 13, 43, 22],
-        options: {
-          chart: {
-            width: "100%",
-            type: 'pie',
-          },
+  const [ series, setSeries ] = useState([]);
+  const [ options, setOptions ] = useState({ labels: [] });
 
-          labels: ['Lazer', 'Gasolina', 'Comida', 'Estudo', 'Trabalho'],
-          
-          responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200,
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
-          }]
-        },
-      };
-    }
+  useEffect(() => {
+    showStatus();
+  }, [salaryStatus]);
 
-    render() {
-      return (
-        <div id="chart">
-          <Chart 
-              options={this.state.options} 
-              series={this.state.series} 
-              type="pie" 
-              width={"100%"} 
-            />
-        </div>
-      );
-    }
+  function showStatus() {
+
+    console.log(salaryStatus)
+
+    const aux = [];
+    const labels = [];
+
+    salaryStatus.map( item => (
+      aux.push(item.value),
+      labels.push(item.name)
+    ));
+
+    setSeries(aux);
+    setOptions({ labels });
+
   }
-export default Pie;
+
+  return (
+        
+    <div id="chart">
+      <Chart 
+        options={ options } 
+        series={ series } 
+        type="pie" 
+        width={"100%"} 
+      />
+    </div>
+  );
+}
