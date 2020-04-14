@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { useSalary } from '../../../../context/Salary';
-import api from '../../../../services/api';
 
 import { ContainerProgress } from './style';
 import Bars from '../../../../components/chart/bar';
+import { useSalary } from '../../../../context/Salary';
+import api from '../../../../services/api';
 
 export default function Bar() {
 
-    const { salary } = useSalary();
     const [ status, setStatus ] = useState([]); 
+    const { salary, setSalary } = useSalary();
 
-     useEffect(() => {
-        switchStatus();
-    }, [])
+    useEffect( ()=> {
+        statusBar();
+    }, [ salary ])
 
-    async function switchStatus() {
+    async function statusBar() {
+
+        if( salary.id ) {
+            const response = await api.get(`status/${ salary.id }`)
+            setStatus(response.data)
+        }
     }
 
     return(
 
         <ContainerProgress>
-            <Bars salaryStatus={ status }/>
+            <Bars status={ status }/>
         </ContainerProgress>
 
     );

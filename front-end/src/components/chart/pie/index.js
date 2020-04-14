@@ -1,40 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import Chart from 'react-apexcharts';
+import React from 'react';
 
-export default function Pies({ salaryStatus }) {
+import { Pie } from 'react-chartjs-2';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-  const [ series, setSeries ] = useState([]);
-  const [ options, setOptions ] = useState({ labels: [] });
+export default function Pies({ status }) {
 
   useEffect(() => {
-    showStatus();
-  }, [salaryStatus]);
+    setData({ 
+      labels: status.map( item => ( item.name )),
+      datasets: [
+        { 
+          data: status.map( item => ( item.value )),
+          backgroundColor: status.map( item => (item.color)),
+        }
 
-  function showStatus() {
+      ]
+    })
+  },[ status ])  
 
-    console.log(salaryStatus)
+    const [ data, setData ] = useState({
 
-    const aux = [];
-    const labels = [];
+      labels: [],
+      
+      datasets: [{
+        data: [],
+        borderWidth: 4,
+        borderColor: '#48887B',
+        borderAlign: 'center',
+        weight: 5,
+        hoverBorderWidth: 1,
 
-    salaryStatus.map( item => (
-      aux.push(item.value),
-      labels.push(item.name)
-    ));
+        backgroundColor: [],
 
-    setSeries(aux);
-    setOptions({ labels });
+        hoverBackgroundColor: [],
+      }]
+    } 
+  )
 
-  }
-
-  return (
-        
-    <div id="chart">
-      <Chart 
-        options={ options } 
-        series={ series } 
-        type="pie" 
-        width={"100%"} 
+  return(
+    <div>
+      <Pie 
+        data={ data }
+        width={ 180 }
+        height={ 150 } 
+        redraw={ false }
       />
     </div>
   );

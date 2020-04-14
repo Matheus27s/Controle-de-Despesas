@@ -42,7 +42,7 @@ public class ExpenseController {
 		
 	}
 	
-	@PostMapping("/")
+	@PostMapping("")
 	public ResponseEntity<Expense> insert( @RequestBody Expense expense ) {
 		expense = expenseRepository.save(expense);
 		return ResponseEntity.ok(expense);

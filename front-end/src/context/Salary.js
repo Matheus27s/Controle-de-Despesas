@@ -1,10 +1,12 @@
 import React, { createContext, useState, useContext } from 'react';
 
+import api from '../services/api';
+
 export const SalaryContext = createContext();
 
 export default function SalaryProvider({children}) {
 
-    const [ salary, setSalary ] = useState(0);
+    const [ salary, setSalary ] = useState({});
 
     return (
         <SalaryContext.Provider value={{ salary, setSalary }}>

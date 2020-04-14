@@ -21,6 +21,7 @@ public class CategoryStatus implements Serializable {
 	
 	private String name;	
 	private Float value;
+	private String color;
 	
 	public String getName() {
 		return name;
@@ -33,6 +34,12 @@ public class CategoryStatus implements Serializable {
 	}
 	public void setValue(Float value) {
 		this.value = value;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 }

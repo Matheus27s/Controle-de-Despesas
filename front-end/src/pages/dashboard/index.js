@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
-
-//Provedor de acesso ao 'Salary'
-import { useSalary } from '../../context/Salary';
+import React, { useState, useEffect } from 'react';
 
 import Header from './header';
 import Main from './main';
 import Footer from './footer';
 
 import { ContainerDashboard } from './style';
-import api from '../../services/api';
+
+import PartialSalaryProvider from '../../context/PartialSalary'; 
 
 export default function Dashboard() {
 
     return (
 
-        <ContainerDashboard>
+        <PartialSalaryProvider>
+            <ContainerDashboard>
+                
+                <Header/>
+                <Main />
+                <Footer />
 
-            <Header />
-            <Main />
-            <Footer />
-
-        </ContainerDashboard>
+            </ContainerDashboard>
+        </PartialSalaryProvider>
             
     );
 }

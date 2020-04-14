@@ -1,6 +1,7 @@
 package control.expenses;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -105,7 +106,8 @@ class ApplicationTests {
 		expense.setName("Testando salary 5");
 		expense.setValue(20f);
 		expense.setSalary(salary.get());
-		expense.setCategory(category.get());			
+		expense.setCategory(category.get());
+		expense.setData(new Date());
 		
 		Expense expenseReturn = expenseRepository.save(expense);
 		System.out.println( expenseReturn.getSalary().getValue() );

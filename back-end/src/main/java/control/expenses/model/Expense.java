@@ -1,6 +1,7 @@
 package control.expenses.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +25,7 @@ public class Expense implements Serializable {
 	private String name;
 	private Float value;
 	private boolean pay;
-	private String data;
+	private Date data;
 	
 	@JsonBackReference
 	@ManyToOne()
@@ -84,11 +85,12 @@ public class Expense implements Serializable {
 		this.pay = pay;
 	}
 
-	public String getData() {
+
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 

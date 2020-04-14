@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Pie from './pie';
+import Pies from './pie';
 import Bar from './bar';
-import Expenses from './expenses';
+import Expense from './expense';
 
 import { ContainerMain } from './style';
 
@@ -12,8 +12,8 @@ export default function Main() {
 
         <ContainerMain>
 
-            <Expenses />
-            <Pie />
+            <Expense />
+            <Pies />
             <Bar />
             
         </ContainerMain>

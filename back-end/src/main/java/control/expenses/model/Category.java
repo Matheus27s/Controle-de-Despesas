@@ -27,6 +27,7 @@ public class Category implements Serializable {
 	private Long id;
 	private String name;
 	private String icon;
+	private String color;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL )
@@ -62,6 +63,14 @@ public class Category implements Serializable {
 
 	public void setExpenses(List<Expense> expenses) {
 		this.expenses = expenses;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 	@Override

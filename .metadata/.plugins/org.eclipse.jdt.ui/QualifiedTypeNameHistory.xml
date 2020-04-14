@@ -5,4 +5,5 @@
 <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.privilegedactions.GetInstancesFromServiceLoader"/>
 <fullyQualifiedTypeName name="control.expenses.controller.CategoryStatus"/>
 <fullyQualifiedTypeName name="control.expenses.modelUtil.CategoryStatus"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

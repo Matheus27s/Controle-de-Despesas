@@ -2,41 +2,41 @@ import React, { useEffect, useState } from 'react';
 
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { ContainerHeader } from './style';
-
 import { useSalary } from '../../../context/Salary';
-
 import api from '../../../services/api';
 
 export default function Header() {
 
-    const { salary, setSalary } = useSalary();
+    const id = localStorage.getItem('id');
     const [ salaries, setSalaries ] = useState([]);
+    const { setSalary } = useSalary();
 
     useEffect( () => {
         allSalaries();
-    },[salary])
+    },[ id ])
 
     async function allSalaries() {
-        const response = await api.get(`users/${1}`);
-        console.log(response.data)
+        const response = await api.get(`users/${ id }`);
         setSalaries(response.data.salaries);
+        setSalary(response.data.salaries[0]);
     }
 
-    function switchSalary( item ) {
-        setSalary(item);
+    async function switchSalary( salary ) {
+        setSalary(salary);        
     }
- 
-   return(     
+
+    return(     
         <ContainerHeader >
 
             <FiChevronLeft size={ 50 } color="#c4c4c4"/>
-
             <div>
+                
                 <ul>
-                    { salaries.map( item => ( <li key={item.id} onClick={ () => switchSalary(item) }>{ item.data }</li> ) ) }
+                    { salaries.map( item => (
+                        <li onClick={() => switchSalary(item) } key={item.id}>{ item.data }</li>
+                    ))}
                 </ul>
             </div>
-
             <FiChevronRight size={ 50 } color="#c4c4c4"/>
 
         </ContainerHeader>

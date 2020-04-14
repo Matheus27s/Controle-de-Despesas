@@ -10,6 +10,7 @@ export const ContainerLogin = styled.div`
   width: 100%;
   margin: 0 auto;
   height: 100vh;/* cobre a altura toda do corpo*/
+  background-color: #48887B;
 `;
 
 export const ContainerLeft = styled.div`

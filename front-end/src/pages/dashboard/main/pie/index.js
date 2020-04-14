@@ -1,25 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Pies from '../../../../components/chart/pie';
-import { useSalary } from '../../../../context/Salary';
 import { ContainerPie } from './style';
+import { useSalary } from '../../../../context/Salary';
 import api from '../../../../services/api';
+import { useEffect } from 'react';
 
 export default function Pie() {
 
-    const { salary } = useSalary();
     const [ status, setStatus ] = useState([]); 
+    const { salary } = useSalary();
 
-     useEffect(() => {
-        switchStatus();
-    }, [salary])
+    useEffect( ()=> {
+        statusPie();
+    }, [ salary ])
 
-    async function switchStatus() {
+    async function statusPie() {
+
+        if( salary.id ) {
+            const response = await api.get(`status/${ salary.id }`)
+            setStatus(response.data)
+        }
     }
 
     return(
 
         <ContainerPie>
-            <Pies salaryStatus={ status }/>
+            <Pies status={ status }/>
         </ContainerPie>
 
     );

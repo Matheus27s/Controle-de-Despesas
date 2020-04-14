@@ -1,41 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import Chart from 'react-apexcharts';
+import React from 'react';
 
-export default function Bar({ salaryStatus }) {
+import { Bar } from 'react-chartjs-2';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-   const [ options, setOptions ] = useState({ 
-
-     xaxis: { 
-       categories: [],
-      } 
-
-    });
-
-   const [ series, setSeries ] = useState([
-
-    { name: '',  data: [] },
-
-   ]);
+export default function Bars({ status }) {
 
   useEffect(() => {
-    showStatus();
-  }, [salaryStatus]);
+    setData({ 
+      labels: status.map( item => ( item.name )),
+      datasets: [
+        { 
+          label: 'Análize de Gastos',
+          data: status.map( item => ( item.value )),
+          backgroundColor: '#48887B',
+          borderColor: 'green',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'green',
+        }
+      ]
+    })
+  },[ status ])  
 
-  function showStatus() {
+    const [ data, setData ] = useState({
 
-    const aux = [];
-    const labels = [];
+      labels: [],
+      datasets: [
+      
+        {
+          label: '',
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          data: [],
+        }
+     
+      ]
+    } 
+  )
 
-    salaryStatus.map( item => (
-      aux.push(item.value),
-      labels.push(item.name)
-    ));
-
-    setOptions({ xaxis: { categories: labels } });
-    setSeries([ { name: 'Olá, Mundo!',data: aux } ])
-  }
-
-  return (
-    <Chart options={ options } series={ series } type="bar"/>
+  return(
+    <div>
+      <Bar 
+        data={ data }
+        width={ 180 }
+        height={ 150 } 
+        redraw={ false }
+      />
+    </div>
   );
 }

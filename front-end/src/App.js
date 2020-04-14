@@ -1,16 +1,19 @@
 import React from 'react';
 import './App.css';
 
-import SalaryProvider from './context/Salary';
+import UserProvider from './context/User';
 
 import Routes from './routes';
+import SalaryProvider from './context/Salary';
 
 function App() {
   return (
     <div className="App">
-      <SalaryProvider>
-          <Routes />
-      </SalaryProvider>
+      <UserProvider>
+          <SalaryProvider>
+            <Routes />
+          </SalaryProvider>
+      </UserProvider>
     </div>
   );
 }

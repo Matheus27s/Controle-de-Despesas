@@ -56,6 +56,7 @@ public class StatusController {
 			CategoryStatus categoryStatus = new CategoryStatus();
 			categoryStatus.setName(category.getName());
 			categoryStatus.setValue(aux);
+			categoryStatus.setColor(category.getColor());
 			allCategoryStatus.add(categoryStatus);
 			aux = 0;	
 		}
