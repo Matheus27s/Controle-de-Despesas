@@ -46,8 +46,6 @@ export default function Bars({ status }) {
     <div>
       <Bar 
         data={ data }
-        width={ 180 }
-        height={ 150 } 
         redraw={ false }
       />
     </div>

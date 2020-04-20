@@ -42,8 +42,6 @@ export default function Pies({ status }) {
     <div>
       <Pie 
         data={ data }
-        width={ 180 }
-        height={ 150 } 
         redraw={ false }
       />
     </div>

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import Header from './header';
 import Main from './main';
-import Footer from './footer';
+import SideBar from './side-bar';
+
 
 import { ContainerDashboard } from './style';
 
@@ -17,7 +18,7 @@ export default function Dashboard() {
                 
                 <Header/>
                 <Main />
-                <Footer />
+                <SideBar />
 
             </ContainerDashboard>
         </PartialSalaryProvider>

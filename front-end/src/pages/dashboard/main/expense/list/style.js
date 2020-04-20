@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 export const Overflow = styled.div`
     overflow: auto;
-    height: 728px;
     margin-top: 5px;
 
     ::-webkit-scrollbar {
         width: 3px;
-}
+    }
 
     /* Track */
     ::-webkit-scrollbar-track {

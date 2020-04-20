@@ -96,7 +96,7 @@ export default function Register({ history }) {
                 <button>Cadastro</button>
 
                 <ContainerRegister>
-                    <strong>Login</strong>
+                    <p>Login</p>
                     <Link to="/" >
                         <FiChevronLeft size={ 30 } color="#29B573"/>
                     </Link>

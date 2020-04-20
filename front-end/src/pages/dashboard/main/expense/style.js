@@ -5,7 +5,6 @@ export const ContainerExpense = styled.div`
     grid-column: 1/2;
     grid-row: 1/3;
     display: grid;
-    grid-template-rows: 90% 10%;
     border-radius: 10px;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
     width: 100%;

@@ -71,7 +71,7 @@ export default function Login({ history }) {
                 <button>Login</button>
 
                 <ContainerRegister>
-                    <strong>Register</strong>
+                    <p>Register</p>
                     <Link to="/register" >
                         <FiChevronRight size={ 30 } color="#29B573"/>
                     </Link>

@@ -65,13 +65,13 @@ export const ContainerRight = styled.div`
 
     button {
         width: 179.98px;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
         background-color: #29B573;
         border: none;
+        height: 34px;
         border-radius: 5px;
         margin-top: 10px;
-        padding: 3px;
         cursor: pointer;
         transition-duration: 0.2s;
         color: #48887B;
@@ -86,13 +86,13 @@ export const ContainerRight = styled.div`
 
 export const LoginInput = styled.input`
     background-color: #FFF;
-    font-size: 18px;
+    font-size: 16px;
     width: 179.98px;
     height: 34px;
     border-radius: 5px;
     border: none;
     margin-top: 10px;
-    padding: 10px;
+    padding-left: 16px;
 `;
 
 export const ContainerRegister = styled.div `
@@ -103,7 +103,7 @@ export const ContainerRegister = styled.div `
     margin-top: 10px;
     width: 179.98px;
 
-    strong {
+    p {
         font-size: 24px;
         color: #29B573;
     }
