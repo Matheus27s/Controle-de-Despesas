@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Register from './pages/register';
 import Dashboard from './pages/dashboard';
-import AddExpense from './pages/add-expense';
+import AddExpense from './pages/expense';
 
 const Routes = () => (
     <BrowserRouter>
