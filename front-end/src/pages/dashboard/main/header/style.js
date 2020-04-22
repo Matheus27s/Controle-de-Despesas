@@ -27,8 +27,9 @@ export const ContainerHeader = styled.header`
     width: 100%;
     align-items: center;
     background-color: #FFF;
-    box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
     overflow: overlay;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.3); 
+    border-radius: 12px;
 
     div ul {
         display: flex;

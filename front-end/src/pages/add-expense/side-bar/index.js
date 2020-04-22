@@ -19,13 +19,13 @@ export default function SideBar() {
                 </li>
 
                 <li>
-                    <Link to={"/expense"} >
+                    <Link to="/expense" >
                         <FiDollarSign size={ 32 } color="48887B"/>
                     </Link>
                 </li>
 
                 <li>
-                    <Link to={"/page2"}>
+                    <Link to={"/vffgf"}>
                         <FiClipboard size={ 32 } color="48887B"/>
                     </Link>
                 </li>

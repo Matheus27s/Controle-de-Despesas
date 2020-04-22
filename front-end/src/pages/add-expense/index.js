@@ -1,27 +1,25 @@
-import React, { useState, useEffect } from 'react';
-
-import { Switch, Route, Link } from 'react-router-dom';  
+import React from 'react';
 
 import Header from './header';
 import SideBar from './side-bar';
-import { ContainerDashboard } from './style';
+import { ContainerAddExpense } from './style';
 import PartialSalaryProvider from '../../context/PartialSalary'; 
 
 import Main from './main';
 
-export default function Dashboard() {
+export default function AddExpense() {
 
-    return (
-
+    return(
         <PartialSalaryProvider>
-            <ContainerDashboard>
+            <ContainerAddExpense>
 
                 <Header/>
                 <Main />
                 <SideBar />
 
-            </ContainerDashboard>
+            </ContainerAddExpense>
         </PartialSalaryProvider>
-            
+
     );
+
 }

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 
-import { AddExpense, LoginInput, Select } from './style';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import pt from 'date-fns/locale/pt';
 
-import { format } from 'date-fns';
-
 import { FiArrowUp } from 'react-icons/fi';
 
-import { useSalary } from '../../../../../context/Salary';
-import api from '../../../../../services/api';
+import { useSalary } from '../../context/Salary';
+import api from '../../services/api';
 
-export default function Add() {
+import { Expense, LoginInput, Select } from './style';
+
+export default function ExpenseForm() {
 
     const [ name, setName ] = useState('');
     const [ value, setValue ] = useState(0);
@@ -57,8 +56,8 @@ export default function Add() {
     }
 
     return(
-        <AddExpense>
 
+        <Expense>  
             <form onSubmit={ addExpense }>  
                 
                 <LoginInput 
@@ -103,16 +102,11 @@ export default function Add() {
                     
                 </Select>
 
-                <button type="submit">
-                    <FiArrowUp 
-                        size={ 25 } 
-                        color="#48887B"
-                    />
-                </button>
+                <button type="submit">Inserir</button>
 
             </form>
-
-        </AddExpense>
+        </Expense>
+        
     )
 }
 

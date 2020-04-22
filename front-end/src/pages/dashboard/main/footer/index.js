@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { ContainerHeader, Overflow } from './style';
+import { ContainerHeader } from './style';
 import { useSalary } from '../../../../context/Salary';
 import api from '../../../../services/api';
 
-export default function Header() {
+export default function Footer() {
 
     const id = localStorage.getItem('id');
     const [ salaries, setSalaries ] = useState([]);
@@ -26,15 +26,7 @@ export default function Header() {
 
     return(     
         <ContainerHeader >
-
-            <Overflow>
-                <ul>
-                    { salaries.map( item => (
-                        <li onClick={() => switchSalary(item) } key={item.id}>{ item.data }</li>
-                    ))}
-                </ul>
-            </Overflow>
-
+            <h2>800,00 / 1.200,00 $</h2>
         </ContainerHeader>
     );
 }
