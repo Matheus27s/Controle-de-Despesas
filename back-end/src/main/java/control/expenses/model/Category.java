@@ -26,12 +26,11 @@ public class Category implements Serializable {
 	@GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "seq_categories" )
 	private Long id;
 	private String name;
-	private String icon;
 	private String color;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL )
-	private List<Expense> expenses = new ArrayList<Expense>();
+	private List<Move> moves = new ArrayList<Move>();
 
 	public Long getId() {
 		return id;
@@ -49,20 +48,12 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
-	public String getIcon() {
-		return icon;
+	public List<Move> getMoves() {
+		return moves;
 	}
 
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
-
-	public List<Expense> getExpenses() {
-		return expenses;
-	}
-
-	public void setExpenses(List<Expense> expenses) {
-		this.expenses = expenses;
+	public void setMoves(List<Move> moves) {
+		this.moves = moves;
 	}
 
 	public String getColor() {

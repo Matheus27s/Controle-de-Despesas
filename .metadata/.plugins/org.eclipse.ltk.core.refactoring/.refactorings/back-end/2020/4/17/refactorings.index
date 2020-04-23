@@ -1,0 +1,6 @@
+1587665113281	Rename type 'Expense'
+1587665346695	Rename type 'ExpenseController'
+1587665458284	Rename type 'ExpenseRepository'
+1587665526225	Rename type 'Salary'
+1587665553935	Rename type 'SalaryRepository'
+1587665786300	Rename type 'SalaryController'

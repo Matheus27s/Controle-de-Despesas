@@ -1,27 +1,23 @@
 import React, { useEffect, useState } from 'react';
 
 import { ContainerHeader } from './style';
-import { useSalary } from '../../../../context/Salary';
+import { useRecipe } from '../../../../context/Recipe';
 import api from '../../../../services/api';
 
 export default function Footer() {
 
     const id = localStorage.getItem('id');
-    const [ salaries, setSalaries ] = useState([]);
-    const { setSalary } = useSalary();
+    const [ recipes, setRecipes ] = useState([]);
+    const { setRecipe } = useRecipe();
 
     useEffect( () => {
-        allSalaries();
+        allRecipes();
     },[ id ])
 
-    async function allSalaries() {
+    async function allRecipes() {
         const response = await api.get(`users/${ id }`);
-        setSalaries(response.data.salaries);
-        setSalary(response.data.salaries[0]);
-    }
-
-    async function switchSalary( salary ) {
-        setSalary(salary);        
+        setRecipes(response.data.recipes);
+        setRecipe(response.data.recipes[0]);
     }
 
     return(     

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { ExpenseList, ContainerLeft, ContainerCenter, ContainerRight, Overflow } from './style';
-import { useSalary } from '../../../../../context/Salary';
-import { usePartialSalary } from '../../../../../context/PartialSalary';
+import { MoveList, ContainerLeft, ContainerCenter, ContainerRight, Overflow } from './style';
+import { useRecipe } from '../../../../../context/Recipe';
 
 import { format } from 'date-fns';
 
@@ -10,29 +9,21 @@ import { FiChevronsDown, FiX } from 'react-icons/fi';
 
 export default function List() {
 
-    const [ expenses, setExpenses ] = useState([]);
-    const { salary } = useSalary();
-    const { partialSalary, setPartialSalary } = usePartialSalary();
+    const [ moves, setMoves ] = useState([]);
+    const { recipe } = useRecipe();
 
     useEffect( () => {
-        allExpenses();
-        soma();
-    },[ salary ])
+        allMoves();
+    },[ recipe ])
 
-    async function allExpenses() {
-        setExpenses(salary.expenses || [])
-    }
-
-    function soma() {
-        expenses.map( item => (
-            setPartialSalary( partialSalary + item.value )
-        ))
+    async function allMoves() {
+        setMoves(recipe.moves || [])
     }
 
     return(
         <Overflow>
-            <ExpenseList >
-                   { expenses.map( item => (
+            <MoveList >
+                   { moves.map( item => (
 
                         <li key={ item.id }>
                             <ContainerLeft>
@@ -56,7 +47,7 @@ export default function List() {
                             </ContainerRight>
                             </li>
                     ))}
-               </ExpenseList>
+               </MoveList>
             </Overflow>
     );
 }

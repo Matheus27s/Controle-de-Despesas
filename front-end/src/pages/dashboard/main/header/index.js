@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
 import { ContainerHeader, Overflow } from './style';
-import { useSalary } from '../../../../context/Salary';
+import { useRecipe } from '../../../../context/Recipe';
 import api from '../../../../services/api';
 
 export default function Header() {
 
     const id = localStorage.getItem('id');
-    const [ salaries, setSalaries ] = useState([]);
-    const { setSalary } = useSalary();
+    const [ recipes, setRecipes ] = useState([]);
+    const { setRecipe } = useRecipe();
 
     useEffect( () => {
-        allSalaries();
+        allrecipes();
     },[ id ])
 
-    async function allSalaries() {
+    async function allrecipes() {
         const response = await api.get(`users/${ id }`);
-        setSalaries(response.data.salaries);
-        setSalary(response.data.salaries[0]);
+        setRecipes(response.data.recipes);
+        setRecipe(response.data.recipes[0]);
     }
 
-    async function switchSalary( salary ) {
-        setSalary(salary);        
+    async function switchRecipe( recipe ) {
+        setRecipe(recipe);        
     }
 
     return(     
@@ -29,8 +29,8 @@ export default function Header() {
 
             <Overflow>
                 <ul>
-                    { salaries.map( item => (
-                        <li onClick={() => switchSalary(item) } key={item.id}>{ item.data }</li>
+                    { recipes.map( item => (
+                        <li onClick={() => switchRecipe(item) } key={item.id}>{ item.data }</li>
                     ))}
                 </ul>
             </Overflow>

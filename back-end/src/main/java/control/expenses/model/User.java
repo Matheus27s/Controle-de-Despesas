@@ -30,7 +30,7 @@ public class User implements Serializable {
 	
 	@OneToMany( mappedBy = "user", cascade = CascadeType.ALL )
 	@JsonManagedReference
-	private List<Salary> salaries = new ArrayList<Salary>();
+	private List<Recipe> recipes = new ArrayList<Recipe>();
 
 	public Long getId() {
 		return id;
@@ -65,12 +65,12 @@ public class User implements Serializable {
 	}
 
 
-	public List<Salary> getSalaries() {
-		return salaries;
+	public List<Recipe> getSalaries() {
+		return recipes;
 	}
 
-	public void setSalaries(List<Salary> salaries) {
-		this.salaries = salaries;
+	public void setSalaries(List<Recipe> recipes) {
+		this.recipes = recipes;
 	}
 
 	@Override

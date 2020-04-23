@@ -1,6 +1,6 @@
 import styled from 'styled-components';   
 
-export const ContainerExpense = styled.div`
+export const MoveContainer = styled.div`
     background-color: #ffff;
     grid-column: 1/2;
     grid-row: 2/4;
@@ -11,7 +11,7 @@ export const ContainerExpense = styled.div`
 
 `;
 
-export const ExpenseList = styled.ul`
+export const MoveList = styled.ul`
 
     display: flex;
     flex-direction: column;

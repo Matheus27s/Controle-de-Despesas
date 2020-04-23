@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import control.expenses.model.Category;
-import control.expenses.model.Expense;
-import control.expenses.model.Salary;
+import control.expenses.model.Move;
+import control.expenses.model.Recipe;
 import control.expenses.modelUtil.CategoryStatus;
 import control.expenses.repository.CategoryRepository;
-import control.expenses.repository.SalaryRepository;
+import control.expenses.repository.RecipeRepository;
 
 @RestController
 @CrossOrigin
@@ -27,27 +27,27 @@ import control.expenses.repository.SalaryRepository;
 public class StatusController {
 		
 	@Autowired
-	private SalaryRepository salaryRepository;
+	private RecipeRepository salaryRepository;
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Iterable<CategoryStatus>> init(@PathVariable(value = "id") Long id) {
 		
-		Optional<Salary> salary = salaryRepository.findById(id);
+		Optional<Recipe> salary = salaryRepository.findById(id);
 		List<CategoryStatus> allCategoryStatus = new ArrayList<CategoryStatus>();
 		float aux = 0;
 		
 		Set<Category> semRepeticao = new HashSet<Category>();
 		
-		for(Expense expense : salary.get().getExpenses()) {			
+		for(Move expense : salary.get().getExpenses()) {			
 			semRepeticao.add(expense.getCategory());
 		}
 				
 		for( Category category : semRepeticao ) {
 						
-			for(Expense expense : category.getExpenses()) {
+			for(Move move : category.getMoves()) {
 				
-				if(expense.getSalary().getId() == salary.get().getId()) {
-					aux = aux + expense.getValue();
+				if(move.getSalary().getId() == salary.get().getId()) {
+					aux = aux + move.getValue();
 				} 
 				
 			}

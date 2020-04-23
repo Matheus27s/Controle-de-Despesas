@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import control.expenses.model.Category;
-import control.expenses.model.Salary;
+import control.expenses.model.Recipe;
 import control.expenses.repository.CategoryRepository;
 
 @RestController

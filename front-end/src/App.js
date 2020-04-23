@@ -4,15 +4,15 @@ import './App.css';
 import UserProvider from './context/User';
 
 import Routes from './routes';
-import SalaryProvider from './context/Salary';
+import RecipeProvider from './context/Recipe';
 
 function App() {
   return (
     <div className="App">
       <UserProvider>
-          <SalaryProvider>
+          <RecipeProvider>
             <Routes />
-          </SalaryProvider>
+          </RecipeProvider>
       </UserProvider>
     </div>
   );

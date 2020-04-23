@@ -1,17 +1,15 @@
 import React from 'react';
 import List from './list';
 
-import { ContainerExpense } from './style';
+import { MoveContainer } from './style';
 
-export default function Expenses() {
+export default function Move() {
 
     return(
 
-        <ContainerExpense>
-
+        <MoveContainer>
             <List />
-
-        </ContainerExpense>
+        </MoveContainer>
 
     );
 

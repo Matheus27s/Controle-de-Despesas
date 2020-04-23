@@ -25,7 +25,7 @@ export const Overflow = styled.div`
 `;
 
 
-export const ExpenseList = styled.ul`
+export const MoveList = styled.ul`
 
     display: flex;
     flex-direction: column;

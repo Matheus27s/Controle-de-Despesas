@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import control.expenses.model.User;
 import control.expenses.repository.CategoryRepository;
-import control.expenses.repository.ExpenseRepository;
+import control.expenses.repository.MoveRepository;
 import control.expenses.repository.UserRepository;
 
 @RestController
@@ -34,7 +34,7 @@ public class IndexController {
 	private CategoryRepository categoryRepository;
 	
 	@Autowired
-	private ExpenseRepository expenseRepository;
+	private MoveRepository expenseRepository;
 	
 	
 	@GetMapping(value = "/{id}")

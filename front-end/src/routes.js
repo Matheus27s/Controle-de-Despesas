@@ -4,14 +4,16 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Register from './pages/register';
 import Dashboard from './pages/dashboard';
-import AddExpense from './pages/expense';
+import AddMove from './pages/move';
+import AddRecipe from './pages/recipe';
 
 const Routes = () => (
     <BrowserRouter>
         <Route exact path="/" component={ Login }/>
         <Route path="/register" component={ Register }/>
         <Route path="/dashboard/:id" component={ Dashboard }/>
-        <Route path="/expense" component={ AddExpense }/>
+        <Route path="/recipes" component={ AddRecipe }/>
+        <Route path="/moves" component={ AddMove }/>
 
     </BrowserRouter>
 );

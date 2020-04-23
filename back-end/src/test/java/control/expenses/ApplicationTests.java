@@ -12,13 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import control.expenses.model.Category;
-import control.expenses.model.Expense;
-import control.expenses.model.Salary;
+import control.expenses.model.Move;
+import control.expenses.model.Recipe;
 import control.expenses.model.User;
 import control.expenses.modelUtil.CategoryStatus;
 import control.expenses.repository.CategoryRepository;
-import control.expenses.repository.ExpenseRepository;
-import control.expenses.repository.SalaryRepository;
+import control.expenses.repository.MoveRepository;
+import control.expenses.repository.RecipeRepository;
 import control.expenses.repository.UserRepository;
 import control.expenses.service.ManipulateSalary;
 
@@ -32,10 +32,10 @@ class ApplicationTests {
 	private CategoryRepository categoryRepository;
 	
 	@Autowired
-	private ExpenseRepository expenseRepository;
+	private MoveRepository expenseRepository;
 	
 	@Autowired
-	private SalaryRepository salaryRepository;
+	private RecipeRepository salaryRepository;
 	
 	
 	private ManipulateSalary manpuleSalary = new ManipulateSalary();
@@ -78,7 +78,7 @@ class ApplicationTests {
 	@Test
 	void insertSalary() {
 		
-		Salary salary = new Salary();
+		Recipe salary = new Recipe();
 		salary.setValue(1200f);
 		
 //		Convertendo a data
@@ -99,24 +99,24 @@ class ApplicationTests {
 	@Test
 	void insertExpense() {//insert an expense with data did entered
 		
-		Optional <Salary> salary = salaryRepository.findById(1L);
+		Optional <Recipe> salary = salaryRepository.findById(1L);
 		Optional <Category> category = categoryRepository.findById(3L);
 		
-		Expense expense = new Expense();
+		Move expense = new Move();
 		expense.setName("Testando salary 5");
 		expense.setValue(20f);
 		expense.setSalary(salary.get());
 		expense.setCategory(category.get());
-		expense.setData(new Date());
+		expense.setPaymentDate(new Date());
 		
-		Expense expenseReturn = expenseRepository.save(expense);
+		Move expenseReturn = expenseRepository.save(expense);
 		System.out.println( expenseReturn.getSalary().getValue() );
 		
 	}
 	
 	@Test
 	void expense() {
-		Optional<Expense> expense = expenseRepository.findById(20L);
+		Optional<Move> expense = expenseRepository.findById(20L);
 		System.out.println("Salário: " + expense.get().getSalary());
 	}
 
@@ -127,13 +127,13 @@ class ApplicationTests {
 		User user = new User();
 		user.setName("Luma");
 		
-			Expense expense = new Expense();
+			Move expense = new Move();
 			expense.setName("Bloco Maiobão");
 			expense.setValue(70f);
 				Optional<Category> category = categoryRepository.findById(11L);
 			expense.setCategory(category.get());
 		
-			List<Expense> expenses = new ArrayList<Expense>();
+			List<Move> expenses = new ArrayList<Move>();
 			expenses.add(expense);
 				
 		user = userRepository.save(user);
@@ -146,18 +146,18 @@ class ApplicationTests {
 	@Test
 	void updateExpense() {//update an expense
 		
-		Optional<Expense> expense = expenseRepository.findById(7L);
+		Optional<Move> expense = expenseRepository.findById(7L);
 		
 		expense.get().setName("Pagamento Moto");
 		
-		Expense repoExpense = expenseRepository.save(expense.get());
+		Move repoExpense = expenseRepository.save(expense.get());
 		System.out.println(repoExpense);
 	}
 	
 	@Test
 	void removeExpense() {//remove an expense
 		
-		Optional<Expense> expense = expenseRepository.findById(6L);
+		Optional<Move> expense = expenseRepository.findById(6L);
 		expenseRepository.deleteById(expense.get().getId());
 		System.out.println("OK!!");
 	}
@@ -165,7 +165,7 @@ class ApplicationTests {
 	@Test
 	void allExpenses() { //show all expenses
 		
-		Optional<Salary> salary =  salaryRepository.findById(1L);
+		Optional<Recipe> salary =  salaryRepository.findById(1L);
 		System.out.println(salary.get());
 		
 	}
@@ -195,13 +195,13 @@ class ApplicationTests {
 		
 //		Pegar a categoria de cada expense
 		
-		Optional<Salary> salary = salaryRepository.findById(2L);
+		Optional<Recipe> salary = salaryRepository.findById(2L);
 		List<CategoryStatus> allCategoryStatus = new ArrayList<CategoryStatus>();
 		float aux = 0;
 		
 		System.out.println("Expenses do salário " + salary.get().getId());
 		
-		for(Expense expense : salary.get().getExpenses()) {
+		for(Move expense : salary.get().getExpenses()) {
 			System.out.println(expense.getName());
 		}
 		
@@ -210,7 +210,7 @@ class ApplicationTests {
 		Set<Category> semRepeticao = new HashSet<Category>();
 
 		
-		for(Expense expense : salary.get().getExpenses()) {
+		for(Move expense : salary.get().getExpenses()) {
 			
 			System.out.println("Despesa: " + expense.getName());
 			System.out.println("Usuário: " + salary.get().getUser().getName());
@@ -228,7 +228,7 @@ class ApplicationTests {
 			
 			System.out.println("Categoria: " + category.getName());
 			
-			for(Expense expense : category.getExpenses()) {
+			for(Move expense : category.getMoves()) {
 				 
 				
 				if(expense.getSalary().getId() == salary.get().getId()) {
