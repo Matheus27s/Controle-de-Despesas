@@ -68,7 +68,7 @@ export default function MoveForm() {
           paymentDate,
           typeMove,
           recipe,
-          category,
+          category
         })
     }
 

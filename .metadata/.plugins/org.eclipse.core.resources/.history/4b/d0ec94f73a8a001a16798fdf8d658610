@@ -32,7 +32,7 @@ public class Recipe implements Serializable {
 	private Long id;
 	
 	@Temporal( TemporalType.DATE )
-	private Date dateMonth;
+	private Long dateMonth;
 	private Float value;
 	private Float valueModal;
 	
@@ -52,11 +52,11 @@ public class Recipe implements Serializable {
 		this.id = id;
 	}
 	
-	public Date getDateMonth() {
+	public Long getDateMonth() {
 		return dateMonth;
 	}
 	public void setDateMonth(Date dateMonth) {
-		this.dateMonth = dateMonth;
+		this.dateMonth = dateMonth.getTime();
 	}
 	public Float getValue() {
 		return value;

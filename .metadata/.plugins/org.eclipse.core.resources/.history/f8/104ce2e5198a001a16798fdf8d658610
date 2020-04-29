@@ -14,8 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.ForeignKey;
 
@@ -30,9 +28,7 @@ public class Recipe implements Serializable {
 	@Id
 	@GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "seq_recipes" )
 	private Long id;
-	
-	@Temporal( TemporalType.DATE )
-	private Date dateMonth;
+	private Long dateMonth;
 	private Float value;
 	private Float valueModal;
 	
@@ -52,11 +48,11 @@ public class Recipe implements Serializable {
 		this.id = id;
 	}
 	
-	public Date getDateMonth() {
+	public Long getDateMonth() {
 		return dateMonth;
 	}
 	public void setDateMonth(Date dateMonth) {
-		this.dateMonth = dateMonth;
+		this.dateMonth = dateMonth.getTime();
 	}
 	public Float getValue() {
 		return value;

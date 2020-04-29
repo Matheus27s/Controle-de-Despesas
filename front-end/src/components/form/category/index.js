@@ -7,6 +7,8 @@ import pt from 'date-fns/locale/pt';
 import api from '../../../services/api';
 
 import { CategoryContainer, LoginInput } from './style';
+import { useRecipe } from '../../../context/Recipe';
+import { useEffect } from 'react';
 
 export default function CategoryForm() {
 
@@ -19,6 +21,7 @@ export default function CategoryForm() {
           name,
           color,
         })
+
     }
 
     return(
