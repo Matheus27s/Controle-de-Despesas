@@ -11,16 +11,17 @@ export default function Pie() {
     const { recipe } = useRecipe();
 
     useEffect( ()=> {
+
+        async function statusPie() {
+
+            if( recipe.id ) {
+                const response = await api.get(`status/${ recipe.id }`)
+                setStatus(response.data)
+            }
+        }
+
         statusPie();
     }, [ recipe ])
-
-    async function statusPie() {
-
-        if( recipe.id ) {
-            const response = await api.get(`status/${ recipe.id }`)
-            setStatus(response.data)
-        }
-    }
 
     return(
 

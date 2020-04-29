@@ -10,19 +10,40 @@ export default function Header() {
 
     const id = localStorage.getItem('id');
     const [ recipes, setRecipes ] = useState([]);
-    const { setRecipe } = useRecipe();
+    const { recipe, setRecipe } = useRecipe();
 
     useEffect( () => {
+        
+        async function getNowRecipe() {
+
+            let now = new Date()
+            const response = await api.get(`users/${ id }`);
+
+            response.data.recipes.map( item => {
+            
+                if(format(item.dateMonth, "MM/yyyy" ) === format(now.getTime(), "MM/yyyy")) {
+                    setRecipe( item );
+                }
+
+                return true;
+            });
+        }
+
+        getNowRecipe();
+
+    }, [ id ])
+
+    useEffect( () => {
+
+        async function allrecipes() {
+            const response = await api.get(`users/${ id }`);
+            setRecipes(response.data.recipes);
+        }
+
         allrecipes();
-    },[ id ])
+    },[ recipe ])
 
-    async function allrecipes() {
-        const response = await api.get(`users/${ id }`);
-        setRecipes(response.data.recipes);
-        setRecipe(response.data.recipes[0]);
-    }
-
-    async function switchRecipe( recipe ) {
+    function switchRecipe( recipe ) {
         setRecipe(recipe);        
     }
 
@@ -32,7 +53,7 @@ export default function Header() {
             <Overflow>
                 <ul>
                     { recipes.map( item => (
-                        <li onClick={() => switchRecipe(item) } key={item.id}>{ format(item.dateMonth, "dd/MM") }</li>
+                        <li onClick={() => switchRecipe(item) } key={item.id}>{ format(item.dateMonth, "dd/MM/yyyy") }</li>
                     ))}
                 </ul>
             </Overflow>

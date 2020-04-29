@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerRegister } from './style';
 import { FiChevronRight } from 'react-icons/fi';
@@ -7,14 +7,11 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api'
 
 import logo from '../../img/logo.svg';
-import { useUser } from '../../context/User';
 
 export default function Login({ history }) {
 
     const [ login, setLogin ] = useState('');
     const [ password, setPassword ] = useState('');
-
-    const { user, setUser } = useUser();
 
     async function loginUser(e) {
         e.preventDefault();

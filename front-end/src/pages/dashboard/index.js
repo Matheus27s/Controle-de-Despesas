@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-
-import { Switch, Route, Link } from 'react-router-dom';  
+import React from 'react';
 
 import Header from '../../components/header';
 import SideBar from '../../components/side-bar';

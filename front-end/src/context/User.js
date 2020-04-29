@@ -1,8 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
 
-import api from '../services/api';
-import { useEffect } from 'react';
-
 export const UserContext = createContext();
 
 export default function UserProvider({ children }) {

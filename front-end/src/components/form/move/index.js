@@ -32,15 +32,17 @@ export default function MoveForm() {
 
     function handleChangeCategory(e) {
 
-        if( e.target.value == "Categoria" ){
+        if( e.target.value === "Categoria" ){
             return;
         }
 
         categories.map( item => {
 
-            if(item.id == e.target.value) {
+            if(item.id === e.target.value) {
                 setCategory(item);
             }   
+
+            return true;
         })
     }
 
@@ -56,13 +58,13 @@ export default function MoveForm() {
             return;
         }
 
-        if( typeMove == 0 ){
+        if( typeMove === 0 ){
             alert("Defina um tipo de movimentação")
             e.preventDefault();
             return;
         }
 
-        const response = await api.post('moves', {
+        await api.post('moves', {
           name,
           value,
           paymentDate,

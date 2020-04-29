@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import pt from 'date-fns/locale/pt';
 
 import api from '../../../services/api';
 
 import { CategoryContainer, LoginInput } from './style';
-import { useRecipe } from '../../../context/Recipe';
-import { useEffect } from 'react';
 
 export default function CategoryForm() {
 
@@ -17,7 +14,7 @@ export default function CategoryForm() {
 
     async function addCategory() {
         
-        const response = await api.post('categories', {
+        await api.post('categories', {
           name,
           color,
         })

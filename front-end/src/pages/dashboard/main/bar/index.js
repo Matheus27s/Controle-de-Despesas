@@ -8,19 +8,20 @@ import api from '../../../../services/api';
 export default function Bar() {
 
     const [ status, setStatus ] = useState([]); 
-    const { recipe, setRecipe } = useRecipe();
+    const { recipe } = useRecipe();
 
     useEffect( ()=> {
+
+        async function statusBar() {
+
+            if( recipe.id ) {
+                const response = await api.get(`status/${ recipe.id }`)
+                setStatus(response.data)
+            }
+        }
+
         statusBar();
     }, [ recipe ])
-
-    async function statusBar() {
-
-        if( recipe.id ) {
-            const response = await api.get(`status/${ recipe.id }`)
-            setStatus(response.data)
-        }
-    }
 
     return(
 

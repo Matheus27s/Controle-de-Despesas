@@ -13,18 +13,21 @@ export default function List() {
     const { recipe } = useRecipe();
 
     useEffect( () => {
+
+        async function allMoves() {
+            setMoves(recipe.moves || [])
+        }
+
         allMoves();
     },[ recipe ])
 
-    async function allMoves() {
-        setMoves(recipe.moves || [])
-    }
+    
 
     return(
         <Overflow>
             <MoveList >
                 { moves.map( item => (( 
-                    item.typeMove == 2 ? ( 
+                    item.typeMove === 2 ? ( 
                         <li key={ item.id }>
 
                             <ContainerLeft>
