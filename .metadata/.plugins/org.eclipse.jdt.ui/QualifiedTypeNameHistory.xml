@@ -6,4 +6,6 @@
 <fullyQualifiedTypeName name="control.expenses.controller.CategoryStatus"/>
 <fullyQualifiedTypeName name="control.expenses.modelUtil.CategoryStatus"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="control.expenses.model.Recipe"/>
+<fullyQualifiedTypeName name="control.expenses.repository.RecipeRepository"/>
 </qualifiedTypeNameHistroy>

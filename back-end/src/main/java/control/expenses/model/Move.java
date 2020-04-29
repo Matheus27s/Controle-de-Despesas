@@ -14,22 +14,23 @@ import org.hibernate.annotations.ForeignKey;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-@Entity( name = "expenses" )
-@SequenceGenerator( name = "seq_expenses", sequenceName = "seq_expenses", allocationSize = 1, initialValue = 1 )
+@Entity( name = "moves" )
+@SequenceGenerator( name = "seq_moves", sequenceName = "seq_moves", allocationSize = 1, initialValue = 1 )
 public class Move implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "seq_expenses" )
+	@GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "seq_moves" )
 	private Long id;
 	private String name;
 	private Float value;
 	private Date paymentDate;
+	private int typeMove; // [ 1 ] aumento e [ 2 ] desconto ( recebimento ou gasto)
 	
 	@JsonBackReference
 	@ManyToOne()
-	@ForeignKey( name = "salary_id" )
-	private Recipe salary;
+	@ForeignKey( name = "recipe_id" )
+	private Recipe recipe;
 	
 	@ManyToOne()
 	@ForeignKey( name = "category_id" )
@@ -58,13 +59,13 @@ public class Move implements Serializable {
 	public void setValue(Float value) {
 		this.value = value;
 	}
-	
-	public Recipe getSalary() {
-		return salary;
+
+	public Recipe getRecipe() {
+		return recipe;
 	}
 
-	public void setSalary(Recipe salary) {
-		this.salary = salary;
+	public void setRecipe(Recipe recipe) {
+		this.recipe = recipe;
 	}
 
 	public Category getCategory() {
@@ -81,6 +82,14 @@ public class Move implements Serializable {
 
 	public void setPaymentDate(Date paymentDate) {
 		this.paymentDate = paymentDate;
+	}
+
+	public int getTypeMove() {
+		return typeMove;
+	}
+
+	public void setTypeMove(int typeMove) {
+		this.typeMove = typeMove;
 	}
 
 	@Override

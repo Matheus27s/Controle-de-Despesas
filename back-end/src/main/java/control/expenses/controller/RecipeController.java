@@ -27,7 +27,7 @@ import control.expenses.repository.UserRepository;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/salaries")
+@RequestMapping("/recipes")
 public class RecipeController {
 	
 	@Autowired

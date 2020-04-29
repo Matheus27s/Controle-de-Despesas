@@ -4,6 +4,8 @@ import { ContainerHeader, Overflow } from './style';
 import { useRecipe } from '../../../../context/Recipe';
 import api from '../../../../services/api';
 
+import { format } from 'date-fns';
+
 export default function Header() {
 
     const id = localStorage.getItem('id');
@@ -30,7 +32,7 @@ export default function Header() {
             <Overflow>
                 <ul>
                     { recipes.map( item => (
-                        <li onClick={() => switchRecipe(item) } key={item.id}>{ item.data }</li>
+                        <li onClick={() => switchRecipe(item) } key={item.id}>{ format(item.dateMonth, "dd/MM") }</li>
                     ))}
                 </ul>
             </Overflow>

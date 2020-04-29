@@ -6,6 +6,7 @@ import Register from './pages/register';
 import Dashboard from './pages/dashboard';
 import AddMove from './pages/move';
 import AddRecipe from './pages/recipe';
+import AddCategory from './pages/category';
 
 const Routes = () => (
     <BrowserRouter>
@@ -14,6 +15,8 @@ const Routes = () => (
         <Route path="/dashboard/:id" component={ Dashboard }/>
         <Route path="/recipes" component={ AddRecipe }/>
         <Route path="/moves" component={ AddMove }/>
+        <Route path="/categories" component={ AddCategory }/>
+
 
     </BrowserRouter>
 );

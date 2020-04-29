@@ -27,26 +27,26 @@ import control.expenses.repository.RecipeRepository;
 public class StatusController {
 		
 	@Autowired
-	private RecipeRepository salaryRepository;
+	private RecipeRepository recipeRepository;
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Iterable<CategoryStatus>> init(@PathVariable(value = "id") Long id) {
 		
-		Optional<Recipe> salary = salaryRepository.findById(id);
+		Optional<Recipe> recipe = recipeRepository.findById(id);
 		List<CategoryStatus> allCategoryStatus = new ArrayList<CategoryStatus>();
 		float aux = 0;
 		
 		Set<Category> semRepeticao = new HashSet<Category>();
 		
-		for(Move expense : salary.get().getExpenses()) {			
-			semRepeticao.add(expense.getCategory());
+		for(Move move : recipe.get().getMoves()) {			
+			semRepeticao.add(move.getCategory());
 		}
 				
 		for( Category category : semRepeticao ) {
 						
 			for(Move move : category.getMoves()) {
 				
-				if(move.getSalary().getId() == salary.get().getId()) {
+				if(move.getRecipe().getId() == recipe.get().getId()) {
 					aux = aux + move.getValue();
 				} 
 				

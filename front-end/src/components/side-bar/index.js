@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FiChevronRight, FiHome, FiClipboard, FiDollarSign } from 'react-icons/fi';
+import { FiHome, FiClipboard, FiDollarSign, FiHash } from 'react-icons/fi';
 
 import { Link } from 'react-router-dom';
 
@@ -19,14 +19,20 @@ export default function SideBar() {
                 </li>
 
                 <li>
-                    <Link to={"/salary"} >
+                    <Link to={"/recipes"} >
                         <FiDollarSign size={ 32 } color="48887B"/>
                     </Link>
                 </li>
 
                 <li>
-                    <Link to={"/expense"}>
+                    <Link to={"/moves"}>
                         <FiClipboard size={ 32 } color="48887B"/>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to={"/categories"}>
+                        <FiHash size={ 32 } color="48887B"/>
                     </Link>
                 </li>
             </ul>

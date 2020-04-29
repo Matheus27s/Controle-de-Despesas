@@ -13,15 +13,15 @@ import { RecipeContainer, LoginInput } from './style';
 export default function RecipeForm() {
 
     const [ value, setValue ] = useState(0);
-    const [ data, setData ] = useState(new Date());
+    const [ dateMonth, setDateMonth ] = useState(new Date());
     const { setRecipe } = useRecipe();
 
     async function addRecipe(e) {
         
-        const response1 = await api.get(`users/${ 1 }`);
+        const response1 = await api.get(`users/${ 99 }`);
         const response = await api.post('recipes', {
           value,
-          data,
+          dateMonth,
           user: response1.data,
         })
 
@@ -42,8 +42,8 @@ export default function RecipeForm() {
                 />
 
                 <DatePicker 
-                    selected={ data } 
-                    onChange={date => setData(date)} 
+                    selected={ dateMonth } 
+                    onChange={date => setDateMonth(date)} 
                     locale={pt}
                     dateFormat="dd/MM/yyyy"
                 />

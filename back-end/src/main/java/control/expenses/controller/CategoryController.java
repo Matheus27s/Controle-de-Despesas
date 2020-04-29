@@ -1,5 +1,6 @@
 package control.expenses.controller;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +32,12 @@ public class CategoryController {
 		Iterable<Category> categories = categoryRepository.findAll();
 		return ResponseEntity.ok(categories);
 		
+	}
+	
+	@PostMapping("")
+	public ResponseEntity<Category> insert( @RequestBody Category category ) throws ParseException {			
+		category = categoryRepository.save(category);
+		return ResponseEntity.ok(category);
 	}
 	
 	@GetMapping(value = "/{id}")

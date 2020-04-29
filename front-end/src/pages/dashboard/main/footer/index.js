@@ -8,7 +8,7 @@ export default function Footer() {
 
     const id = localStorage.getItem('id');
     const [ recipes, setRecipes ] = useState([]);
-    const { setRecipe } = useRecipe();
+    const { recipe, setRecipe } = useRecipe();
 
     useEffect( () => {
         allRecipes();
@@ -22,7 +22,7 @@ export default function Footer() {
 
     return(     
         <ContainerHeader >
-            <h2>800,00 / 1.200,00 $</h2>
+            <h2>{ recipe.value },00 $</h2>
         </ContainerHeader>
     );
 }

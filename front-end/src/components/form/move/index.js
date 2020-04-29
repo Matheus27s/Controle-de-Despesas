@@ -15,8 +15,9 @@ export default function MoveForm() {
 
     const [ name, setName ] = useState('');
     const [ value, setValue ] = useState(0);
-    const [ data, setData ] = useState(new Date());
-    const [ category, setCategory ] = useState({ name: 'Selecione...',  color: 'blue' });
+    const [ paymentDate, setPaymentDate ] = useState(new Date());
+    const [ category, setCategory ] = useState({});
+    const [ typeMove, setTypeMove ] = useState(0);
     const { recipe } = useRecipe();
     const [ categories, setCategories ] = useState([]);
 
@@ -29,27 +30,43 @@ export default function MoveForm() {
         setCategories(response.data);
     }
 
-    function handleChange(e) {
+    function handleChangeCategory(e) {
+
+        if( e.target.value == "Categoria" ){
+            return;
+        }
+
         categories.map( item => {
 
             if(item.id == e.target.value) {
                 setCategory(item);
-                console.log(item.name);
-            }
+            }   
         })
+    }
+
+    function handleChangeType(e) {
+        setTypeMove(e.target.value);
     }
 
     async function addMove(e) {
 
-        if( category.name == 'Selecione...' ) {
+        if( !category.name ) {
             alert('Insira uma categoria')
+            e.preventDefault();
+            return;
+        }
+
+        if( typeMove == 0 ){
+            alert("Defina um tipo de movimentação")
+            e.preventDefault();
             return;
         }
 
         const response = await api.post('moves', {
           name,
           value,
-          data,
+          paymentDate,
+          typeMove,
           recipe,
           category,
         })
@@ -77,24 +94,49 @@ export default function MoveForm() {
                 />
 
                 <DatePicker 
-                    selected={data} 
-                    onChange={date => setData(date)} 
+                    selected={ paymentDate } 
+                    onChange={date => setPaymentDate(date)} 
                     locale={pt}
                     dateFormat="dd/MM/yyyy"
                 />
                  
                 <Select 
                     required 
-                    onChange={ handleChange }>
-                        <option>Selecione...</option>
+                    onChange={ handleChangeCategory }>
+                        <option value="Categoria">Categoria</option>
 
-                        <optgroup label="Categoria">
+                        <optgroup>
 
                         { categories.map( item => (
 
                             <option
                                 value={ item.id } 
                                 key={ item.id }>{ item.name }
+                            </option> 
+                            ))}
+
+                        </optgroup>
+                    
+                </Select>
+
+                <Select 
+                    required 
+                    onChange={ handleChangeType }>
+                        <option 
+                            value={ 0 }
+                            key={ 0 }>Tipo de movimentação em conta?
+                        </option>
+
+                        <optgroup >
+
+                            <option
+                                value={ 1 } 
+                                key={ 1 }>{ "RECEBIMENTO" }
+                            </option> 
+
+                            <option
+                                value={ 2 } 
+                                key={ 2 }>{ "GASTO" }
                             </option> 
                             ))}
 

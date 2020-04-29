@@ -105,19 +105,19 @@ class ApplicationTests {
 		Move expense = new Move();
 		expense.setName("Testando salary 5");
 		expense.setValue(20f);
-		expense.setSalary(salary.get());
+		expense.setRecipe(salary.get());
 		expense.setCategory(category.get());
 		expense.setPaymentDate(new Date());
 		
 		Move expenseReturn = expenseRepository.save(expense);
-		System.out.println( expenseReturn.getSalary().getValue() );
+		System.out.println( expenseReturn.getRecipe().getValue() );
 		
 	}
 	
 	@Test
 	void expense() {
 		Optional<Move> expense = expenseRepository.findById(20L);
-		System.out.println("Salário: " + expense.get().getSalary());
+		System.out.println("Salário: " + expense.get().getRecipe());
 	}
 
 	
@@ -195,14 +195,12 @@ class ApplicationTests {
 		
 //		Pegar a categoria de cada expense
 		
-		Optional<Recipe> salary = salaryRepository.findById(2L);
+		Optional<Recipe> recipe = salaryRepository.findById(2L);
 		List<CategoryStatus> allCategoryStatus = new ArrayList<CategoryStatus>();
 		float aux = 0;
-		
-		System.out.println("Expenses do salário " + salary.get().getId());
-		
-		for(Move expense : salary.get().getExpenses()) {
-			System.out.println(expense.getName());
+				
+		for(Move move : recipe.get().getMoves()) {
+			System.out.println(move.getName());
 		}
 		
 		System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
@@ -210,15 +208,15 @@ class ApplicationTests {
 		Set<Category> semRepeticao = new HashSet<Category>();
 
 		
-		for(Move expense : salary.get().getExpenses()) {
+		for(Move move : recipe.get().getMoves()) {
 			
-			System.out.println("Despesa: " + expense.getName());
-			System.out.println("Usuário: " + salary.get().getUser().getName());
-			System.out.println("Salário: " + salary.get().getValue());
-			System.out.println("Categoria: " + expense.getCategory().getName());
+			System.out.println("Despesa: " + move.getName());
+			System.out.println("Usuário: " + recipe.get().getUser().getName());
+			System.out.println("Salário: " + recipe.get().getValue());
+			System.out.println("Categoria: " + move.getCategory().getName());
 			System.out.println("- -");
 			
-			semRepeticao.add(expense.getCategory());
+			semRepeticao.add(move.getCategory());
 
 		}
 		
@@ -228,12 +226,12 @@ class ApplicationTests {
 			
 			System.out.println("Categoria: " + category.getName());
 			
-			for(Move expense : category.getMoves()) {
+			for(Move move : category.getMoves()) {
 				 
 				
-				if(expense.getSalary().getId() == salary.get().getId()) {
+				if(move.getRecipe().getId() == recipe.get().getId()) {
 					
-					aux = aux + expense.getValue();
+					aux = aux + move.getValue();
 					System.out.println("Valor somando: " + aux);				
 				} 
 				
