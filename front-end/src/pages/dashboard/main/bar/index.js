@@ -21,7 +21,7 @@ export default function Bar() {
         }
 
         statusBar();
-    }, [ recipe ])
+    }, [])
 
     return(
 

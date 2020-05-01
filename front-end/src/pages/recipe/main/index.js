@@ -10,7 +10,7 @@ export default function Main() {
     return(
 
         <ContainerMain>
-            <Header title="Adicione um salário"/>
+            <Header title="Nova receita no mês"/>
             <RecipeForm />
         </ContainerMain>
     );

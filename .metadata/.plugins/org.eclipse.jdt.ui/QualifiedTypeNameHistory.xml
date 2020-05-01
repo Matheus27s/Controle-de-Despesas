@@ -9,4 +9,6 @@
 <fullyQualifiedTypeName name="control.expenses.model.Recipe"/>
 <fullyQualifiedTypeName name="control.expenses.repository.RecipeRepository"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="javax.persistence.Temporal"/>
+<fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
 </qualifiedTypeNameHistroy>

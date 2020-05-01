@@ -5,20 +5,19 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body, input, form, select, h1, h2, h3, h4, h5 {
   color: #666;
-}
 
-body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
 
-input, button {
+button {
+  color: #FFF;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #666;
 }
+

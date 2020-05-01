@@ -74,7 +74,6 @@ export const ContainerRight = styled.div`
         margin-top: 10px;
         cursor: pointer;
         transition-duration: 0.2s;
-        color: #48887B;
     }
 
     button:hover {

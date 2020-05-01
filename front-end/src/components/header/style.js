@@ -14,15 +14,28 @@ export const ContainerHeader = styled.header`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 
     img {
-        width: 64px;
-        height: 64px;
+        width: 65px;
+        height: 56px;
+    } 
+`;
+
+export const ContainerUser = styled.div`
+
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    justify-content: space-between;
+
+    strong {
+        color: #FFF;
+        margin-right: 10px;
     }
 
     div {
-        width: 64px;
-        height: 64px;
+        width: 56px;
+        height: 56px;
         background-color: grey;
         border-radius: 50%;
     }
-    
+
 `;

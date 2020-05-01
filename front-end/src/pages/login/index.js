@@ -16,13 +16,13 @@ export default function Login({ history }) {
     async function loginUser(e) {
         e.preventDefault();
         
-        const response = await api.get('users/', {
+        const { data } = await api.get('users/', {
             params: {
                 login,
             }
         })
 
-        const { id } = response.data;
+        const { id } = data;
 
         if(id) {
             localStorage.setItem('id', id);

@@ -11,7 +11,7 @@ export default function Main() {
     return(
 
         <ContainerMain>
-            <Header title="Adicione uma despesa"/>
+            <Header title="Nova movimentação"/>
             <MoveForm />
         </ContainerMain>
     );

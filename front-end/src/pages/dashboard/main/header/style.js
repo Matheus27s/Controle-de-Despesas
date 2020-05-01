@@ -2,20 +2,9 @@ import styled from 'styled-components';
 
 export const Overflow = styled.div`
     max-width: 900px;
-    overflow: auto;
+    overflow-x: auto;
     margin: 0 auto;
-
-    ::-webkit-scrollbar {
-        height: 2px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background: #ccc; 
-    }
+    white-space: nowrap;
 `;
 
 export const ContainerHeader = styled.header`
@@ -27,7 +16,6 @@ export const ContainerHeader = styled.header`
     width: 100%;
     align-items: center;
     background-color: #FFF;
-    overflow: overlay;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.3); 
     border-radius: 12px;
 
@@ -37,17 +25,19 @@ export const ContainerHeader = styled.header`
     }
 
     div ul li {
-        list-style: none;
-        margin: 0 50px;
+        width: 100%;
+        list-style: none;   
+        padding: 0 36px;
         text-decoration: none;
         font-size: 24px;
-        color: #c4c4c4;
-        transition-duration: 0.2s;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        color: #3333;   
     }
 
     div ul li:hover {
-        font-size: 25px;
-        color: #656363;
+        background-color: rgba(200,200,200,0.1);
+        color: #666;
     }
     
 `;

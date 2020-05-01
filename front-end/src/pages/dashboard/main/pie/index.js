@@ -21,7 +21,7 @@ export default function Pie() {
         }
 
         statusPie();
-    }, [ recipe ])
+    }, [])
 
     return(
 

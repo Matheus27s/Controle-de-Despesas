@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.ForeignKey;
 
@@ -24,6 +26,8 @@ public class Move implements Serializable {
 	private Long id;
 	private String name;
 	private Float value;
+	
+	@Temporal( TemporalType.DATE )
 	private Date paymentDate;
 	private int typeMove; // [ 1 ] aumento e [ 2 ] desconto ( recebimento ou gasto)
 	

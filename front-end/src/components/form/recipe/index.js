@@ -5,7 +5,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import pt from 'date-fns/locale/pt';
 
+import { useUser } from '../../../context/User';
 import { useRecipe } from '../../../context/Recipe';
+
+
 import api from '../../../services/api';
 
 import { RecipeContainer, LoginInput } from './style';
@@ -16,13 +19,14 @@ export default function RecipeForm() {
     const [ dateMonth, setDateMonth ] = useState(new Date());
     const { setRecipe } = useRecipe();
 
-    async function addRecipe(e) {
+    const { user } = useUser();
+
+    async function addRecipe() {
         
-        const response1 = await api.get(`users/${ 99 }`);
         const response = await api.post('recipes', {
           value,
           dateMonth,
-          user: response1.data,
+          user,
         })
 
         setRecipe(response.data); 
