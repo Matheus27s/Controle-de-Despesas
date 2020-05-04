@@ -69,6 +69,18 @@ public class MoveController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity removeMove( @PathVariable( name = "id")  Long id ) {
+						
+		Optional<Move> move = moveRepository.findById(id);
+		Optional<Recipe> recipe = recipeRepository.findById(move.get().getRecipe().getId());
+		
+		if( move.get().getTypeMove() == 1 ) {
+			recipe.get().decrement(move.get().getValue());
+			
+		} else {
+			recipe.get().increment(move.get().getValue());
+		}
+		
+		
 		moveRepository.deleteById(id);
 		return new ResponseEntity("OK!!", HttpStatus.OK);
 	}

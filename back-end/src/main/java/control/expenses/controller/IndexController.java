@@ -59,7 +59,7 @@ public class IndexController {
 		return new ResponseEntity("OK!!", HttpStatus.OK);
 	}
 	
-	@GetMapping()
+	@PostMapping()
 	public  ResponseEntity<User> login( @RequestParam( value = "login" ) String login ) {
 		
 		User user = userRepository.login(login);

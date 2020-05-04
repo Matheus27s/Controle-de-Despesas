@@ -3,10 +3,14 @@ import './App.css';
 
 import Routes from './routes';
 
-function App() {
+import { AuthProvider } from './context/auth';
+
+const App = () => {
   return (
     <div className="App">
-          <Routes />
+          <AuthProvider>
+            <Routes />
+          </AuthProvider>
     </div>
   );
 }

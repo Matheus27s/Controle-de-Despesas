@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;IndexController.java&apos; to &apos;back-end/src/main/java/control.expenses.controller&apos;&#x0D;&#x0A;- Original project: &apos;back-end&apos;&#x0D;&#x0A;- Destination element: &apos;back-end/src/main/java/control.expenses.controller&apos;&#x0D;&#x0A;- Original element: &apos;control.expenses.controller.IndexController.java&apos;" description="Copy compilation unit" destination="/src\/main\/java&lt;control.expenses.controller" element1="/src\/main\/java&lt;control.expenses.controller{IndexController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1588600659304" units="1" version="1.0"/>
+</session>

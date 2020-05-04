@@ -3,7 +3,7 @@ INDEX VERSION 1.131+C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\.met
 104505094.index
 2759485948.index
 4044886762.index
-418213879.index
+3795540215.index
 1965616228.index
 3528580038.index
 3943900541.index
@@ -55,11 +55,12 @@ INDEX VERSION 1.131+C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\.met
 351020285.index
 165620955.index
 1632250553.index
-1687006318.index
 4104013454.index
+1687006318.index
 3273561204.index
 1835195830.index
 4056829579.index
+516275.index
 537037432.index
 2992608715.index
 3385284709.index
@@ -111,6 +112,6 @@ INDEX VERSION 1.131+C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\.met
 1023490207.index
 3533655975.index
 2744835472.index
+418213879.index
 3555742944.index
 3634455926.index
-3795540215.index

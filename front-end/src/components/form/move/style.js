@@ -48,7 +48,7 @@ export const Expense = styled.div`
             margin-top: 10px;
             cursor: pointer;
             transition-duration: 0.2s;
-            color: #48887B;
+            color: #FFF;
         }
 
         button:hover {

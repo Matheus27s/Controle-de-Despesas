@@ -4,33 +4,20 @@ import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerReg
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-import api from '../../services/api'
+import { useAuth } from '../../context/auth';
 
 import logo from '../../img/logo.svg';
 
-export default function Login({ history }) {
+export default function Login() {
+
+    const { signIn } = useAuth();
 
     const [ login, setLogin ] = useState('');
     const [ password, setPassword ] = useState('');
 
-    async function loginUser(e) {
+    const loginUser = (e) => {
         e.preventDefault();
-        
-        const { data } = await api.get('users/', {
-            params: {
-                login,
-            }
-        })
-
-        const { id } = data;
-
-        if(id) {
-            localStorage.setItem('id', id);
-            history.push(`dashboard/${ id }`);
-
-        } else {
-            alert("Login erro!!");
-        };
+        signIn( login );
     }
 
     return (
@@ -43,7 +30,7 @@ export default function Login({ history }) {
             </ContainerLeft>
 
             <ContainerRight>
-            <form onSubmit={loginUser}>
+            <form onSubmit={ loginUser } method={"POST"}>
 
                 <h2>Login</h2>
 
@@ -73,7 +60,6 @@ export default function Login({ history }) {
                         <FiChevronRight size={ 30 } color="#29B573"/>
                     </Link>
                 </ContainerRegister>
-
 
             </form>
 

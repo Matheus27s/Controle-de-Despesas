@@ -21,9 +21,10 @@ export const ContainerSideBar = styled.div`
         justify-content: center;
         align-items: center;
         cursor: pointer;
+
+        svg:hover {
+            color: #FFF;
+        }
     }
 
-    li:hover {
-        background-color: rgba( 72, 136, 123, 0.1 );
-    }
 `;

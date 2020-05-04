@@ -17,19 +17,19 @@ export default function RecipeForm() {
 
     const [ value, setValue ] = useState(0);
     const [ dateMonth, setDateMonth ] = useState(new Date());
-    const { setRecipe } = useRecipe();
+    //const { recipe, setRecipe } = useRecipe();
 
-    const { user } = useUser();
+    //const { user } = useUser();
 
     async function addRecipe() {
         
-        const response = await api.post('recipes', {
-          value,
-          dateMonth,
-          user,
-        })
+        //const response = await api.post('recipes', {
+         // value,
+          //dateMonth,
+          //user,
+       // })
 
-        setRecipe(response.data); 
+       // setRecipe(response.data); 
     }
 
     return(

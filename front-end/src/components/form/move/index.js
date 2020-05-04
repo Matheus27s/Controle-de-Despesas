@@ -18,12 +18,12 @@ export default function MoveForm() {
     const [ paymentDate, setPaymentDate ] = useState(new Date());
     const [ category, setCategory ] = useState({});
     const [ typeMove, setTypeMove ] = useState(0);
-    const { recipe } = useRecipe();
+    //const { recipe } = useRecipe();
     const [ categories, setCategories ] = useState([]);
 
-    useEffect(() => {
-        allCategories();
-    },[ recipe ]);
+   // useEffect(() => {
+    //    allCategories();
+   // },[ recipe ]);
 
     async function allCategories() {
         const response = await api.get(`categories`);
@@ -64,20 +64,21 @@ export default function MoveForm() {
             return;
         }
 
-        await api.post('moves', {
-          name,
-          value,
-          paymentDate,
-          typeMove,
-          recipe,
-          category
-        })
+     //   await api.post('moves', {
+       //   name,
+        //  value,
+        //  paymentDate,
+        //  typeMove,
+        //  recipe,
+         // category
+        //})
     }
 
     return(
 
-        <Expense>  
-            <form onSubmit={ addMove }>  
+        <Expense> 
+
+            <form onSubmit={ addMove }> 
                 
                 <LoginInput 
                     onChange={ e => setName(e.target.value) }

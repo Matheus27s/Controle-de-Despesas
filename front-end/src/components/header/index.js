@@ -9,25 +9,25 @@ import { useUser } from '../../context/User';
 
 export default function Header() {
 
-    const id = localStorage.getItem('id');
-    const { user, setUser } = useUser();
+    //const id = localStorage.getItem('id');
+    //const { user, setUser } = useUser();
 
-    const getUser = useCallback( async() => {
-        console.log("-- GET USER --")
-        const { data } = await api.get(`users/${ id }`);
-        setUser(data);
-    }, []);
+    //const getUser = useCallback( async() => {
+      //  console.log("-- GET USER --")
+       // const { data } = await api.get(`users/${ id }`);
+        //setUser(data);
+    //}, []);
 
-    useEffect(() => {
-        getUser();
-    }, [ getUser ])
+    //useEffect(() => {
+      //  getUser();
+    //}, [ getUser ])
 
     return(     
         <ContainerHeader >
             <img src={ logo } alt="logo"></img>
             
             <ContainerUser>
-                <strong>{ user.name }</strong>
+                <strong>{ "user.name" }</strong>
                 <div></div>
             </ContainerUser>
         </ContainerHeader>

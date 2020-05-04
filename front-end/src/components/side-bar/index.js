@@ -1,39 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { FiHome, FiClipboard, FiDollarSign, FiHash } from 'react-icons/fi';
-
-import { Link } from 'react-router-dom';
+import { FiHome, FiClipboard, FiDollarSign, FiHash, FiArrowLeft } from 'react-icons/fi';
 
 import { ContainerSideBar } from './style';
-
+import { useAuth } from '../../context/auth';
+import { usePage } from '../../context/page';
 
 export default function SideBar() {
+
+    const { signOut } = useAuth();
+    const { handlePage } = usePage();
+ 
+    const handleSignOut = () => {
+        signOut();
+    }
 
     return(
         <ContainerSideBar>
             <ul>
                 <li>
-                    <Link to={`/dashboard/${ 1 }`}>
-                        <FiHome size={ 32 } color="48887B"/>
-                    </Link>
+                    <a onClick={() => handlePage('page01') }>
+                        <FiHome 
+                            size={ 32 } 
+                        />
+                    </a>
                 </li>
 
                 <li>
-                    <Link to={"/recipes"} >
-                        <FiDollarSign size={ 32 } color="48887B"/>
-                    </Link>
+                    <a onClick={() => handlePage('page02') }>
+                        <FiDollarSign 
+                            size={ 32 } 
+                        />
+                    </a>
                 </li>
 
                 <li>
-                    <Link to={"/moves"}>
-                        <FiClipboard size={ 32 } color="48887B"/>
-                    </Link>
+                    <a onClick={() => handlePage('page03') }>
+                        <FiClipboard 
+                            size={ 32 } 
+                        />
+                    </a>
                 </li>
 
                 <li>
-                    <Link to={"/categories"}>
-                        <FiHash size={ 32 } color="48887B"/>
-                    </Link>
+                    <a onClick={() => handlePage('page04') }>
+                        <FiHash 
+                            size={ 32 } 
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a onClick={ handleSignOut }>
+                        <FiArrowLeft 
+                            size={ 32 }
+                        />
+                    </a>
                 </li>
             </ul>
         </ContainerSideBar>
