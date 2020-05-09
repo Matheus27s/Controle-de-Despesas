@@ -33,6 +33,7 @@ public class Recipe implements Serializable {
 	
 	@Temporal( TemporalType.DATE )
 	private Date dateMonth;
+	
 	private Float value;
 	private Float valueModal;
 	

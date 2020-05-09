@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Pies from '../../../../components/chart/pie';
 import { ContainerPie } from './style';
-import { useRecipe } from '../../../../context/Recipe';
+import { useRecipe } from '../../../../context/recipe';
 import api from '../../../../services/api';
 import { useEffect } from 'react';
 
@@ -17,17 +17,16 @@ export default function Pie() {
             if( recipe.id ) {
                 const response = await api.get(`status/${ recipe.id }`)
                 setStatus(response.data)
-            }
-        }
+             }
+      }
 
-        statusPie();
-    }, [ recipe ])
+         statusPie();
+         }, [ recipe ])
 
     return(
 
-        <ContainerPie>
-            <Pies status={ status }/>
+       <ContainerPie>
+           <Pies status={ status }/>
         </ContainerPie>
-
     );
 }

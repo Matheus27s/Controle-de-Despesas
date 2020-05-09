@@ -1,52 +1,50 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
 import { ContainerHeader, Overflow } from './style';
-import { useRecipe } from '../../../../context/Recipe';
-
-import api from '../../../../services/api'
+import { useRecipe } from '../../../../context/recipe';
 
 import { format } from 'date-fns';
+import pt from 'date-fns/locale/pt';
+
+import { useAuth } from '../../../../context/auth';
+import api from '../../../../services/api';
 
 export default function Header() {
 
-    const id = localStorage.getItem('id');
-    const now = new Date();
+  const { user } = useAuth();
+  const { setRecipe } = useRecipe();
+  const [ recipes, setRecipes ] = useState([]);
 
-    const [ recipes, setRecipes ] = useState([]);
-    const { recipe, setRecipe } = useRecipe();
+  useEffect(() => {
 
-    const getRecipes = useCallback( async () => {
-        console.log("-- GET RECIPES --")
-        const { data } = await api.get(`users/${ id }`);
+    const getRecipes = async () => {
+      const { data } = await api.get(`users/${ user.id }`)
+      setRecipes(data.recipes)
+    }
 
-            //data.recipes.map( item => {
+    getRecipes();
 
-              //  if(format(item.dateMonth, "MM/yyyy" ) === format(now.getTime(), "MM/yyyy")) {
-              //      setRecipe( item );
-              //  }
-           // });
+  },[])
 
-        setRecipes(data.recipes);
+  function switchRecipe( recipe ) {
+    setRecipe(recipe)
+  };
 
-    }, []);
+  return(  
 
-    useEffect(() => {
-        getRecipes();
-    },[ getRecipes ]);
+    <ContainerHeader >
+      <Overflow>
+        <ul>
+          
+          { recipes.map( item => ( 
+            <li onClick={ () => switchRecipe( item ) } 
+              key={ item.id }>{ format(item.dateMonth, "MMMM", { locale: pt }) }
+            </li>
+          ))}
 
-    function switchRecipe( recipe ) {
-        setRecipe(recipe);        
-    };
+        </ul>
+      </Overflow>
+    </ContainerHeader>
 
-    return(     
-        <ContainerHeader >
-            <Overflow>
-                <h1>{ recipe.id }</h1>
-
-                <ul>
-                    { recipes.map( item => <li onClick={ () => switchRecipe( item ) } key={ item.id }>{ format(item.dateMonth, "MM/yyyy") }</li> ) }
-                </ul>
-        </Overflow>
-        </ContainerHeader>
-    );
+  );
 }

@@ -1,8 +1,10 @@
 import React, { createContext, useState, useContext } from 'react';
 
-export const RecipeContext = createContext();
+const RecipeContext = createContext({
+    recipe: {},
+});
 
-export default function RecipeProvider({ children }) {
+export const RecipeProvider = ({ children }) => {
 
     const [ recipe, setRecipe ] = useState({});
 
@@ -15,6 +17,5 @@ export default function RecipeProvider({ children }) {
 
 export function useRecipe() {
     const context = useContext(RecipeContext);
-    const { recipe, setRecipe } = context;
-    return { recipe, setRecipe };
+    return context;
 }
