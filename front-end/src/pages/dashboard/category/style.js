@@ -28,31 +28,40 @@ export const CategoryForm = styled.div`
 
     form {
         animation: show-login 1s ease-in-out forwards;
-        display: flex;
-        flex-direction: column;
         width: 30%;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: 80fr 20fr;
+        gap: 20px;
 
         input {
-            width: 100%;
+            grid-column: 1/2;
             background-color: #FFFF;
             font-size: 18px;
             height: 34px;
             border-radius: 5px;
             border: none;
             padding: 0 10px;
-            margin: 8px 0px;
+        }
+
+        input[type="color"] {
+            grid-column: 2/3;
+            background-color: #FFF;
+            font-size: 18px;
+            height: 34px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
         }
 
         button {
-            width: 100%;
+            grid-column: 1/3;
             font-size: 16px;
             font-weight: bold;
             background-color: #29B573;
             border: none;
             height: 34px;
             border-radius: 5px;
-            margin-top: 10px;
             cursor: pointer;
             transition-duration: 0.2s;
             color: rgba(0,0,0,0.4);
@@ -63,31 +72,5 @@ export const CategoryForm = styled.div`
             box-shadow: 0px 5px 2px #25443D;
             color: #FFFF;
         }
-    }
-`;
-
-export const CategoryInput = styled.input`
-    background-color: #FFFF;
-    font-size: 18px;
-    width: 100%;
-    height: 34px;
-    border-radius: 5px;
-    border: none;
-    padding: 0 10px;
-    margin: 8px 0px;
-`;
-
-export const Select = styled.select`
-    background-color: #FFFF;
-    font-size: 18px;
-    width: 100%;
-    height: 34px;
-    border-radius: 5px;
-    border: none;
-    padding: 0 10px;
-    margin: 8px 0px;
-
-    option {
-        background-color: #FFF;
     }
 `;

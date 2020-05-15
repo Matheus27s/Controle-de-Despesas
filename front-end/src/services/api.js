@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://control-expenses-heroku.herokuapp.com/'
+    baseURL: 'http://localhost:8080/'
 });
 
 export default api;

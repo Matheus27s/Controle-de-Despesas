@@ -1,27 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+
+import { Form } from '@unform/web';
+
+import * as Yup from 'yup';
 
 import Header from '../../../components/form/header'
 import { useRecipe } from '../../../context/recipe';
+
+import Input from '../../../components/form/inputs/input';
+
+import api from '../../../services/api';
 
 import { CategoryContainer, CategoryForm, CategoryInput } from './style';
 
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-import api from '../../../services/api';
-
 export default function AddCategory() {
 
-    const { recipe } = useRecipe();
-    const [ name, setName ] = useState('');
-    const [ color, setColor ] = useState('');
+    const formRef = useRef(null);
 
-    async function addCategory() {
-        
-        await api.post('categories', {
-          name,
-          color,
-        })
+    async function addCategory(data, { reset }) {
+
+        try {
+
+            const schema = Yup.object().shape({
+                name: Yup.string().required('O nome é obrigatório'),
+                color: Yup.string().required('A cor é obrigatório')
+            });
+
+            await schema.validate(data, {
+                abortEarly: false
+            });
+
+            console.log(data);
+            formRef.current.setErrors({});
+
+            await api.post('categories', data )
+
+            reset();
+
+        } catch (err) {
+            if( err instanceof Yup.ValidationError ) {
+                const errorMessages = {};
+                err.inner.forEach(error => {
+                    errorMessages[error.path] = error.message;
+                })
+
+                formRef.current.setErrors(errorMessages);
+            }
+        }
     }
 
     return(
@@ -29,29 +57,12 @@ export default function AddCategory() {
             <Header title="Adicione uma categoria"/>
 
             <CategoryForm>  
-                <form onSubmit={ addCategory }>  
-                    
-                    <CategoryInput 
-                        onChange={ e => setName(e.target.value) }
-                        type="text"
-                        placeholder="Nome"
-                        name={ name }
-                        required
-                    />
-
-                    <CategoryInput 
-                        onChange={ e => setColor(e.target.value) }
-                        type="text"
-                        placeholder="Cor"
-                        name={ color }
-                        required
-                    />
-
+                <Form ref={formRef} onSubmit={ addCategory }>  
+                    <Input name="name" placeholder="Nome*"/>
+                    <Input name="color" type="color" placeholder="Cor*"/>
                     <button type="submit">Inserir</button>
-
-                </form>
+                </Form>
             </CategoryForm>
         </CategoryContainer>
     );
-
 }
