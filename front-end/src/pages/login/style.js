@@ -75,11 +75,13 @@ export const ContainerRight = styled.div`
         margin-top: 10px;
         cursor: pointer;
         transition-duration: 0.2s;
+        color: rgba(0,0,0,0.4);
     }
 
     button:hover {
         transform: translateY(-2px);
         box-shadow: 0px 5px 2px #25443D;
+        color: #FFFF;
     }
 
 `;

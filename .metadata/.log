@@ -12764,3 +12764,1106 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-09 10:24:34.954
 !MESSAGE executing callback sts4.classpath.oJzxPWSO SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-09 16:50:22.458
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.oJzxPWSO
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-09 16:50:22.693
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.oJzxPWSO
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-09 16:50:22.958
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-09 16:50:23.005
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.oJzxPWSO => OK
+
+!ENTRY org.eclipse.ui 2 2 2020-05-09 16:50:24.427
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2020-05-10 10:26:46.527 -----------------------------------------------
+eclipse.buildId=4.3.2.201908130627-RELEASE
+java.version=1.8.0_211
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.egit.core 1 0 2020-05-10 10:27:53.432
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2020-05-10 10:27:58.833
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-05-10 10:27:58.833
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@b90c5a5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1786150f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:29:10.042
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:29:10.053
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@73cfafd8[org.springframework.tooling.boot.ls:1.10.0.201908130624(id=624)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:29:10.824
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-05-10 10:29:12.558
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Ellen Rose'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:29:15.682
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:30.562
+!MESSAGE Boot LS startup time from start to initialized: 78932ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:31.795
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.qcyKxIQAisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:31.820
+!MESSAGE subscribing to classpath changes: sts4.classpath.qcyKxIQA isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:31.864
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:31.913
+!MESSAGE subsribers = {sts4.classpath.qcyKxIQA=Send Classpath Notifications(72)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:31.933
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:31.966
+!MESSAGE project back-end ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:32.015
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:32.035
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:32.065
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.qcyKxIQA => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:32.133
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:33.321
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:33.352
+!MESSAGE buffering callback sts4.classpath.qcyKxIQA back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:33.365
+!MESSAGE executing callback sts4.classpath.qcyKxIQA 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 10:30:33.557
+!MESSAGE executing callback sts4.classpath.qcyKxIQA SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 15:10:23.639
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.qcyKxIQA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 15:10:23.858
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.qcyKxIQA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 15:10:23.858
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-10 15:10:23.873
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.qcyKxIQA => OK
+
+!ENTRY org.eclipse.ui 2 2 2020-05-10 15:10:26.577
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2020-05-11 17:58:00.290 -----------------------------------------------
+eclipse.buildId=4.3.2.201908130627-RELEASE
+java.version=1.8.0_211
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.egit.core 1 0 2020-05-11 17:58:17.093
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2020-05-11 17:58:19.153
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-05-11 17:58:19.153
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@44864ebe,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5f803481,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:58:37.982
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:58:37.998
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@7e9d171c[org.springframework.tooling.boot.ls:1.10.0.201908130624(id=624)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:58:38.185
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-05-11 17:58:38.248
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Ellen Rose'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:58:39.390
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.497
+!MESSAGE Boot LS startup time from start to initialized: 25076ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.832
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fxhcxHFwisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.846
+!MESSAGE subscribing to classpath changes: sts4.classpath.fxhcxHFw isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.864
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.884
+!MESSAGE subsribers = {sts4.classpath.fxhcxHFw=Send Classpath Notifications(72)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.900
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.921
+!MESSAGE project back-end ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.940
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.950
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.964
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fxhcxHFw => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:03.975
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:04.269
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:04.296
+!MESSAGE buffering callback sts4.classpath.fxhcxHFw back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:04.312
+!MESSAGE executing callback sts4.classpath.fxhcxHFw 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-11 17:59:04.471
+!MESSAGE executing callback sts4.classpath.fxhcxHFw SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-12 12:01:34.007
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fxhcxHFw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-12 12:01:34.338
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.fxhcxHFw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-12 12:01:34.369
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-12 12:01:34.385
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fxhcxHFw => OK
+
+!ENTRY org.eclipse.ui 2 2 2020-05-12 12:01:42.003
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2020-05-13 08:28:50.248 -----------------------------------------------
+eclipse.buildId=4.3.2.201908130627-RELEASE
+java.version=1.8.0_211
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.egit.core 1 0 2020-05-13 08:29:55.579
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2020-05-13 08:30:00.110
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-05-13 08:30:00.110
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@b90c5a5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1786150f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-13 08:30:37.125
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-13 08:30:37.125
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@73cfafd8[org.springframework.tooling.boot.ls:1.10.0.201908130624(id=624)]
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-05-13 08:30:37.156
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Ellen Rose'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-13 08:30:37.406
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-13 08:30:39.051
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.ui 2 2 2020-05-13 08:31:07.443
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2020-05-14 18:15:57.749 -----------------------------------------------
+eclipse.buildId=4.3.2.201908130627-RELEASE
+java.version=1.8.0_211
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.egit.core 1 0 2020-05-14 18:16:52.394
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2020-05-14 18:16:56.501
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-05-14 18:16:56.501
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53432aef,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a16d393,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:31.815
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:31.846
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@89dd102[org.springframework.tooling.boot.ls:1.10.0.201908130624(id=624)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:32.065
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-05-14 18:17:32.596
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Ellen Rose'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:34.011
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.315
+!MESSAGE Boot LS startup time from start to initialized: 26920ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.755
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.EykVzXxyisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.815
+!MESSAGE subscribing to classpath changes: sts4.classpath.EykVzXxy isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.897
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.920
+!MESSAGE subsribers = {sts4.classpath.EykVzXxy=Send Classpath Notifications(71)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.942
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.964
+!MESSAGE project back-end ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.979
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:17:59.994
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:18:00.008
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.EykVzXxy => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:18:00.023
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:18:00.183
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:18:00.215
+!MESSAGE buffering callback sts4.classpath.EykVzXxy back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:18:00.229
+!MESSAGE executing callback sts4.classpath.EykVzXxy 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:18:00.346
+!MESSAGE executing callback sts4.classpath.EykVzXxy SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:53:22.296
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.EykVzXxy
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:53:22.363
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.EykVzXxy
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:53:22.387
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 18:53:22.407
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.EykVzXxy => OK
+
+!ENTRY org.eclipse.ui 2 2 2020-05-14 18:59:45.327
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:20.769
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:20.800
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@89dd102[org.springframework.tooling.boot.ls:1.10.0.201908130624(id=624)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:20.800
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.438
+!MESSAGE Boot LS startup time from start to initialized: 6560ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.548
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.JWbYHFKBisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.563
+!MESSAGE subscribing to classpath changes: sts4.classpath.JWbYHFKB isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.579
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.595
+!MESSAGE subsribers = {sts4.classpath.JWbYHFKB=Send Classpath Notifications(528)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.610
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.626
+!MESSAGE project back-end ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.641
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.657
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.673
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.JWbYHFKB => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.688
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.720
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.751
+!MESSAGE buffering callback sts4.classpath.JWbYHFKB back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.766
+!MESSAGE executing callback sts4.classpath.JWbYHFKB 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:27.891
+!MESSAGE executing callback sts4.classpath.JWbYHFKB SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:40.267
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.JWbYHFKB
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:40.282
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.JWbYHFKB
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:40.298
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:11:40.314
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.JWbYHFKB => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:21:53.993
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:21:54.043
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@89dd102[org.springframework.tooling.boot.ls:1.10.0.201908130624(id=624)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:21:54.055
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:02.608
+!MESSAGE Boot LS startup time from start to initialized: 8531ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:02.834
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.mxJtzzkTisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:02.848
+!MESSAGE subscribing to classpath changes: sts4.classpath.mxJtzzkT isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:02.862
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:02.879
+!MESSAGE subsribers = {sts4.classpath.mxJtzzkT=Send Classpath Notifications(582)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:02.893
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:03.458
+!MESSAGE project back-end ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:03.711
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:03.795
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:03.826
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:03.852
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.mxJtzzkT => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:03.896
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:03.957
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:04.018
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 19:22:04.222
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:21:12.553
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:21:12.610
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:21:12.653
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:21:12.687
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:21:12.697
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:21:12.779
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:28.180
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:28.245
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:28.333
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:28.729
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:28.839
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:29.129
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-05-14 21:22:36.680
+!MESSAGE Error occurred while deleting: /back-end/target/classes/META-INF
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:765)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not delete '/back-end/target/classes/META-INF'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:367)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses\control.expenses.
+java.nio.file.DirectoryNotEmptyException: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses\control.expenses
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:256)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:140)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:66)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:154)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:118)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2020-05-14 21:22:36.693
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2020-05-14 21:22:36.693
+!MESSAGE Could not delete '/back-end/target/classes/META-INF'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:367)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses\control.expenses.
+java.nio.file.DirectoryNotEmptyException: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses\control.expenses
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:256)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:140)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:66)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:154)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:118)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2020-05-14 21:22:36.694
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2020-05-14 21:22:36.695
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2020-05-14 21:22:36.695
+!MESSAGE Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses\control.expenses.
+!STACK 0
+java.nio.file.DirectoryNotEmptyException: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses\control.expenses
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:256)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:140)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:66)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:154)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:118)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2020-05-14 21:22:36.695
+!MESSAGE Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven\control.expenses.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2020-05-14 21:22:36.695
+!MESSAGE Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF\maven.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2020-05-14 21:22:36.696
+!MESSAGE Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\META-INF.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:38.369
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:38.423
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:38.479
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:38.518
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:38.532
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:22:38.575
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:34.253
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:34.271
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:34.313
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:34.341
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:34.373
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:34.400
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:58.941
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:58.962
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:59.016
+!MESSAGE classpath=99 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:59.054
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 99
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:59.073
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:23:59.129
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-05-14 21:23:59.321
+!MESSAGE Error occurred while deleting: /back-end/target/classes/control
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:765)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not delete '/back-end/target/classes/control'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:367)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses\modelUtil.
+java.nio.file.DirectoryNotEmptyException: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses\modelUtil
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:256)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:140)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:66)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:154)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:118)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2020-05-14 21:23:59.322
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2020-05-14 21:23:59.322
+!MESSAGE Could not delete '/back-end/target/classes/control'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:367)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses\modelUtil.
+java.nio.file.DirectoryNotEmptyException: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses\modelUtil
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:256)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:140)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:66)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:154)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:118)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses.
+Contains: Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2020-05-14 21:23:59.322
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2020-05-14 21:23:59.322
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2020-05-14 21:23:59.322
+!MESSAGE Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses\modelUtil.
+!STACK 0
+java.nio.file.DirectoryNotEmptyException: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses\modelUtil
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:256)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:251)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:140)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:66)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:154)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:118)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:813)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1771)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:752)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:140)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:65)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:191)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:154)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2020-05-14 21:23:59.326
+!MESSAGE Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control\expenses.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2020-05-14 21:23:59.326
+!MESSAGE Could not delete: C:\Users\Ellen Rose\Desktop\Projects\ControleDeDespesas\back-end\target\classes\control.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:25:33.944
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:25:33.988
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:25:34.087
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:25:34.137
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:25:34.154
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:25:34.208
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:26:38.862
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:26:38.974
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:26:39.026
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:26:39.069
+!MESSAGE buffering callback sts4.classpath.mxJtzzkT back-end false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:26:39.085
+!MESSAGE executing callback sts4.classpath.mxJtzzkT 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:26:39.134
+!MESSAGE executing callback sts4.classpath.mxJtzzkT SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:15.189
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.mxJtzzkT
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:15.262
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.mxJtzzkT
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:15.294
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:15.317
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.mxJtzzkT => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:18.477
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:18.499
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@89dd102[org.springframework.tooling.boot.ls:1.10.0.201908130624(id=624)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:18.521
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:37.822
+!MESSAGE Boot LS startup time from start to initialized: 19252ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.138
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.onGutNawisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.156
+!MESSAGE subscribing to classpath changes: sts4.classpath.onGutNaw isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.172
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.190
+!MESSAGE subsribers = {sts4.classpath.onGutNaw=Send Classpath Notifications(1306)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.202
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.219
+!MESSAGE project back-end ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.235
+!MESSAGE Preparing classpath changed notification back-end
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.246
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.250
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.271
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.onGutNaw => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.307
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.340
+!MESSAGE buffering callback sts4.classpath.onGutNaw back-end false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.352
+!MESSAGE executing callback sts4.classpath.onGutNaw 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 21:38:38.427
+!MESSAGE executing callback sts4.classpath.onGutNaw SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 22:10:13.420
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.onGutNaw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 22:10:13.592
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.onGutNaw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 22:10:13.780
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-14 22:10:14.078
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.onGutNaw => OK

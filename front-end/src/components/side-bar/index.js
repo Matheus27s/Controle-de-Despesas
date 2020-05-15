@@ -6,11 +6,13 @@ import { ContainerSideBar } from './style';
 import { useAuth } from '../../context/auth';
 import { usePage } from '../../context/page';
 
+
+
 export default function SideBar() {
 
     const { signOut } = useAuth();
     const { handlePage } = usePage();
- 
+
     const handleSignOut = () => {
         signOut();
     }

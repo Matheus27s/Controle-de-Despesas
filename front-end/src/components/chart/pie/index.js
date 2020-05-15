@@ -4,9 +4,18 @@ import { Pie } from 'react-chartjs-2';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+const style = {
+
+  a: {
+    color: 'red'
+  }
+
+}
+
 export default function Pies({ status }) {
 
   useEffect(() => {
+
     setData({ 
       labels: status.map( item => ( item.name )),
       datasets: [
@@ -14,9 +23,9 @@ export default function Pies({ status }) {
           data: status.map( item => ( item.value )),
           backgroundColor: status.map( item => (item.color)),
         }
-
       ]
     })
+
   },[ status ])  
 
     const [ data, setData ] = useState({
@@ -30,17 +39,14 @@ export default function Pies({ status }) {
         borderAlign: 'center',
         weight: 5,
         hoverBorderWidth: 1,
-
         backgroundColor: [],
-
-        hoverBackgroundColor: [],
       }]
     } 
   )
 
   return(
     <div>
-      <Pie 
+      <Pie style={{ a: { color: 'red' } }}
         data={ data }
         redraw={ false }
       />

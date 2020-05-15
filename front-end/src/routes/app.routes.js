@@ -10,7 +10,3 @@ const AppRoutes = () => (
 );
 
 export default AppRoutes;
-
-        /*<Route path="/recipes" component={ AddRecipe }/>
-        <Route path="/moves" component={ AddMove }/>
-        <Route path="/categories" component={ AddCategory }/>*/

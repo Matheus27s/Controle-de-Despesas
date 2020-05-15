@@ -1,0 +1,2 @@
+#PostgreSQL
+spring.jpa.hibernate.dll-auto=update

@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
-export const ContainerAddMove = styled.div`
+export const MoveContainer = styled.div`
     background-color: #F8F9F8;
-    display: flex;
-    flex-direction: column;
-    margin: 16px
+    display: grid;
+    grid-template-rows: 10fr 80fr;
+    gap: 10px;
+    margin: 10px;
 `;
 
-export const Expense = styled.div`
-    background-color: #E5E5E5;
+export const MoveForm = styled.div`
     border-radius: 12px;
     padding: 16px;
-    box-shadow: 0 -2px 2px rgba(0,0,0,0.1);
+    background-color: #F8F9F8;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.3); 
 
     @keyframes show-login {
     0% {
@@ -55,18 +56,19 @@ export const Expense = styled.div`
             margin-top: 10px;
             cursor: pointer;
             transition-duration: 0.2s;
-            color: #FFF;
+            color: rgba(0,0,0,0.4);
         }
 
         button:hover {
             transform: translateY(-2px);
             box-shadow: 0px 5px 2px #25443D;
+            color: #FFFF;
         }
     
     }
 `;
 
-export const LoginInput = styled.input`
+export const MoveInput = styled.input`
     background-color: #FFFF;
     font-size: 18px;
     width: 100%;

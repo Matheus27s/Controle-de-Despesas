@@ -4,9 +4,16 @@ import { useAuth } from '../context/auth';
 import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 
+import LoadingInfo from '../components/loading';
+
 const Routes = () => {
 
-    const { signed } = useAuth();
+    const { signed, loading } = useAuth();
+
+    if( loading ) {
+        return <LoadingInfo />
+    }
+
     return signed ? <AppRoutes /> : <AuthRoutes/>;
 
 }

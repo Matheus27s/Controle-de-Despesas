@@ -7,7 +7,7 @@ import pt from 'date-fns/locale/pt';
 
 import api from '../../../services/api';
 
-import { ContainerAddMove, Expense, LoginInput, Select } from './style';
+import { MoveContainer, MoveForm, MoveInput, Select } from './style';
 
 import Header from '../../../components/form/header'
 import { useRecipe } from '../../../context/recipe';
@@ -79,15 +79,15 @@ export default function AddMove() {
     }
 
     return(
-        <ContainerAddMove>
+        <MoveContainer>
 
             <Header title="Nova movimentação"/>
             
-            <Expense> 
+            <MoveForm> 
 
             <form onSubmit={ addMove }> 
                 
-                <LoginInput 
+                <MoveInput 
                     onChange={ e => setName(e.target.value) }
                     type="text"
                     placeholder="Movimentação"
@@ -95,7 +95,7 @@ export default function AddMove() {
                     required
                 />
 
-                <LoginInput 
+                <MoveInput 
                     onChange={ e => setValue(e.target.value) }
                     type="text"
                     placeholder="Valor"
@@ -157,9 +157,9 @@ export default function AddMove() {
                 <button type="submit">Inserir</button>
 
             </form>
-        </Expense>
+        </MoveForm>
 
-        </ContainerAddMove>
+        </MoveContainer>
 
     );
 

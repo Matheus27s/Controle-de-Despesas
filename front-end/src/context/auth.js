@@ -14,18 +14,22 @@ const AuthContext = createContext({
 export const AuthProvider = ({ children }) => {
 
     const [ user, setUser ] = useState(null);
+    const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
 
-        async function loadStorageData() {
+        function loadStorageData() {
+            
             const storagedUser = localStorage.getItem('@RNAuth:user');
-
-            if( storagedUser ){
+            
+            if( storagedUser ){ 
                 setUser(JSON.parse(storagedUser));
             }
         }
 
+        setLoading(false);
         loadStorageData();
+
     },[])
 
     async function signIn( login ) {
@@ -46,7 +50,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     return(
-        <AuthContext.Provider value={{ signed: !!user, user , signIn, signOut }}>
+        <AuthContext.Provider value={{ signed: !!user, loading ,user , signIn, signOut }}>
             { children }
         </AuthContext.Provider>
     );

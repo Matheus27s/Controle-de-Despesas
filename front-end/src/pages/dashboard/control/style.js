@@ -3,9 +3,8 @@ import styled from 'styled-components';
 export const ContainerControl = styled.div`
     background-color: #F8F9F8;
     display: grid;
-    grid-template-rows: 10fr 50fr 40fr 10fr;
-    grid-template-columns: 60fr 40fr;
-    margin: 16px;
+    grid-template-rows: 10fr 40fr 30fr 10fr;
+    grid-template-columns: 70fr 30fr;
+    gap: 10px;
+    margin: 10px;
 `;
-
-//84 - 940
