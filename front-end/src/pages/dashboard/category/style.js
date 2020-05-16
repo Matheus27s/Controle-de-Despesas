@@ -9,10 +9,10 @@ export const CategoryContainer = styled.div`
 `;
 
 export const CategoryForm = styled.div`
-    border-radius: 12px;
-    padding: 16px;
     background-color: #F8F9F8;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.3); 
+    border-radius: 12px;
+    padding: 16px; 
 
     @keyframes show-login {
         0% {
@@ -32,45 +32,17 @@ export const CategoryForm = styled.div`
         margin: 0 auto;
         display: grid;
         grid-template-columns: 80fr 20fr;
-        gap: 20px;
+    }
 
-        input {
-            grid-column: 1/2;
-            background-color: #FFFF;
-            font-size: 18px;
-            height: 34px;
-            border-radius: 5px;
-            border: none;
-            padding: 0 10px;
-        }
+    input {
+        grid-column: 1/2;
+    }
 
-        input[type="color"] {
-            grid-column: 2/3;
-            background-color: #FFF;
-            font-size: 18px;
-            height: 34px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-        }
+    input[type="color"] {
+        grid-column: 2/3;
+    }
 
-        button {
-            grid-column: 1/3;
-            font-size: 16px;
-            font-weight: bold;
-            background-color: #29B573;
-            border: none;
-            height: 34px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition-duration: 0.2s;
-            color: rgba(0,0,0,0.4);
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0px 5px 2px #25443D;
-            color: #FFFF;
-        }
+    button {
+        grid-column: 1/3;
     }
 `;

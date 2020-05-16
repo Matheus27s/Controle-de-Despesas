@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import ReactDatePicker from 'react-datepicker';
 import { useField } from '@unform/core';
+
+import { Picker } from './style';
 
 export default function DatePicker({ name, ...rest }) {
 
@@ -23,7 +24,7 @@ export default function DatePicker({ name, ...rest }) {
 
   return (
 
-    <ReactDatePicker
+    <Picker
       ref={datepickerRef}
       selected={date}
       onChange={ date => setDate(date)}

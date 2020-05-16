@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import { Form } from '@unform/web';
+import * as Yup from 'yup';
+
 import pt from 'date-fns/locale/pt';
 
 import api from '../../../services/api';
@@ -12,13 +12,17 @@ import { MoveContainer, MoveForm, MoveInput, Select } from './style';
 import Header from '../../../components/form/header'
 import { useRecipe } from '../../../context/recipe';
 
+import Input from '../../../components/form/inputs/text';
+import InputSale from '../../../components/form/inputs/sale';
+import DatePicker from '../../../components/form/inputs/datepicker';
+import ButtonDefault from '../../../components/buttons';
+
 export default function AddMove() {
+
+    const formRef = useRef(null);
 
     const { recipe } = useRecipe();
 
-    const [ name, setName ] = useState('');
-    const [ value, setValue ] = useState(0);
-    const [ paymentDate, setPaymentDate ] = useState(new Date());
     const [ category, setCategory ] = useState({});
     const [ typeMove, setTypeMove ] = useState(0);
     const [ categories, setCategories ] = useState([]);
@@ -66,7 +70,7 @@ export default function AddMove() {
             return;
         }
 
-       await api.post('moves', {
+       /*await api.post('moves', {
 
          name,
          value,
@@ -75,7 +79,7 @@ export default function AddMove() {
          recipe,
          category
          
-       })
+       })*/
     }
 
     return(
@@ -85,29 +89,22 @@ export default function AddMove() {
             
             <MoveForm> 
 
-            <form onSubmit={ addMove }> 
+            <Form ref={formRef} onSubmit={ addMove }> 
                 
-                <MoveInput 
-                    onChange={ e => setName(e.target.value) }
+                <Input 
                     type="text"
                     placeholder="Movimentação"
-                    name={name}
-                    required
+                    name="name"
                 />
 
-                <MoveInput 
-                    onChange={ e => setValue(e.target.value) }
+                <InputSale 
                     type="text"
                     placeholder="Valor"
-                    name={value}
-                    required
+                    name="value"
                 />
 
                 <DatePicker 
-                    selected={ paymentDate } 
-                    onChange={date => setPaymentDate(date)} 
-                    locale={pt}
-                    dateFormat="dd/MM/yyyy"
+                    name="paymentDate"
                 />
                  
                 <Select 
@@ -154,9 +151,9 @@ export default function AddMove() {
                     
                 </Select>
 
-                <button type="submit">Inserir</button>
+                <ButtonDefault type="submit">Inserir</ButtonDefault>
 
-            </form>
+            </Form>
         </MoveForm>
 
         </MoveContainer>

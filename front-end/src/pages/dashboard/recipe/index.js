@@ -9,9 +9,9 @@ import { Form } from '@unform/web';
 
 import * as Yup from 'yup';
 
-import InputSale from '../../../components/form/inputs/inputSale';
-import DefaultDatePicker from '../../../components/Date/datepicker';
-
+import InputSale from '../../../components/form/inputs/sale';
+import DatePicker from '../../../components/form/inputs/datepicker';
+import ButtonDefault from '../../../components/buttons';
 
 import api from '../../../services/api';
 
@@ -69,8 +69,8 @@ export default function AddRecipe() {
                 <Form ref={formRef} onSubmit={ addRecipe }>  
                     
                     <InputSale name="value" disabled="disabled"/>
-                    <DefaultDatePicker name="dateMonth" />
-                    <button type="submit">Inserir</button>
+                    <DatePicker name="dateMonth" />
+                    <ButtonDefault type="submit">Inserir</ButtonDefault>
 
                 </Form>
             </RecipeForm>

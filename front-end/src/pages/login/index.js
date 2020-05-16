@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+
+import { Form } from '@unform/web';
+import * as Yup from 'yup';
 
 import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerRegister } from './style';
 import { FiChevronRight } from 'react-icons/fi';
@@ -6,18 +9,20 @@ import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../context/auth';
 
+import ButtonDefault from '../../components/buttons';
+import Input from '../../components/form/inputs/text';
+
 import logo from '../../img/logo.svg';
 
 export default function Login() {
 
+    const formRef = useRef(null);
     const { signIn } = useAuth();
 
-    const [ login, setLogin ] = useState('');
-    const [ password, setPassword ] = useState('');
+    const loginUser = (data, { reset }) => {
 
-    const loginUser = (e) => {
-        e.preventDefault();
-        signIn( login );
+        console.log(data)
+        signIn(data.login);
     }
 
     return (
@@ -30,38 +35,16 @@ export default function Login() {
             </ContainerLeft>
 
             <ContainerRight>
-            <form onSubmit={ loginUser } method={"POST"}>
+            <Form ref={formRef} onSubmit={ loginUser } >
 
                 <h2>Login</h2>
 
-                <LoginInput type="text" 
-                       placeholder="Login" 
-                       id="login" 
-                       name="login" 
-                       value={ login }
-                       onChange={ e => setLogin(e.target.value) }
-                       required
-                />
+                <Input name="login" type="text" placeholder="Login"/>
+                <Input name="password" type="password" placeholder="Password"/>
 
-                <LoginInput type="password" 
-                       placeholder="Password" 
-                       id="password" 
-                       name="password"
-                       value={ password }
-                       onChange={ e => setPassword(e.target.value) }
-                       required
-                />
+                <ButtonDefault>Login</ButtonDefault>
 
-                <button>Login</button>
-
-                <ContainerRegister>
-                    <p>Register</p>
-                    <Link to="/register" >
-                        <FiChevronRight size={ 30 } color="#29B573"/>
-                    </Link>
-                </ContainerRegister>
-
-            </form>
+            </Form>
 
             </ContainerRight>
         </ContainerLogin>

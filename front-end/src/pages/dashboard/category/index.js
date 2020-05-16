@@ -1,17 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import { Form } from '@unform/web';
-
 import * as Yup from 'yup';
 
-import Header from '../../../components/form/header'
-import { useRecipe } from '../../../context/recipe';
-
-import Input from '../../../components/form/inputs/input';
+import Header from '../../../components/form/header';
+import ButtonDefault from '../../../components/buttons';
+import Input from '../../../components/form/inputs/text';
 
 import api from '../../../services/api';
 
-import { CategoryContainer, CategoryForm, CategoryInput } from './style';
+import { CategoryContainer, CategoryForm } from './style';
 
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
@@ -60,7 +58,7 @@ export default function AddCategory() {
                 <Form ref={formRef} onSubmit={ addCategory }>  
                     <Input name="name" placeholder="Nome*"/>
                     <Input name="color" type="color" placeholder="Cor*"/>
-                    <button type="submit">Inserir</button>
+                    <ButtonDefault type="submit">Inserir</ButtonDefault>
                 </Form>
             </CategoryForm>
         </CategoryContainer>

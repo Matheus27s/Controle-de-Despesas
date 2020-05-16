@@ -59,55 +59,8 @@ export const ContainerRight = styled.div`
     form {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    button {
-        width: 179.98px;
-        font-size: 16px;
-        font-weight: bold;
-        background-color: #29B573;
-        border: none;
-        height: 34px;
-        border-radius: 5px;
-        margin-top: 10px;
-        cursor: pointer;
-        transition-duration: 0.2s;
-        color: rgba(0,0,0,0.4);
-    }
-
-    button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0px 5px 2px #25443D;
-        color: #FFFF;
-    }
-
-`;
-
-export const LoginInput = styled.input`
-    background-color: #FFF;
-    font-size: 16px;
-    width: 179.98px;
-    height: 34px;
-    border-radius: 5px;
-    border: none;
-    margin-top: 10px;
-    padding-left: 16px;
-`;
-
-export const ContainerRegister = styled.div `
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    width: 179.98px;
-
-    p {
-        font-size: 24px;
-        color: #29B573;
+        width: 40%;
+        margin: 0 auto;        
     }
 `;
 

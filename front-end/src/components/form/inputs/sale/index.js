@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import * as CurrencyFormat from 'react-currency-format';
-
 import { useField } from '@unform/core';
+
+import { Sale } from './style';
 
 export default function InputSale({ name, ...rest }) {
 
@@ -24,7 +24,7 @@ export default function InputSale({ name, ...rest }) {
 
     return (
        <>   
-            <CurrencyFormat 
+            <Sale 
                 thousandSeparator={true} 
                 prefix={'$ '} 
                 fixedDecimalScale={true} 
