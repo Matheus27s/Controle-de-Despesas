@@ -1,23 +1,28 @@
 import React, { useState, useEffect } from 'react';
 
-import { ContainerProgress } from './style';
-import Bars from '../../../../components/chart/bar';
-import { useRecipe } from '../../../../context/recipe';
 import api from '../../../../services/api';
+
+//Contexts:
+import { useRecipe } from '../../../../context/recipe';
+
+//Components:
+import Bars from '../../../../components/chart/bar';
+
+import { ContainerProgress } from './style';
 
 export default function Bar() {
 
-   const [ status, setStatus ] = useState([]); 
-   const { recipe } = useRecipe();
-
+  const { recipe } = useRecipe();
+   
+  const [ status, setStatus ] = useState([]); 
    useEffect( ()=> {
 
-      async function statusBar() {
+  async function statusBar() {
 
       if( recipe.id ) {
-      const response = await api.get(`status/${ recipe.id }`)
-        setStatus(response.data)
-      }
+        const response = await api.get(`status/${ recipe.id }`)
+          setStatus(response.data)
+        }
       }
 
      statusBar();

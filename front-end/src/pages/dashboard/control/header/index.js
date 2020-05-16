@@ -1,13 +1,14 @@
-import React, { useEffect, useState, useCallback } from 'react';
-
-import { ContainerHeader, Overflow } from './style';
-import { useRecipe } from '../../../../context/recipe';
-
+import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
-import { useAuth } from '../../../../context/auth';
 import api from '../../../../services/api';
+
+//Contexts
+import { useAuth } from '../../../../context/auth';
+import { useRecipe } from '../../../../context/recipe';
+
+import { ContainerHeader, Overflow } from './style';
 
 export default function Header() {
 

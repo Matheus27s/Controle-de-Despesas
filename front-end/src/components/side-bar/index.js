@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { FiHome, FiClipboard, FiDollarSign, FiHash, FiArrowLeft } from 'react-icons/fi';
-
-import { ContainerSideBar } from './style';
+//Contexts:
 import { useAuth } from '../../context/auth';
 import { usePage } from '../../context/page';
 
+import { ContainerSideBar } from './style';
 
+import { FiHome, FiClipboard, FiDollarSign, FiHash, FiArrowLeft } from 'react-icons/fi';
 
 export default function SideBar() {
 

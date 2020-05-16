@@ -1,29 +1,23 @@
 import React, { useState, useRef } from 'react';
-
-import Header from '../../../components/form/header';
-
-import { useAuth } from '../../../context/auth';
-import { useRecipe } from '../../../context/recipe';
-
 import { Form } from '@unform/web';
-
 import * as Yup from 'yup';
 
+import api from '../../../services/api';
+
+//Contexts:
+import { useAuth } from '../../../context/auth';
+
+//Components:
+import Header from '../../../components/form/header';
 import InputSale from '../../../components/form/inputs/sale';
 import DatePicker from '../../../components/form/inputs/datepicker';
 import ButtonDefault from '../../../components/buttons';
-
-import api from '../../../services/api';
 
 import { RecipeContainer, RecipeForm } from './style';
 
 export default function AddRecipe() {
 
-    const { recipe } = useRecipe();
-
-    const { setRecipe } = useRecipe();
-    const [ dateMonth, setDateMonth ] = useState(new Date());
-    const { user, signOut } = useAuth();
+    const { user } = useAuth();
 
     const formRef = useRef(null);
 
@@ -32,20 +26,24 @@ export default function AddRecipe() {
         try {
 
             const schema = Yup.object().shape({
-                value: Yup.string().required('O valor é obrigatório'),
+                dateMonth: Yup.date().required()
             });
 
             await schema.validate(data, {
                 abortEarly: false
             });
+            
+            formRef.current.setErrors({});
+
+            console.log(data);
 
             await api.post('recipes', {
                 value: data.value,
                 dateMonth: data.dateMonth,
                 user
             });
-            
-            formRef.current.setErrors({});
+
+            reset();
 
 
         } catch (err) {

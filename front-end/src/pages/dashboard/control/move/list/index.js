@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-
-import { MoveList, ContainerLeft, ContainerCenter, ContainerRight, Overflow } from './style';
-import { useRecipe } from '../../../../../context/recipe';
-
 import { format } from 'date-fns';
-import pt from 'date-fns/locale/pt';
-
-import { FiChevronsDown, FiChevronsUp, FiX } from 'react-icons/fi';
 
 import api from '../../../../../services/api';
 
+//Contexts:
+import { useRecipe } from '../../../../../context/recipe';
+
+import { MoveList, ContainerLeft, ContainerCenter, ContainerRight, Overflow } from './style';
+import { FiChevronsDown, FiChevronsUp, FiX } from 'react-icons/fi';
+
 export default function List() {
 
-    const [ moves, setMoves ] = useState([]);
     const { recipe } = useRecipe();
+    const [ moves, setMoves ] = useState([]);
 
     useEffect( () => {
 

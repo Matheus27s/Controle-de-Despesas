@@ -1,18 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
+import api from '../../../services/api';
+
+//Components:
 import Header from '../../../components/form/header';
 import ButtonDefault from '../../../components/buttons';
 import Input from '../../../components/form/inputs/text';
 
-import api from '../../../services/api';
-
 import { CategoryContainer, CategoryForm } from './style';
-
-import "react-datepicker/dist/react-datepicker.css";
-import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export default function AddCategory() {
 

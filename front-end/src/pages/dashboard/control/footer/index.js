@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { ContainerHeader } from './style';
+//Contexts:
 import { useRecipe } from '../../../../context/recipe';
+
+import { ContainerHeader } from './style';
 
 export default function Footer() {
 

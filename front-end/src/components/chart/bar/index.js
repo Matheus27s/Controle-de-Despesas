@@ -1,12 +1,10 @@
-import React from 'react';
-
+import React, { useState, useEffect} from 'react';
 import { Bar } from 'react-chartjs-2';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 export default function Bars({ status }) {
 
   useEffect(() => {
+
     setData({ 
       labels: status.map( item => ( item.name )),
       datasets: [
@@ -43,11 +41,11 @@ export default function Bars({ status }) {
   )
 
   return(
-    <div>
+    <>
       <Bar 
         data={ data }
         redraw={ false }
       />
-    </div>
+    </>
   );
 }

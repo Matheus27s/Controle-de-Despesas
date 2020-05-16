@@ -5,9 +5,9 @@ import { InputText } from './style';
 
 export default function Input({ name, ...rest }) {
 
-    const inputRef = useRef(null);
-
     const { fieldName, registerField, defaultValue, error } = useField(name);
+    
+    const inputRef = useRef(null);
 
     useEffect(() => {
 
@@ -19,7 +19,12 @@ export default function Input({ name, ...rest }) {
 
     return (
        <>
-            <InputText ref={ inputRef } defaultValue={ defaultValue } { ...rest }/> 
+            <InputText 
+                ref={ inputRef } 
+                defaultValue={ defaultValue } 
+                { ...rest }
+            />
+             
             { error && <span style={{ color: 'red' }}>{ error }</span> }
        </>
     );

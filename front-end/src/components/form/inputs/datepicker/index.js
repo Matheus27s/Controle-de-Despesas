@@ -5,9 +5,10 @@ import { Picker } from './style';
 
 export default function DatePicker({ name, ...rest }) {
 
-  const datepickerRef = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
   const [date, setDate] = useState(defaultValue || null);
+
+  const datepickerRef = useRef(null);
 
   useEffect(() => {
 
@@ -24,14 +25,17 @@ export default function DatePicker({ name, ...rest }) {
 
   return (
 
-    <Picker
-      ref={datepickerRef}
-      selected={date}
-      onChange={ date => setDate(date)}
-      {...rest}
-      dateFormat="dd/MM/yyyy"
-      
+    <>
+      <Picker
+        ref={datepickerRef}
+        selected={date}
+        onChange={ date => setDate(date)}
+        {...rest}
+        dateFormat="dd/MM/yyyy" 
     />
+      
+      { error && <span style={{ color: 'red' }}>{ error }</span> }
+    </>
 
   );
 };

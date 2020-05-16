@@ -1,51 +1,69 @@
 import React, { useState, useRef } from 'react';
-
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerRegister } from './style';
-import { FiChevronRight } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-
+//Contexts:
 import { useAuth } from '../../context/auth';
 
+//Components:
 import ButtonDefault from '../../components/buttons';
 import Input from '../../components/form/inputs/text';
 
+import { ContainerLogin, ContainerRight, ContainerLeft } from './style';
 import logo from '../../img/logo.svg';
 
 export default function Login() {
 
-    const formRef = useRef(null);
     const { signIn } = useAuth();
 
-    const loginUser = (data, { reset }) => {
+    const formRef = useRef(null);
 
-        console.log(data)
-        signIn(data.login);
+    const loginUser = async (data, { reset }) => {
+
+        try {
+
+            const schema = Yup.object().shape({
+                login: Yup.string().required('O Login é obrigatório'),
+                password: Yup.string().required(),
+            });
+
+            await schema.validate(data, {
+                abortEarly: false
+            });
+
+            formRef.current.setErrors({});
+            signIn(data.login);
+
+        } catch (err) {
+            if( err instanceof Yup.ValidationError ) {
+                const errorMessages = {};
+                err.inner.forEach(error => {
+                    errorMessages[error.path] = error.message;
+                })
+
+                formRef.current.setErrors(errorMessages);
+            }
+        }
     }
 
     return (
         
         <ContainerLogin>
-
             <ContainerLeft>
                 <img src={ logo } alt="logo"/>
                 <p>Sistema que irá auxiliar no controle dos seus gastos.</p>
             </ContainerLeft>
 
             <ContainerRight>
-            <Form ref={formRef} onSubmit={ loginUser } >
+                <Form ref={formRef} onSubmit={ loginUser } >
 
-                <h2>Login</h2>
+                    <h2>Login</h2>
 
-                <Input name="login" type="text" placeholder="Login"/>
-                <Input name="password" type="password" placeholder="Password"/>
+                    <Input name="login" type="text" placeholder="Login"/>
+                    <Input name="password" type="password" placeholder="Password"/>
 
-                <ButtonDefault>Login</ButtonDefault>
-
-            </Form>
-
+                    <ButtonDefault>Login</ButtonDefault>
+                </Form>
             </ContainerRight>
         </ContainerLogin>
     );

@@ -1,9 +1,11 @@
 import React from 'react';
 
+//Contexts:
+import { useAuth } from '../../context/auth';
+
 import { ContainerHeader, ContainerUser } from './style';
 
 import logo from '../../img/logo-single.svg';
-import { useAuth } from '../../context/auth';
 
 export default function Header() {
 

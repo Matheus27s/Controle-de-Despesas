@@ -1,31 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
-
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
 import pt from 'date-fns/locale/pt';
-
 import api from '../../../services/api';
 
-import { MoveContainer, MoveForm, MoveInput, Select } from './style';
-
-import Header from '../../../components/form/header'
+//Context
 import { useRecipe } from '../../../context/recipe';
 
+//Components:
+import Header from '../../../components/form/header'
 import Input from '../../../components/form/inputs/text';
 import InputSale from '../../../components/form/inputs/sale';
 import DatePicker from '../../../components/form/inputs/datepicker';
 import ButtonDefault from '../../../components/buttons';
 
-export default function AddMove() {
+import { MoveContainer, MoveForm, Select } from './style';
 
-    const formRef = useRef(null);
+export default function AddMove() {
 
     const { recipe } = useRecipe();
 
     const [ category, setCategory ] = useState({});
     const [ typeMove, setTypeMove ] = useState(0);
     const [ categories, setCategories ] = useState([]);
+
+    const formRef = useRef(null);
 
     useEffect(() => {
        allCategories();
@@ -56,30 +56,53 @@ export default function AddMove() {
         setTypeMove(e.target.value);
     }
 
-    async function addMove(e) {
+    async function addMove(data) {
 
-        if( !category.name ) {
-            alert('Insira uma categoria')
-            e.preventDefault();
-            return;
+        console.log('caiu')
+
+        try {
+
+            const schema = Yup.object().shape({
+                name: Yup.string().required("A movimentação é obrigatório").max(10, "Texto muito grande"),
+                paymentDate: Yup.date().required(),
+            });
+
+            if( !category.name ) {
+                alert('Insira uma categoria')
+                return;
+            }
+    
+            if( typeMove == 0 ){
+                alert("Defina um tipo de movimentação")
+                return;
+            }
+
+            await schema.validate(data, {
+                abortEarly: false
+            });
+
+            await api.post('moves', {
+
+                name: data.name,
+                value: data.value.substr(2),
+                paymentDate: data.paymentDate,
+                typeMove,
+                recipe,
+                category
+                
+            })
+
+
+        } catch (err) {
+            if( err instanceof Yup.ValidationError ) {
+                const errorMessages = {};
+                err.inner.forEach(error => {
+                    errorMessages[error.path] = error.message;
+                })
+
+                formRef.current.setErrors(errorMessages);
+            }
         }
-
-        if( typeMove == 0 ){
-            alert("Defina um tipo de movimentação")
-            e.preventDefault();
-            return;
-        }
-
-       /*await api.post('moves', {
-
-         name,
-         value,
-         paymentDate,
-         typeMove,
-         recipe,
-         category
-         
-       })*/
     }
 
     return(

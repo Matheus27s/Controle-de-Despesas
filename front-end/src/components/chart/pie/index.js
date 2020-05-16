@@ -1,16 +1,5 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { Pie } from 'react-chartjs-2';
-import { useState } from 'react';
-import { useEffect } from 'react';
-
-const style = {
-
-  a: {
-    color: 'red'
-  }
-
-}
 
 export default function Pies({ status }) {
 
@@ -45,11 +34,11 @@ export default function Pies({ status }) {
   )
 
   return(
-    <div>
-      <Pie style={{ a: { color: 'red' } }}
+    <>
+      <Pie
         data={ data }
         redraw={ false }
       />
-    </div>
+    </>
   );
 }

@@ -4,7 +4,6 @@ import HashLoader from "react-spinners/HashLoader";
 
 import { LoadingContainer } from './style';
  
-// Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
   display: flex;
   margin-bottom: 10px;

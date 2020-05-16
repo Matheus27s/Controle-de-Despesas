@@ -5,16 +5,18 @@ import { Sale } from './style';
 
 export default function InputSale({ name, ...rest }) {
 
-    const currencyRef = useRef(null);
-
     const { fieldName, registerField, defaultValue, error } = useField(name);
 
+    const currencyRef = useRef(null);
+
     useEffect(() => {
+
+        console.log(currencyRef.current)
 
         registerField({
             name: fieldName, 
             ref: currencyRef.current, 
-            path: 'props.value',
+            path: 'state.value',
             clearValue: (ref) => {
                 ref.clear();
               },
@@ -32,7 +34,6 @@ export default function InputSale({ name, ...rest }) {
                 ref={ currencyRef }
                 defaultValue={ defaultValue } 
                 { ...rest }
-                value={0}
             />
             
             { error && <span style={{ color: 'red' }}>{ error }</span> }
