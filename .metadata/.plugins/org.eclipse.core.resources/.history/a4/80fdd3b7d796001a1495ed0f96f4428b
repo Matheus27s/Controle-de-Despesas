@@ -54,10 +54,6 @@ public class RecipeController {
 	@PostMapping("")
 	public ResponseEntity<Recipe> insert( @RequestBody Recipe recipe ) throws ParseException {			
 		
-		System.out.println("Valor: " + recipe.getValue());
-		System.out.println("Data: " + recipe.getDateMonth());
-		System.out.println("Usuário: " + recipe.getUser().getName());
-		
 		recipe = recipeRepository.save(recipe);
 		return ResponseEntity.ok(recipe);
 		

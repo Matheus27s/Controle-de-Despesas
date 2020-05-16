@@ -11,7 +11,6 @@ export const RecipeContainer = styled.div`
 export const RecipeForm = styled.div`
     background-color: #F8F9F8;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.3); 
-
     border-radius: 12px;
     padding: 16px;
 
@@ -66,31 +65,5 @@ export const RecipeForm = styled.div`
             color: #FFFF;
         }
     
-    }
-`;
-
-export const RecipeInput = styled.input`
-    background-color: #FFFF;
-    font-size: 18px;
-    width: 100%;
-    height: 34px;
-    border-radius: 5px;
-    border: none;
-    padding: 0 10px;
-    margin: 8px 0px;
-`;
-
-export const Select = styled.select`
-    background-color: #FFFF;
-    font-size: 18px;
-    width: 100%;
-    height: 34px;
-    border-radius: 5px;
-    border: none;
-    padding: 0 10px;
-    margin: 8px 0px;
-
-    option {
-        background-color: #FFF;
     }
 `;

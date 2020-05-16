@@ -1,29 +1,36 @@
-import React, { Component } from "react";
-import DatePicker from "react-datepicker";
- 
-import "react-datepicker/dist/react-datepicker.css";
-import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import pt from 'date-fns/locale/pt';
+import React, { useRef, useState, useEffect } from 'react';
+import ReactDatePicker from 'react-datepicker';
+import { useField } from '@unform/core';
 
- 
-export default class Data extends Component {
-        
-  state = {
-    startDate: new Date()
-  };
- 
-  handleChange = date => {
-    this.setState({
-      startDate: date
+export default function DatePicker({ name, ...rest }) {
+
+  const datepickerRef = useRef(null);
+  const { fieldName, registerField, defaultValue, error } = useField(name);
+  const [date, setDate] = useState(defaultValue || null);
+
+  useEffect(() => {
+
+    registerField({
+      name: fieldName,
+      ref: datepickerRef.current,
+      path: 'props.selected',
+      clearValue: (ref) => {
+        ref.clear();
+      },
     });
-  };
- 
-  render() {
-    return (
-      <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange }
-      />
-    );
-  }
-}
+
+  }, [ fieldName, registerField ]);
+
+  return (
+
+    <ReactDatePicker
+      ref={datepickerRef}
+      selected={date}
+      onChange={ date => setDate(date)}
+      {...rest}
+      dateFormat="dd/MM/yyyy"
+      
+    />
+
+  );
+};
