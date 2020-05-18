@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
@@ -21,7 +21,6 @@ export default function AddCategory() {
 
             const schema = Yup.object().shape({
                 name: Yup.string().required('O nome é obrigatório'),
-                color: Yup.string().required('A cor é obrigatório')
             });
 
             await schema.validate(data, {

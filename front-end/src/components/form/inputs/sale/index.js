@@ -11,8 +11,6 @@ export default function InputSale({ name, ...rest }) {
 
     useEffect(() => {
 
-        console.log(currencyRef.current)
-
         registerField({
             name: fieldName, 
             ref: currencyRef.current, 
@@ -27,10 +25,9 @@ export default function InputSale({ name, ...rest }) {
     return (
        <>   
             <Sale 
-                thousandSeparator={true} 
                 prefix={'$ '} 
-                fixedDecimalScale={true} 
-                decimalScale={2}
+                fixedDecimalScale={ true } 
+                decimalScale={ 2 }
                 ref={ currencyRef }
                 defaultValue={ defaultValue } 
                 { ...rest }

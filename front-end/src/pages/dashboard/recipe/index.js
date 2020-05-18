@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
@@ -9,11 +9,11 @@ import { useAuth } from '../../../context/auth';
 
 //Components:
 import Header from '../../../components/form/header';
-import InputSale from '../../../components/form/inputs/sale';
 import DatePicker from '../../../components/form/inputs/datepicker';
 import ButtonDefault from '../../../components/buttons';
 
 import { RecipeContainer, RecipeForm } from './style';
+import { useEffect } from 'react';
 
 export default function AddRecipe() {
 
@@ -38,7 +38,6 @@ export default function AddRecipe() {
             console.log(data);
 
             await api.post('recipes', {
-                value: data.value,
                 dateMonth: data.dateMonth,
                 user
             });
@@ -66,7 +65,6 @@ export default function AddRecipe() {
            <RecipeForm>  
                 <Form ref={formRef} onSubmit={ addRecipe }>  
                     
-                    <InputSale name="value" disabled="disabled"/>
                     <DatePicker name="dateMonth" />
                     <ButtonDefault type="submit">Inserir</ButtonDefault>
 

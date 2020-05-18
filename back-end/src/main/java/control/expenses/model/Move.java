@@ -29,6 +29,7 @@ public class Move implements Serializable {
 	
 	@Temporal( TemporalType.DATE )
 	private Date paymentDate;
+	
 	private int typeMove; // [ 1 ] aumento e [ 2 ] desconto ( recebimento ou gasto)
 	
 	@JsonBackReference

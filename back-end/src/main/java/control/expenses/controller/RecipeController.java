@@ -1,8 +1,6 @@
 package control.expenses.controller;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import control.expenses.model.Recipe;
 import control.expenses.model.User;
-import control.expenses.repository.CategoryRepository;
-import control.expenses.repository.MoveRepository;
 import control.expenses.repository.RecipeRepository;
 import control.expenses.repository.UserRepository;
 
@@ -32,31 +28,23 @@ public class RecipeController {
 	
 	@Autowired
 	private UserRepository userRepository;
-
-	@Autowired
-	private CategoryRepository categoryRepository;
-	
-	@Autowired
-	private MoveRepository moveRepository;
-	
+		
 	@Autowired
 	private RecipeRepository recipeRepository;
 	
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Recipe> init(@PathVariable(value = "id") Long id) {
+	public ResponseEntity<Recipe> get(@PathVariable(value = "id") Long id) {
 		
 		Optional<Recipe> salary =  recipeRepository.findById(id);
 		return ResponseEntity.ok(salary.get());
 		
 	}
 	
-	@PostMapping("")
-	public ResponseEntity<Recipe> insert( @RequestBody Recipe recipe ) throws ParseException {			
+	@PostMapping
+	public ResponseEntity<Recipe> insert( @RequestBody Recipe recipe ) throws ParseException {
 		
-		System.out.println("Valor: " + recipe.getValue());
-		System.out.println("Data: " + recipe.getDateMonth());
-		System.out.println("Usuário: " + recipe.getUser().getName());
+		recipe.setValue(0.f);
 		
 		recipe = recipeRepository.save(recipe);
 		return ResponseEntity.ok(recipe);
@@ -68,12 +56,6 @@ public class RecipeController {
 		userRepository.deleteById(id);
 		return new ResponseEntity("OK!!", HttpStatus.OK);
 	}
-	
-	@GetMapping()
-	public  ResponseEntity<User> login( @RequestParam( value = "login" ) String login ) {
-		
-		User user = userRepository.login(login);
-		return ResponseEntity.ok(user);
-	}
+
 
 }

@@ -25,7 +25,7 @@ export default function Header() {
 
     getRecipes();
 
-  },[])
+  },[ user.id ])
 
   function switchRecipe( recipe ) {
     setRecipe(recipe)

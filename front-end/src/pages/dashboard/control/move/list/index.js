@@ -56,7 +56,7 @@ export default function List() {
 
                                 <ContainerRight>
                                     <p></p>
-                                    <strong style={{ color: 'red' }}>{ item.value },00</strong>
+                                    <strong style={{ color: 'red' }}>{ item.value }</strong>
                                     <FiX 
                                         color="#666" 
                                         style={{ cursor: "pointer" }} 
@@ -86,7 +86,7 @@ export default function List() {
 
                                 <ContainerRight>
                                     <p></p>
-                                    <strong style={{ color: 'blue' }}>{ item.value },00</strong>
+                                    <strong style={{ color: 'blue' }}>{ item.value } </strong>
                                     <FiX 
                                         style={{ cursor: "pointer" }} 
                                         color="#666" 

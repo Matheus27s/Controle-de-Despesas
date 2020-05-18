@@ -23,7 +23,7 @@ export default function Pies({ status }) {
       
       datasets: [{
         data: [],
-        borderWidth: 4,
+        borderWidth: 1,
         borderColor: '#48887B',
         borderAlign: 'center',
         weight: 5,

@@ -18,7 +18,6 @@ import control.expenses.model.Category;
 import control.expenses.model.Move;
 import control.expenses.model.Recipe;
 import control.expenses.modelUtil.CategoryStatus;
-import control.expenses.repository.CategoryRepository;
 import control.expenses.repository.RecipeRepository;
 
 @RestController
@@ -30,7 +29,7 @@ public class StatusController {
 	private RecipeRepository recipeRepository;
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Iterable<CategoryStatus>> init(@PathVariable(value = "id") Long id) {
+	public ResponseEntity<Iterable<CategoryStatus>> get(@PathVariable(value = "id") Long id) {
 		
 		Optional<Recipe> recipe = recipeRepository.findById(id);
 		List<CategoryStatus> allCategoryStatus = new ArrayList<CategoryStatus>();

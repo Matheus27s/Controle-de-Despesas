@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,7 +34,6 @@ public class Recipe implements Serializable {
 	private Date dateMonth;
 	
 	private Float value;
-	private Float valueModal;
 	
 	@JsonBackReference()
 	@ManyToOne()
@@ -65,12 +63,7 @@ public class Recipe implements Serializable {
 	public void setValue(Float value) {
 		this.value = value;
 	}
-	public Float getValueModal() {
-		return valueModal;
-	}
-	public void setValueModal(Float valueModal) {
-		this.valueModal = valueModal;
-	}
+	
 	public User getUser() {
 		return user;
 	}
@@ -119,7 +112,7 @@ public class Recipe implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Salary [id=" + id + ", data=" + dateMonth + ", value=" + value + ", valueModal=" + valueModal + ", user="
+		return "Salary [id=" + id + ", data=" + dateMonth + ", value=" + value + ", valueModal=" + ", user="
 				+ user + ", expenses=" + moves + "]";
 	}
 	

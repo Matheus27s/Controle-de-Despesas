@@ -33,8 +33,6 @@ export const AuthProvider = ({ children }) => {
 
     async function signIn( login ) {
 
-        console.log(login)
-
         const { data } = await api.post('sessions/', {
             login,
         })

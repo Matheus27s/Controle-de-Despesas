@@ -11,7 +11,7 @@ export default function Footer() {
 
     return(     
         <ContainerHeader >
-            <h2>{ recipe.value },00 $</h2>
+            <h2>{ recipe.value } $</h2>
         </ContainerHeader>
     );
 }

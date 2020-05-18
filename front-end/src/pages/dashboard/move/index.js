@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import pt from 'date-fns/locale/pt';
 import api from '../../../services/api';
 
 //Context
@@ -58,8 +57,6 @@ export default function AddMove() {
 
     async function addMove(data) {
 
-        console.log('caiu')
-
         try {
 
             const schema = Yup.object().shape({
@@ -81,6 +78,20 @@ export default function AddMove() {
                 abortEarly: false
             });
 
+            //await api.post('moves', {
+            console.log({
+
+                name: data.name,
+                value: data.value.substr(2),
+                paymentDate: data.paymentDate,
+                typeMove,
+                recipe,
+                category
+
+            })
+                
+            //})
+
             await api.post('moves', {
 
                 name: data.name,
@@ -91,6 +102,7 @@ export default function AddMove() {
                 category
                 
             })
+                    
 
 
         } catch (err) {

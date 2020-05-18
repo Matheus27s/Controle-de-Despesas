@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useField } from '@unform/core';
 
+import pt from 'date-fns/locale/pt';
+
 import { Picker } from './style';
 
 export default function DatePicker({ name, ...rest }) {
@@ -31,7 +33,8 @@ export default function DatePicker({ name, ...rest }) {
         selected={date}
         onChange={ date => setDate(date)}
         {...rest}
-        dateFormat="dd/MM/yyyy" 
+        dateFormat="dd/MM/yyyy"
+        locale={ pt }
     />
       
       { error && <span style={{ color: 'red' }}>{ error }</span> }
