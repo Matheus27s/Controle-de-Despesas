@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatMoney } from '../../../../util/formatMoneyValue';
 
 //Contexts:
 import { useRecipe } from '../../../../context/recipe';
@@ -11,7 +12,7 @@ export default function Footer() {
 
     return(     
         <ContainerHeader >
-            <h2>{ recipe.value } $</h2>
+           <h2>{ formatMoney( recipe.value ) }</h2>
         </ContainerHeader>
     );
 }

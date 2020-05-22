@@ -13,6 +13,7 @@ export const ContainerHeader = styled.header`
 
     h2 {
         margin: 0 auto;
-        color: #FFF;    
+        color: #FFF; 
+        font-size: 24px;   
     }
 `;

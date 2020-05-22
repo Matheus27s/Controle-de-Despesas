@@ -48,12 +48,12 @@ export const ContainerRight = styled.div`
     display: flex;
     flex-direction: column;
     flex: 2;
-    padding: 15px;
 
     h2 {
         text-align: center;
         font-size: 24px;
         color: #29B573;
+        margin-bottom: 16px;
     }
 
     form {

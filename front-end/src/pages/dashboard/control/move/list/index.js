@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 
 import api from '../../../../../services/api';
+import { formatMoney } from '../../../../../util/formatMoneyValue';
 
 //Contexts:
 import { useRecipe } from '../../../../../context/recipe';
@@ -21,6 +22,7 @@ export default function List() {
         }
 
         allMoves();
+
     },[ recipe ]);
 
    const removeMove = async (id) => {
@@ -56,7 +58,11 @@ export default function List() {
 
                                 <ContainerRight>
                                     <p></p>
-                                    <strong style={{ color: 'red' }}>{ item.value }</strong>
+                                    <strong 
+                                        style={{ color: 'red' }}>
+                                            { formatMoney( item.value ) }
+
+                                    </strong>
                                     <FiX 
                                         color="#666" 
                                         style={{ cursor: "pointer" }} 
@@ -86,8 +92,11 @@ export default function List() {
 
                                 <ContainerRight>
                                     <p></p>
-                                    <strong style={{ color: 'blue' }}>{ item.value } </strong>
-                                    <FiX 
+                                    <strong 
+                                        style={{ color: 'blue' }}>
+                                            { formatMoney( item.value ) }
+                                            
+                                    </strong>                                    <FiX 
                                         style={{ cursor: "pointer" }} 
                                         color="#666" 
                                         onClick={ () => removeMove(item.id) }
@@ -101,6 +110,5 @@ export default function List() {
                         
                 </MoveList>
         </Overflow>
-
     );
 }

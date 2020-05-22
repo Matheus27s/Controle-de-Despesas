@@ -2,10 +2,9 @@ import styled from 'styled-components';
 
 export const Overflow = styled.div`
     overflow: auto;
-    margin-top: 5px;
 
     ::-webkit-scrollbar {
-        width: 3px;
+        width: 5px;
     }
 
     /* Track */
@@ -20,7 +19,7 @@ export const Overflow = styled.div`
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: red; 
+        background: #29B573; 
     }
 `;
 
@@ -29,7 +28,7 @@ export const MoveList = styled.ul`
 
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    max-height: 360px;
 
     li {
         height: 70px;
@@ -42,7 +41,10 @@ export const MoveList = styled.ul`
         grid-template-columns: 3fr 3fr 3fr;
         align-items: center;
         justify-content: center;
+    }
 
+    li:first-child {
+        margin-top: 0px;
     }
 
 `;
