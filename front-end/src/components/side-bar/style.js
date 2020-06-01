@@ -17,14 +17,17 @@ export const ContainerSideBar = styled.div`
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             border-radius: 5px;
             transition-duration: 0.2s;
 
-            a {
+            button {
                 color: rgba(0,0,0,0.1);
                 width: 100%;
                 padding: 12px 10px 10px 10px;
+                cursor: pointer;
+                background-color: #29B573;
+                border: none;
+
             }
 
         }
@@ -32,8 +35,10 @@ export const ContainerSideBar = styled.div`
         li:hover {
             background-color: #48887B;
 
-            a:hover {
+            button:hover {
                 color: #29B573;
+                background-color: #48887B;
+
             }
         }
     }

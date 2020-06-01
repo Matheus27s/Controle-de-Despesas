@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ContainerLogin = styled.div`
+export const ContainerRegister = styled.div`
 
   display: flex;
   justify-content: space-between; 
@@ -10,6 +10,7 @@ export const ContainerLogin = styled.div`
   width: 100%;
   margin: 0 auto;
   height: 100vh;/* cobre a altura toda do corpo*/
+  background-color: #48887B;
 `;
 
 export const ContainerLeft = styled.div`
@@ -18,7 +19,6 @@ export const ContainerLeft = styled.div`
     flex-direction: column;
     border-right: 2px solid #29B573;
     flex: 2;
-
 
     p {
         font-size: 24px;
@@ -43,74 +43,45 @@ export const ContainerRight = styled.div`
         }
     }
 
-    animation: show-login 1s ease-in-out forwards; 
+    animation: show-login 1s ease-in-out forwards;
     display: flex;
     flex-direction: column;
     flex: 2;
-    padding: 15px;
 
     h2 {
         text-align: center;
-        font-size: 36px;
+        font-size: 24px;
         color: #29B573;
+        margin-bottom: 16px;
     }
 
     form {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
+        width: 40%;
+        margin: 0 auto;        
     }
-
-    button {
-        width: 179.98px;
-        font-size: 16px;
-        font-weight: bold;
-        background-color: #29B573;
-        border: none;
-        height: 34px;
-        border-radius: 5px;
-        margin-top: 10px;
-        cursor: pointer;
-        transition-duration: 0.2s;
-    }
-
-    button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0px 5px 2px #25443D;
-    }
-
 `;
 
-export const LoginInput = styled.input`
-    background-color: #FFF;
-    font-size: 16px;
-    width: 179.98px;
-    height: 34px;
-    border-radius: 5px;
-    border: none;
-    margin-top: 10px;
-    padding-left: 16px;
-`;
+export const ContainerOption = styled.div`
 
-export const ContainerRegister = styled.div `
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
     align-items: center;
-    margin-top: 10px;
-    width: 179.98px;
+    justify-content: space-between;
 
     p {
-        font-size: 24px;
         color: #29B573;
+        font-size: 16px;
+        font-weight: bold
+    }
+
+    a {
+        color: #29B573;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold
     }
 `;
-
-export const ContainerAdress = styled.div`
-    
-    display: flex;
-    flex-direction: column;
-`;
-

@@ -2,9 +2,11 @@ package control.expenses.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +27,9 @@ public class User implements Serializable {
 	private String name;
 	private String login;
 	private String password;
+	
+	@Column( columnDefinition = "text")
+	private String profile;
 	
 	
 	@OneToMany( mappedBy = "user", cascade = CascadeType.ALL )
@@ -63,13 +68,20 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-
-	public List<Recipe> getSalaries() {
+	public List<Recipe> getRecipes() {
 		return recipes;
 	}
 
-	public void setSalaries(List<Recipe> recipes) {
+	public void setRecipes(List<Recipe> recipes) {
 		this.recipes = recipes;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 
 	@Override

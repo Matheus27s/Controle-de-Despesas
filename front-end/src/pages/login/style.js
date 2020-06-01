@@ -64,3 +64,26 @@ export const ContainerRight = styled.div`
     }
 `;
 
+export const ContainerOption = styled.div`
+
+display: flex;
+    flex-direction: row;
+    width: 40%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        color: #29B573;
+        font-size: 16px;
+        font-weight: bold
+    }
+
+    a {
+        color: #29B573;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold
+    }
+`;
+

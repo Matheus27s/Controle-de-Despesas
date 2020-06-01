@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import control.expenses.model.Category;
 import control.expenses.model.Move;
 import control.expenses.model.Recipe;
-import control.expenses.modelUtil.CategoryStatus;
+import control.expenses.modelUtil.CategoryUtil;
+import control.expenses.modelUtil.RecipeUtil;
 import control.expenses.repository.RecipeRepository;
 
 @RestController
@@ -29,10 +30,12 @@ public class StatusController {
 	private RecipeRepository recipeRepository;
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Iterable<CategoryStatus>> get(@PathVariable(value = "id") Long id) {
+	public ResponseEntity<Iterable<RecipeUtil>> get(@PathVariable(value = "id") Long id) {
+		
+		List<RecipeUtil> allRecipeUtil = new ArrayList<RecipeUtil>();
 		
 		Optional<Recipe> recipe = recipeRepository.findById(id);
-		List<CategoryStatus> allCategoryStatus = new ArrayList<CategoryStatus>();
+		List<CategoryUtil> allCategoryUtil = new ArrayList<CategoryUtil>();
 		float aux = 0;
 		
 		Set<Category> semRepeticao = new HashSet<Category>();
@@ -52,16 +55,69 @@ public class StatusController {
 			}
 			
 			
-			CategoryStatus categoryStatus = new CategoryStatus();
-			categoryStatus.setName(category.getName());
-			categoryStatus.setValue(aux);
-			categoryStatus.setColor(category.getColor());
-			allCategoryStatus.add(categoryStatus);
+			CategoryUtil categoryUtil = new CategoryUtil();
+			categoryUtil.setName(category.getName());
+			categoryUtil.setValue(aux);
+			categoryUtil.setColor(category.getColor());
+			allCategoryUtil.add(categoryUtil);
 			aux = 0;	
 		}
-			
-		return ResponseEntity.ok(allCategoryStatus);
 		
+		RecipeUtil recipeUtil = new RecipeUtil();
+		recipeUtil.setValue(recipe.get().getValue());
+		recipeUtil.setDateMonth(recipe.get().getDateMonth());
+		recipeUtil.setId(recipe.get().getId());
+		recipeUtil.setCategoriesUtil(allCategoryUtil);
+		
+//		-------------------------------------------------------------------------------------
+		
+		Optional<Recipe> recipe1;
+		
+		if(id == 1) {
+			recipe1 = recipeRepository.findById(id) ;
+		} else {
+			recipe1 = recipeRepository.findById(id - 1) ;
+		}		
+		
+		List<CategoryUtil> allCategoryUtil1 = new ArrayList<CategoryUtil>();
+		float aux1 = 0;
+		
+		Set<Category> semRepeticao1 = new HashSet<Category>();
+		
+		for(Move move : recipe1.get().getMoves()) {			
+			semRepeticao1.add(move.getCategory());
+		}
+				
+		for( Category category : semRepeticao ) {
+						
+			for(Move move : category.getMoves()) {
+				
+				if(move.getRecipe().getId() == recipe1.get().getId()) {
+					aux = aux + move.getValue();
+				} 
+				
+			}
+			
+			
+			CategoryUtil categoryUtil = new CategoryUtil();
+			categoryUtil.setName(category.getName());
+			categoryUtil.setValue(aux);
+			categoryUtil.setColor(category.getColor());
+			allCategoryUtil1.add(categoryUtil);
+			aux = 0;	
+		}
+		
+		RecipeUtil recipeUtil1 = new RecipeUtil();
+		recipeUtil1.setValue(recipe1.get().getValue());
+		recipeUtil1.setDateMonth(recipe1.get().getDateMonth());
+		recipeUtil1.setId(recipe1.get().getId());
+		recipeUtil1.setCategoriesUtil(allCategoryUtil1);
+		
+		allRecipeUtil.add(recipeUtil1);
+		allRecipeUtil.add(recipeUtil);
+		
+		return ResponseEntity.ok(allRecipeUtil);
+				
 	}
 	
 }

@@ -2,10 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Login from '../pages/login';
+import Register from '../pages/register';
 
 const AuthRoutes = () => (
      <BrowserRouter>
-        <Route path="/" component={ Login }/>
+        <Route exact path="/" component={ Login }/>
+        <Route path="/register" component={ Register }/>
     </BrowserRouter>
 );
 

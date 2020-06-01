@@ -31,11 +31,33 @@ export const ContainerUser = styled.div`
         margin-right: 10px;
     }
 
+    button {
+        border: none;
+        background-color: #29B573;
+        border-radius: 50%;
+        position: relative;
+        padding: 6px 6px 6px 8px;
+        left: -16px;
+        top: 16px;
+        box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+        cursor: pointer
+    }
+
     div {
         width: 56px;
         height: 56px;
-        background-color: grey;
+        background-color: #29B573;
         border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%
+        }
     }
 
 `;

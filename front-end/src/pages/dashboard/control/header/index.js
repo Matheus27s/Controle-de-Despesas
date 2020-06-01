@@ -14,25 +14,32 @@ export default function Header() {
 
   const { user } = useAuth();
   const { setRecipe } = useRecipe();
-  const [ recipes, setRecipes ] = useState([]);
+  const [ recipes, setRecipes ] = useState([]); 
 
   useEffect(() => {
 
     const getRecipes = async () => {
       const { data } = await api.get(`users/${ user.id }`)
+
+      data.recipes.map( item => {
+
+        if( format( item.dateMonth, "MMMM", { locale: pt }) === format( new Date(), "MMMM", { locale: pt })) {
+          return setRecipe( item )
+        }
+        return null
+      })
+      
       setRecipes(data.recipes)
     }
 
     getRecipes();
-
-  },[ user.id ])
+  },[ user, setRecipe ])
 
   function switchRecipe( recipe ) {
     setRecipe(recipe)
   };
 
   return(  
-
     <ContainerHeader >
       <Overflow>
         <ul>
@@ -46,6 +53,5 @@ export default function Header() {
         </ul>
       </Overflow>
     </ContainerHeader>
-
   );
 }

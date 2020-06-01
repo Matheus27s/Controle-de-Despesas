@@ -1,38 +1,41 @@
-import React, { useState } from 'react';
-
-import { ContainerLogin, ContainerRight, ContainerLeft, LoginInput, ContainerRegister, ContainerAdress } from './style';
-import { FiChevronLeft } from 'react-icons/fi';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Form } from '@unform/web';
 
-import api from '../../services/api'
+import api from '../../services/api';
 
+//Contexts:
+import { useAuth } from '../../context/auth';
+
+//Components:
+import ButtonDefault from '../../components/buttons';
+import Input from '../../components/form/inputs/text';
+import Upload from '../../components/form/inputs/uploads';
+
+import { ContainerRegister, ContainerOption, ContainerRight, ContainerLeft } from './style';
 import logo from '../../img/logo.svg';
 
 export default function Register({ history }) {
 
-    const [ name, setName ] = useState('');
-    const [ login, setLogin ] = useState('');
-    const [ password, setPassword ] = useState('');
-    const [ city, setCity ] = useState('');
-    const [ uf, setUF ] = useState('');
+    const { user } = useAuth();
+    const formRef = useRef(null);
+    const [pictures, setPictures] = useState([]);
 
+    async function registerUser(data) {
 
-    async function loginUser(e) {
-        e.preventDefault();
-        
-        const response = await api.get('users/', {
-            params: {
-                login,
-            }
-        })
+        const response = await api.post('users', {
+            name: data.name,
+            login: data.login,
+            password: data.password,
+            profile: data.profile 
+        });
 
-        const { id } = response.data;
-        history.push(`users/${ id }`)
+        history.push('/');
     }
 
     return (
         
-        <ContainerLogin>
+        <ContainerRegister>
 
             <ContainerLeft>
                 <img src={ logo } alt="logo"/>
@@ -40,73 +43,35 @@ export default function Register({ history }) {
             </ContainerLeft>
 
             <ContainerRight>
-            <form onSubmit={loginUser}>
+            <Form ref={formRef} onSubmit={registerUser}>
 
                 <h2>Cadastro</h2>
 
-                <LoginInput type="text" 
-                       placeholder="Nome" 
-                       id="name" 
-                       name="name" 
-                       value={ name }
-                       onChange={ e => setName(e.target.value) }
-                       required
+                <Input 
+                    type="text"
+                    name="name"
                 />
 
-                <LoginInput type="text" 
-                       placeholder="Login" 
-                       id="login" 
-                       name="login"
-                       value={ login }
-                       onChange={ e => setLogin(e.target.value) }
-                       required
+                <Input 
+                    type="text"
+                    name="login"
                 />
 
-                <LoginInput type="password" 
-                       placeholder="Password" 
-                       id="password" 
-                       name="password"
-                       value={ password }
-                       onChange={ e => setPassword(e.target.value) }
-                       required
+                <Input 
+                    type="password"
+                    name="password"
                 />
 
-                <ContainerAdress>
+                <ButtonDefault>Cadastro</ButtonDefault>
 
-                    <LoginInput type="text" 
-                       placeholder="Cidade" 
-                       id="city" 
-                       name="city"
-                       value={ city }
-                       onChange={ e => setCity(e.target.value) }
-                       required
-                    />
+            </Form>
 
-                    <LoginInput type="text" 
-                       placeholder="UF" 
-                       id="uf" 
-                       name="uf"
-                       value={ uf }
-                       onChange={ e => setUF(e.target.value) }
-                       required
-                    />
-
-                </ContainerAdress>
-
-                <button>Cadastro</button>
-
-                <ContainerRegister>
-                    <p>Login</p>
-                    <Link to="/" >
-                        <FiChevronLeft size={ 30 } color="#29B573"/>
-                    </Link>
-                </ContainerRegister>
-
-
-            </form>
+            <ContainerOption>
+                <p>Login</p>
+                <Link to="/" >{ '<' }</Link>
+            </ContainerOption>
 
             </ContainerRight>
-        </ContainerLogin>
+        </ContainerRegister>
     );
-
 }

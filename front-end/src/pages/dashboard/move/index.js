@@ -16,7 +16,7 @@ import ButtonDefault from '../../../components/buttons';
 
 import { MoveContainer, MoveForm, Select } from './style';
 
-export default function AddMove() {
+export default function Move() {
 
     const { recipe } = useRecipe();
 

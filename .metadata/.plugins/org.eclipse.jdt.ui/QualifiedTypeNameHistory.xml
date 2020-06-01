@@ -12,4 +12,5 @@
 <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
 <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
 <fullyQualifiedTypeName name="control.expenses.repository.UserRepository"/>
+<fullyQualifiedTypeName name="java.util.Base64"/>
 </qualifiedTypeNameHistroy>

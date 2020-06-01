@@ -21,43 +21,43 @@ export default function SideBar() {
         <ContainerSideBar>
             <ul>
                 <li>
-                    <a onClick={() => handlePage('page01') }>
+                    <button onClick={() => handlePage('page01') }>
                         <FiHome 
                             size={ 32 } 
                         />
-                    </a>
+                    </button>
                 </li>
 
                 <li>
-                    <a onClick={() => handlePage('page02') }>
+                    <button onClick={() => handlePage('page02') }>
                         <FiDollarSign 
                             size={ 32 } 
                         />
-                    </a>
+                    </button>
                 </li>
 
                 <li>
-                    <a onClick={() => handlePage('page03') }>
+                    <button onClick={() => handlePage('page03') }>
                         <FiClipboard 
                             size={ 32 } 
                         />
-                    </a>
+                    </button>
                 </li>
 
                 <li>
-                    <a onClick={() => handlePage('page04') }>
+                    <button onClick={() => handlePage('page04') }>
                         <FiHash 
                             size={ 32 } 
                         />
-                    </a>
+                    </button>
                 </li>
 
                 <li>
-                    <a onClick={ handleSignOut }>
+                    <button onClick={ handleSignOut }>
                         <FiArrowLeft 
                             size={ 32 }
                         />
-                    </a>
+                    </button>
                 </li>
             </ul>
         </ContainerSideBar>

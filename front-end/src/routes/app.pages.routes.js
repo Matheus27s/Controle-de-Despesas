@@ -7,6 +7,7 @@ import Control from '../pages/dashboard/control';
 import Move from '../pages/dashboard/move';
 import Category from '../pages/dashboard/category';
 import Recipe from '../pages/dashboard/recipe';
+import User from '../pages/dashboard/user';
 
 const AppPagesRoutes = () => {
 
@@ -17,6 +18,7 @@ const AppPagesRoutes = () => {
         case 'page02': return <BrowserRouter><Route component={ Recipe } /></BrowserRouter> 
         case 'page03': return <BrowserRouter><Route component={ Move } /></BrowserRouter>
         case 'page04': return <BrowserRouter><Route component={ Category } /></BrowserRouter> 
+        case 'page05': return <BrowserRouter><Route component={ User } /></BrowserRouter> 
         default      : return <BrowserRouter><Route component={ Control } /></BrowserRouter> 
     }
 };

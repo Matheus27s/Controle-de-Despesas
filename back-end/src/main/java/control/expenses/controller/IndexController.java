@@ -1,5 +1,6 @@
 package control.expenses.controller;
 
+import java.util.Base64;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,15 @@ public class IndexController {
 	
 	@PostMapping
 	public ResponseEntity<User> insert( @RequestBody User user ) {
+		
+		if(user.getProfile() != null ) {
+			
+			String encodedString = Base64.getEncoder().encodeToString(user.getProfile().getBytes());
+			user.setProfile(encodedString);
+			
+		} else {
+			user.setProfile("");
+		}
 		
 		user = userRepository.save(user);
 		return ResponseEntity.ok(user);

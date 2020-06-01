@@ -1,8 +1,0 @@
-#PostgreSQL
-spring.jpa.hibernate.ddl-auto=create
-
-# Exibe os comandos SQL
-spring.jpa.properties.hibernate.show_sql=false
-spring.jpa.properties.hibernate.use_sql_comments=true
-spring.jpa.properties.hibernate.format_sql=false
-spring.jpa.properties.hibernate.type=into

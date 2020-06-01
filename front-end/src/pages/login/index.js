@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
@@ -9,7 +10,7 @@ import { useAuth } from '../../context/auth';
 import ButtonDefault from '../../components/buttons';
 import Input from '../../components/form/inputs/text';
 
-import { ContainerLogin, ContainerRight, ContainerLeft } from './style';
+import { ContainerLogin, ContainerRight, ContainerLeft, ContainerOption } from './style';
 import logo from '../../img/logo.svg';
 
 export default function Login() {
@@ -64,8 +65,12 @@ export default function Login() {
 
                     <ButtonDefault>Login</ButtonDefault>
                 </Form>
+
+                <ContainerOption>
+                    <p>Registrar-se</p>
+                    <Link to="/register" >{ '>' }</Link>
+                </ContainerOption>
             </ContainerRight>
         </ContainerLogin>
     );
-
 }
