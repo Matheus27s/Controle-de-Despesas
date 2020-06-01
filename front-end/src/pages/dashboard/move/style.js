@@ -46,6 +46,6 @@ export const Select = styled.select`
     margin: 8px 0px;
 
     option {
-        background-color: #FFF;
+        background-color: white;
     }
 `;
