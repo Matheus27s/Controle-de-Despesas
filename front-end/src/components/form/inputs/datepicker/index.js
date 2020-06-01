@@ -35,6 +35,7 @@ export default function DatePicker({ name, ...rest }) {
         {...rest}
         dateFormat="dd/MM/yyyy"
         locale={ pt }
+        
     />
       
       { error && <span style={{ color: 'red' }}>{ error }</span> }

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const InputText = styled.input`
 
     background-color: #FFFF;
-    font-size: 18px;
+    font-size: 16px;
     height: 34px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: none;
     padding: 0 10px;
     margin: 8px 0px;
 

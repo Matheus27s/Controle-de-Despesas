@@ -4,10 +4,10 @@ import CurrencyFormat from 'react-currency-format';
 export const Sale = styled(CurrencyFormat)`
 
     background-color: #FFFF;
-    font-size: 18px;
+    font-size: 16px;
     height: 34px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid #ccc;
     padding: 0 10px;
     margin: 8px 0px;
 `;

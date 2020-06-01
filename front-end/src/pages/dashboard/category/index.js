@@ -4,6 +4,9 @@ import * as Yup from 'yup';
 
 import api from '../../../services/api';
 
+//Contexts:
+import { usePage } from '../../../context/page';
+
 //Components:
 import Header from '../../../components/form/header';
 import ButtonDefault from '../../../components/buttons';
@@ -14,13 +17,14 @@ import { CategoryContainer, CategoryForm } from './style';
 export default function AddCategory() {
 
     const formRef = useRef(null);
+    const { handlePage } = usePage();
 
-    async function addCategory(data, { reset }) {
+    async function addCategory( data ) {
 
         try {
 
             const schema = Yup.object().shape({
-                name: Yup.string().required('O nome é obrigatório'),
+                name: Yup.string().required('Campo nulo.'),
             });
 
             await schema.validate(data, {
@@ -32,7 +36,7 @@ export default function AddCategory() {
 
             await api.post('categories', data )
 
-            reset();
+            handlePage('page01');
 
         } catch (err) {
             if( err instanceof Yup.ValidationError ) {
@@ -52,8 +56,18 @@ export default function AddCategory() {
 
             <CategoryForm>  
                 <Form ref={formRef} onSubmit={ addCategory }>  
-                    <Input name="name" placeholder="Nome*"/>
-                    <Input name="color" type="color" placeholder="Cor*"/>
+                
+                    <Input 
+                        name="name" 
+                        placeholder="Nome*"
+                    />
+
+                    <Input 
+                        name="color" 
+                        type="color" 
+                        placeholder="Cor*"
+                    />
+
                     <ButtonDefault type="submit">Inserir</ButtonDefault>
                 </Form>
             </CategoryForm>

@@ -17,7 +17,7 @@ import { MoveContainer, MoveForm } from './style';
 
 export default function User() {
 
-    const { user } = useAuth();
+    const { user, signIn } = useAuth();
     const formRef = useRef(null);
     const [pictures, setPictures] = useState([]);
 
@@ -35,6 +35,9 @@ export default function User() {
             password: data.password,
             profile: data.profile 
         })
+
+        signIn(response.data.login);
+
     }
 
     return(

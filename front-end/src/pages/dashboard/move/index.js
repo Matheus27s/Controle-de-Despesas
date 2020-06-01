@@ -6,6 +6,8 @@ import api from '../../../services/api';
 
 //Context
 import { useRecipe } from '../../../context/recipe';
+import { usePage } from '../../../context/page';
+
 
 //Components:
 import Header from '../../../components/form/header'
@@ -13,8 +15,9 @@ import Input from '../../../components/form/inputs/text';
 import InputSale from '../../../components/form/inputs/sale';
 import DatePicker from '../../../components/form/inputs/datepicker';
 import ButtonDefault from '../../../components/buttons';
+import Select from '../../../components/form/selects';
 
-import { MoveContainer, MoveForm, Select } from './style';
+import { MoveContainer, MoveForm } from './style';
 
 export default function Move() {
 
@@ -23,56 +26,49 @@ export default function Move() {
     const [ category, setCategory ] = useState({});
     const [ typeMove, setTypeMove ] = useState(0);
     const [ categories, setCategories ] = useState([]);
+    const [ error, setError ] = useState('');
+
+    const [ tipos, setTipos ]  = useState([
+        { value: 1, label: 'RECEBIMENTO' },
+        { value: 2, label: 'GASTO' },
+    ])
 
     const formRef = useRef(null);
+
+    const { handlePage } = usePage();
 
     useEffect(() => {
        allCategories();
     },[]);
 
     async function allCategories() {
-        const response = await api.get(`categories`);
-        setCategories(response.data);
+        const { data } = await api.get(`categories`);
+
+        setCategories( data.map( item => (
+            {value: item, label: item.name }
+        )))
     }
 
-    function handleChangeCategory(e) {
-
-        if( e.target.value == 'Categoria' ){
-            return;
-        }
-
-        categories.map( item => {
-
-            if(item.id == e.target.value) {
-                setCategory(item);
-            }   
-
-            return true;
-        })
-    }
-
-    function handleChangeType(e) {
-        setTypeMove(e.target.value);
-    }
-
-    async function addMove(data) {
+    async function addMove(data, { reset }) {
 
         try {
 
             const schema = Yup.object().shape({
-                name: Yup.string().required("A movimentação é obrigatório").max(10, "Texto muito grande"),
-                paymentDate: Yup.date().required(),
-            });
 
-            if( !category.name ) {
-                alert('Insira uma categoria')
-                return;
-            }
-    
-            if( typeMove == 0 ){
-                alert("Defina um tipo de movimentação")
-                return;
-            }
+                name: Yup.string().
+                    required("Campo nulo.").
+                    max(13, "Texto muito grande."),
+
+                value: Yup.string().
+                    required("Campo nulo."),
+                
+                paymentDate: Yup.date().
+                    typeError("Campo nulo."),
+                    
+                typeMove: Yup.string().
+                    required("Topic is required!")
+
+            });
 
             await schema.validate(data, {
                 abortEarly: false
@@ -84,10 +80,8 @@ export default function Move() {
                 name: data.name,
                 value: data.value.substr(2),
                 paymentDate: data.paymentDate,
-                typeMove,
-                recipe,
-                category
-
+                category: data.category,
+                typeMove: data.typeMove
             })
                 
             //})
@@ -97,15 +91,17 @@ export default function Move() {
                 name: data.name,
                 value: data.value.substr(2),
                 paymentDate: data.paymentDate,
-                typeMove,
                 recipe,
-                category
+                category: data.category,
+                typeMove: data.typeMove
                 
             })
-                    
-
+            
+        handlePage('page01');
 
         } catch (err) {
+
+
             if( err instanceof Yup.ValidationError ) {
                 const errorMessages = {};
                 err.inner.forEach(error => {
@@ -128,21 +124,46 @@ export default function Move() {
                 
                 <Input 
                     type="text"
-                    placeholder="Movimentação"
+                    placeholder="Movimentação*"
                     name="name"
                 />
 
                 <InputSale 
                     type="text"
-                    placeholder="Valor"
+                    placeholder="Valor*"
                     name="value"
                 />
 
                 <DatePicker 
                     name="paymentDate"
+                    placeholderText="Data*"
                 />
-                 
+
+                <Select
+                    name="category"
+                    options={ categories }
+                    placeholder="Categoria*"
+                />
+
                 <Select 
+                    name="typeMove"
+                    options={ tipos }
+                    placeholder="Tipo*"
+                />
+
+                <ButtonDefault type="submit">Inserir</ButtonDefault>
+
+            </Form>
+        </MoveForm>
+
+        </MoveContainer>
+
+    );
+
+}
+
+/*<Select
+                    name="category"
                     required 
                     onChange={ handleChangeCategory }>
                         <option value="Categoria">Categoria</option>
@@ -159,40 +180,4 @@ export default function Move() {
 
                         </optgroup>
                     
-                </Select>
-
-                <Select 
-                    required 
-                    onChange={ handleChangeType }>
-                        <option 
-                            value={ 0 }
-                            key={ 0 }>Tipo de movimentação em conta?
-                        </option>
-
-                        <optgroup >
-
-                            <option
-                                value={ 1 } 
-                                key={ 1 }>{ "RECEBIMENTO" }
-                            </option> 
-
-                            <option
-                                value={ 2 } 
-                                key={ 2 }>{ "GASTO" }
-                            </option> 
-                            ))}
-
-                        </optgroup>
-                    
-                </Select>
-
-                <ButtonDefault type="submit">Inserir</ButtonDefault>
-
-            </Form>
-        </MoveForm>
-
-        </MoveContainer>
-
-    );
-
-}
+                </Select> */

@@ -73,7 +73,7 @@ public class StatusController {
 		
 		Optional<Recipe> recipe1;
 		
-		if(id == 4) {
+		if(id == 1) {
 			recipe1 = recipeRepository.findById(id) ;
 		} else {
 			recipe1 = recipeRepository.findById(id - 1) ;
@@ -111,7 +111,7 @@ public class StatusController {
 		recipeUtil1.setValue(recipe1.get().getValue());
 		recipeUtil1.setDateMonth(recipe1.get().getDateMonth());
 		recipeUtil1.setId(recipe1.get().getId());
-		recipeUtil1.setCategoriesUtil(allCategoryUtil1);
+		recipeUtil1.setCategoriesUtil(allCategoryUtil1); */
 		
 		allRecipeUtil.add(recipeUtil1);
 		allRecipeUtil.add(recipeUtil); 

@@ -73,7 +73,7 @@ public class StatusController {
 		
 		Optional<Recipe> recipe1;
 		
-		if(id == 4) {
+		if(id == 1) {
 			recipe1 = recipeRepository.findById(id) ;
 		} else {
 			recipe1 = recipeRepository.findById(id - 1) ;

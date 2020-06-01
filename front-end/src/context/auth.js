@@ -37,6 +37,8 @@ export const AuthProvider = ({ children }) => {
             login,
         })
 
+        console.log(data)
+
         setUser(data);
         localStorage.setItem('@RNAuth:user', JSON.stringify(data));
     }

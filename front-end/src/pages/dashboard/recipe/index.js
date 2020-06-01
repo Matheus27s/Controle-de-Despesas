@@ -6,6 +6,7 @@ import api from '../../../services/api';
 
 //Contexts:
 import { useAuth } from '../../../context/auth';
+import { usePage } from '../../../context/page';
 
 //Components:
 import Header from '../../../components/form/header';
@@ -17,15 +18,16 @@ import { RecipeContainer, RecipeForm } from './style';
 export default function Recipe() {
 
     const { user } = useAuth();
-
     const formRef = useRef(null);
+    const { handlePage } = usePage();
 
     async function addRecipe(data, { reset }) {
 
         try {
 
             const schema = Yup.object().shape({
-                dateMonth: Yup.date().required()
+                dateMonth: Yup.date().
+                typeError("Campo nulo."),
             });
 
             await schema.validate(data, {
@@ -42,7 +44,7 @@ export default function Recipe() {
             });
 
             reset();
-
+            handlePage('page01');
 
         } catch (err) {
             if( err instanceof Yup.ValidationError ) {
@@ -64,7 +66,11 @@ export default function Recipe() {
            <RecipeForm>  
                 <Form ref={formRef} onSubmit={ addRecipe }>  
                     
-                    <DatePicker name="dateMonth" />
+                    <DatePicker 
+                        name="dateMonth"                     
+                        placeholderText="Data*"
+                    />
+
                     <ButtonDefault type="submit">Inserir</ButtonDefault>
 
                 </Form>

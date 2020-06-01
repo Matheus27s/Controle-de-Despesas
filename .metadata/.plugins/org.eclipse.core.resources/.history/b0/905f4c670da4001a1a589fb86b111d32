@@ -47,10 +47,8 @@ public class IndexController {
 		}
 		
 		Optional<User> aux = userRepository.findById(user.getId());
-		user.setRecipes(aux.get().getRecipes());
 		
-		user = userRepository.save(user);
-		return ResponseEntity.ok(user);
+		return ResponseEntity.ok(aux);
 		
 	}
 	

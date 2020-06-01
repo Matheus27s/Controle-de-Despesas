@@ -29,20 +29,9 @@ export const CategoryForm = styled.div`
     form {
         animation: show-login 1s ease-in-out forwards;
         width: 30%;
+        flex-direction: column;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 80fr 20fr;
-    }
+        display: flex;
 
-    input {
-        grid-column: 1/2;
-    }
-
-    input[type="color"] {
-        grid-column: 2/3;
-    }
-
-    button {
-        grid-column: 1/3;
     }
 `;

@@ -46,10 +46,10 @@ public class IndexController {
 			user.setProfile("");
 		}
 		
-		Optional<User> aux = userRepository.findById(user.getId());
-		user.setRecipes(aux.get().getRecipes());
-		
 		user = userRepository.save(user);
+		
+		System.out.println(user.getRecipes());
+		
 		return ResponseEntity.ok(user);
 		
 	}
