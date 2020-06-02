@@ -20,6 +20,8 @@ export default function Header() {
 
     const getRecipes = async () => {
       const { data } = await api.get(`users/${ user.id }`)
+      
+      console.log(data.recipes)
 
       data.recipes.map( item => {
 
@@ -46,7 +48,7 @@ export default function Header() {
           
           { recipes.map( item => ( 
             <li onClick={ () => switchRecipe( item ) } 
-              key={ item.id }>{ format(item.dateMonth, "MMMM", { locale: pt }) }
+              key={ item.id }>{ format(item.dateMonth, "MMM", { locale: pt }) }
             </li>
           ))}
 

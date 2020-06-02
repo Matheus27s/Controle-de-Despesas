@@ -26,9 +26,9 @@ export default function Bars({ status }) {
               setData({                 
                 datasets: [
                   { 
-                    label: format(response.data[0].dateMonth, "MMMM", { locale: pt }),
-                    data: response.data[0].categoriesUtil.map( item => ( item.value )),
-                    backgroundColor: response.data[0].categoriesUtil.map( item => (item.color)),
+                    label: format(response.data[1].dateMonth, "MMMM", { locale: pt }),
+                    data: response.data[1].categoriesUtil.map( item => ( item.value )),
+                    backgroundColor: response.data[1].categoriesUtil.map( item => (item.color)),
                     borderColor: 'rgba(0,0,0,0.3)',
                     borderWidth: 1,
                     hoverBorderColor: 'rgba(0,0,0,0.3)',
@@ -36,9 +36,9 @@ export default function Bars({ status }) {
                   },
 
                   { 
-                    label: format(response.data[1].dateMonth, "MMMM", { locale: pt }),
-                    data: response.data[1].categoriesUtil.map( item => ( item.value )),
-                    backgroundColor: response.data[1].categoriesUtil.map( item => (item.color)),
+                    label: format(response.data[0].dateMonth, "MMMM", { locale: pt }),
+                    data: response.data[0].categoriesUtil.map( item => ( item.value )),
+                    backgroundColor: response.data[0].categoriesUtil.map( item => (item.color)),
                     borderColor: 'rgba(0,0,0,0.3)',
                     borderWidth: 1,
                     hoverBorderColor: 'rgba(0,0,0,0.3)',

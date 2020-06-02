@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -42,6 +43,7 @@ public class Recipe implements Serializable {
 	
 	@JsonManagedReference
 	@OneToMany( mappedBy = "recipe", cascade = CascadeType.ALL )
+	@OrderBy("paymentDate")
 	private List<Move> moves = new ArrayList<Move>();
 	
 	public Long getId() {

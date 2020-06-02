@@ -1,6 +1,7 @@
 package control.expenses.controller;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import control.expenses.model.Category;
 import control.expenses.model.Move;
 import control.expenses.model.Recipe;
+import control.expenses.model.User;
 import control.expenses.modelUtil.CategoryUtil;
 import control.expenses.modelUtil.RecipeUtil;
 import control.expenses.repository.RecipeRepository;
+import control.expenses.repository.UserRepository;
 
 @RestController
 @CrossOrigin
@@ -29,95 +32,118 @@ public class StatusController {
 	@Autowired
 	private RecipeRepository recipeRepository;
 	
+	@Autowired
+	private UserRepository userRepository;
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Iterable<RecipeUtil>> get(@PathVariable(value = "id") Long id) {
 		
-		List<RecipeUtil> allRecipeUtil = new ArrayList<RecipeUtil>();
-		
 		Optional<Recipe> recipe = recipeRepository.findById(id);
-		List<CategoryUtil> allCategoryUtil = new ArrayList<CategoryUtil>();
-		float aux = 0;
+		Optional<User> user = userRepository.findById(recipe.get().getUser().getId());
 		
-		Set<Category> semRepeticao = new HashSet<Category>();
 		
-		for(Move move : recipe.get().getMoves()) {			
-			semRepeticao.add(move.getCategory());
-		}
-				
-		for( Category category : semRepeticao ) {
+		List<Recipe> recipes = new ArrayList<Recipe>();
+		List<RecipeUtil> recipeUtils = new ArrayList<RecipeUtil>();
+
+		
+		Recipe now = new Recipe();
+		Recipe previous = new Recipe();
+		int index = 0;
+		
+		for( Recipe rw: user.get().getRecipes() ) {
+			
 						
-			for(Move move : category.getMoves()) {
+			if( index != 0 && rw.getDateMonth() == recipe.get().getDateMonth()) {
 				
-				if(move.getRecipe().getId() == recipe.get().getId()) {
-					aux = aux + move.getValue();
-				} 
+				now = rw;	
 				
+				Calendar dat = Calendar.getInstance();
+				dat.setTime(rw.getDateMonth());
+				dat.add(Calendar.MONTH, -1);				
+				previous = recipeRepository.getRecipePrevious(dat.getTime());
+				
+				recipes.add(now);
+				recipes.add(previous);
+			} 
+			
+			if(index == 0 && rw.getDateMonth() == recipe.get().getDateMonth()) {
+				now = rw;
+				previous = rw;
+				
+				recipes.add(now);
+				recipes.add(previous);
+			}
+			
+			index = index + 1;
+			
+		}
+		
+		for( Recipe rec: recipes ) {
+						
+//			Usando pra salvar uma lista de categorias.
+			List<CategoryUtil> allCategoryUtil = new ArrayList<CategoryUtil>();
+			float aux = 0;
+			
+			Set<Category> noRepeat = new HashSet<Category>();
+			
+	// # Uso para saber as categorias usadas por um determinado usuário		
+			
+//			Pega todas as movimentações de um determinado Lançamento e adiciona a sua categoria um uma lista sem repetição( semRepeticao )
+			for(Move move : rec.getMoves()) {			
+				noRepeat.add(move.getCategory());
 			}
 			
 			
-			CategoryUtil categoryUtil = new CategoryUtil();
-			categoryUtil.setName(category.getName());
-			categoryUtil.setValue(aux);
-			categoryUtil.setColor(category.getColor());
-			allCategoryUtil.add(categoryUtil);
-			aux = 0;	
-		}
-		
-		RecipeUtil recipeUtil = new RecipeUtil();
-		recipeUtil.setValue(recipe.get().getValue());
-		recipeUtil.setDateMonth(recipe.get().getDateMonth());
-		recipeUtil.setId(recipe.get().getId());
-		recipeUtil.setCategoriesUtil(allCategoryUtil);
-		
-//		-------------------------------------------------------------------------------------
-		
-		Optional<Recipe> recipe1;
-		
-		if(id == 4) {
-			recipe1 = recipeRepository.findById(id) ;
-		} else {
-			recipe1 = recipeRepository.findById(id - 1) ;
-		}		
-		
-		List<CategoryUtil> allCategoryUtil1 = new ArrayList<CategoryUtil>();
-		float aux1 = 0;
-		
-		Set<Category> semRepeticao1 = new HashSet<Category>();
-		
-		for(Move move : recipe1.get().getMoves()) {			
-			semRepeticao1.add(move.getCategory());
-		}
+//		    Pega essa lista de categorias inseridas anteriormente		
+			for( Category category : noRepeat ) {
+							
+//			    Passo a ter cada categoria da lista 'semRepetição'...
 				
-		for( Category category : semRepeticao ) {
+//	          Pego todos as movimentação de uma categoria.
+				for(Move move : category.getMoves()) {
+					
+//					Se a movimentação que estamos lidando é uma movimentação do mês que estamos trabalhando.( Com isso trabalhamos comente com as movimentação do mês )
+					if(move.getRecipe().getId() == rec.getId()) {
 						
-			for(Move move : category.getMoves()) {
+//						Vamos pegar o valor da Movimentação e somar.( Com isso passamos a ter um montante de cada categoria inserida na variável "aux")
+						aux = aux + move.getValue();
+					} 
+					
+				}
 				
-				if(move.getRecipe().getId() == recipe1.get().getId()) {
-					aux = aux + move.getValue();
-				} 
+//		# Essa objeto nos ajudará a criar oque será mostrado em tela.
+				CategoryUtil categoryUtil = new CategoryUtil();
 				
+//				A categoria.
+				categoryUtil.setName(category.getName());
+				
+//				O valor da soma das movimentões que são dessa categoria.
+				categoryUtil.setValue(aux);
+				
+//				A cor dessa categoria que será mostrado.
+				categoryUtil.setColor(category.getColor());
+				
+//				Adiciono essa categoria a uma lista que será retornada.
+				allCategoryUtil.add(categoryUtil);
+				aux = 0;	
 			}
 			
 			
-			CategoryUtil categoryUtil = new CategoryUtil();
-			categoryUtil.setName(category.getName());
-			categoryUtil.setValue(aux);
-			categoryUtil.setColor(category.getColor());
-			allCategoryUtil1.add(categoryUtil);
-			aux = 0;	
+	// # Preciso mostrar esse mesmo sistema para o mês atual e o mês anterior. Por isso o valor  retornado será uma lista de recipes.
+			
+
+//			Objeto que será retornado com duas recipes.
+			RecipeUtil recipeUtil = new RecipeUtil();
+			recipeUtil.setValue(rec.getValue());
+			recipeUtil.setDateMonth(rec.getDateMonth());
+			recipeUtil.setId(rec.getId());
+			recipeUtil.setCategoriesUtil(allCategoryUtil);
+			
+			recipeUtils.add(recipeUtil); 
+
 		}
-		
-		RecipeUtil recipeUtil1 = new RecipeUtil();
-		recipeUtil1.setValue(recipe1.get().getValue());
-		recipeUtil1.setDateMonth(recipe1.get().getDateMonth());
-		recipeUtil1.setId(recipe1.get().getId());
-		recipeUtil1.setCategoriesUtil(allCategoryUtil1);
-		
-		allRecipeUtil.add(recipeUtil1);
-		allRecipeUtil.add(recipeUtil); 
-		
-		return ResponseEntity.ok(allRecipeUtil);
-				
+			
+		return ResponseEntity.ok(recipeUtils);		
 	}
 	
 }

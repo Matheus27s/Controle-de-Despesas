@@ -24,12 +24,12 @@ export default function Pie() {
 
                 setData({ 
 
-                    labels: response.data[1].categoriesUtil.map( item => ( item.name )),
+                    labels: response.data[0].categoriesUtil.map( item => ( item.name )),
                     datasets: [
                       { 
                         label: 'Análize de Gastos',
-                        data: response.data[1].categoriesUtil.map( item => ( item.value )),
-                        backgroundColor: response.data[1].categoriesUtil.map( item => (item.color)),
+                        data: response.data[0].categoriesUtil.map( item => ( item.value )),
+                        backgroundColor: response.data[0].categoriesUtil.map( item => (item.color)),
                         borderColor: 'rgba(0,0,0,0.1)',
                         borderWidth: 1,
                         hoverBorderColor: 'rgba(0,0,0,0.1)',

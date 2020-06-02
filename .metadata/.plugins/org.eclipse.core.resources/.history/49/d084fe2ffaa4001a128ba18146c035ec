@@ -1,0 +1,167 @@
+package control.expenses.controller;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import control.expenses.model.Category;
+import control.expenses.model.Move;
+import control.expenses.model.Recipe;
+import control.expenses.modelUtil.CategoryUtil;
+import control.expenses.modelUtil.RecipeUtil;
+import control.expenses.repository.RecipeRepository;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/status")
+public class StatusController {
+		
+	@Autowired
+	private RecipeRepository recipeRepository;
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Iterable<RecipeUtil>> get(@PathVariable(value = "id") Long id) {
+		
+		List<RecipeUtil> allRecipeUtil = new ArrayList<RecipeUtil>();
+		
+		Optional<Recipe> recipe = recipeRepository.findById(id);
+		
+//		Usando pra salvar uma lista de categorias.
+		List<CategoryUtil> allCategoryUtil = new ArrayList<CategoryUtil>();
+		float aux = 0;
+		
+		Set<Category> noRepeat = new HashSet<Category>();
+		
+// # Uso para saber as categorias usadas por um determinado usuário		
+		
+//		Pega todas as movimentações de um determinado Lançamento e adiciona a sua categoria um uma lista sem repetição( semRepeticao )
+		for(Move move : recipe.get().getMoves()) {			
+			noRepeat.add(move.getCategory());
+		}
+		
+		
+//	    Pega essa lista de categorias inseridas anteriormente		
+		for( Category category : noRepeat ) {
+						
+//		    Passo a ter cada categoria da lista 'semRepetição'...
+			
+//          Pego todos as movimentação de uma categoria.
+			for(Move move : category.getMoves()) {
+				
+//				Se a movimentação que estamos lidando é uma movimentação do mês que estamos trabalhando.( Com isso trabalhamos comente com as movimentação do mês )
+				if(move.getRecipe().getId() == recipe.get().getId()) {
+					
+//					Vamos pegar o valor da Movimentação e somar.( Com isso passamos a ter um montante de cada categoria inserida na variável "aux")
+					aux = aux + move.getValue();
+				} 
+				
+			}
+			
+//	# Essa objeto nos ajudará a criar oque será mostrado em tela.
+			CategoryUtil categoryUtil = new CategoryUtil();
+			
+//			A categoria.
+			categoryUtil.setName(category.getName());
+			
+//			O valor da soma das movimentões que são dessa categoria.
+			categoryUtil.setValue(aux);
+			
+//			A cor dessa categoria que será mostrado.
+			categoryUtil.setColor(category.getColor());
+			
+//			Adiciono essa categoria a uma lista que será retornada.
+			allCategoryUtil.add(categoryUtil);
+			aux = 0;	
+		}
+		
+		
+// # Preciso mostrar esse mesmo sistema para o mês atual e o mês anterior. Por isso o valor  retornado será uma lista de recipes.
+		
+
+//		Objeto que será retornado com duas recipes.
+		RecipeUtil recipeUtil = new RecipeUtil();
+		
+		recipeUtil.setValue(recipe.get().getValue());
+		
+		recipeUtil.setDateMonth(recipe.get().getDateMonth());
+		
+		recipeUtil.setId(recipe.get().getId());
+		
+		recipeUtil.setCategoriesUtil(allCategoryUtil);
+		
+//		-------------------------------------------------------------------------------------
+// # Recipe do mês antetior
+		
+		Optional<Recipe> recipePrevious;
+		
+		recipePrevious = recipeRepository.findById(id) ;	
+		
+		Calendar dat = Calendar.getInstance();
+		dat.setTime(recipePrevious.get().getDateMonth());
+		dat.add(Calendar.MONTH,-1);
+		System.out.println(dat.getCalendarType());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		List<CategoryUtil> allCategoryUtil1 = new ArrayList<CategoryUtil>();
+		float auxPrevious = 0;
+		
+		Set<Category> noRepeatPrevious = new HashSet<Category>();
+		
+		for(Move move : recipePrevious.get().getMoves()) {			
+			noRepeatPrevious.add(move.getCategory());
+		}
+				
+		for( Category category : noRepeatPrevious ) {
+						
+			for(Move move : category.getMoves()) {
+				
+				if(move.getRecipe().getId() == recipePrevious.get().getId()) {
+					auxPrevious = auxPrevious + move.getValue();
+				} 
+				
+			}
+			
+			CategoryUtil categoryUtil = new CategoryUtil();
+			categoryUtil.setName(category.getName());
+			categoryUtil.setValue(auxPrevious);
+			categoryUtil.setColor(category.getColor());
+			allCategoryUtil1.add(categoryUtil);
+			auxPrevious = 0;	
+		}
+		
+		RecipeUtil recipeUtil1 = new RecipeUtil();
+		recipeUtil1.setValue(recipePrevious.get().getValue());
+		recipeUtil1.setDateMonth(recipePrevious.get().getDateMonth());
+		recipeUtil1.setId(recipePrevious.get().getId());
+		recipeUtil1.setCategoriesUtil(allCategoryUtil1);
+		
+		allRecipeUtil.add(recipeUtil1);
+		allRecipeUtil.add(recipeUtil); 
+		
+		return ResponseEntity.ok(allRecipeUtil);
+				
+	}
+	
+}

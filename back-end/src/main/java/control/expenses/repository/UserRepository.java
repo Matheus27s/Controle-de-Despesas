@@ -7,5 +7,5 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	
 	@Query( "select u from users u where u.login = ?1" )
 	public User login(String login);
-	
+		
 }

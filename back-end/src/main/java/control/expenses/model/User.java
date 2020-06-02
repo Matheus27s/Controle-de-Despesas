@@ -2,7 +2,6 @@ package control.expenses.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -34,6 +34,7 @@ public class User implements Serializable {
 	
 	@OneToMany( mappedBy = "user", cascade = CascadeType.ALL )
 	@JsonManagedReference
+    @OrderBy(value="date_month")
 	private List<Recipe> recipes = new ArrayList<Recipe>();
 
 	public Long getId() {

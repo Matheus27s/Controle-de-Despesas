@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;control.expenses.controller.IndexController&apos; to &apos;UserController&apos;&#x0D;&#x0A;- Original project: &apos;back-end&apos;&#x0D;&#x0A;- Original element: &apos;control.expenses.controller.IndexController&apos;&#x0D;&#x0A;- Renamed element: &apos;control.expenses.controller.UserController&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;IndexController&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;control.expenses.controller{IndexController.java[IndexController" matchStrategy="1" name="UserController" qualified="false" references="true" similarDeclarations="false" stamp="1591112433656" textual="false" version="1.0"/>
+</session>
