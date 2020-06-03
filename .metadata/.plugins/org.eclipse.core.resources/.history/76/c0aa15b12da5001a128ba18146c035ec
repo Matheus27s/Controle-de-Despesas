@@ -41,6 +41,15 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<User> insert( @RequestBody User user ) {
 		
+		if(user.getProfile() != null ) {
+			
+			String encodedString = Base64.getEncoder().encodeToString(user.getProfile().getBytes());
+			user.setProfile(encodedString);
+			
+		} else {
+			user.setProfile("");
+		}
+		
 		if( user.getId() != null ) {
 			
 //			Usuário já existe.		
@@ -60,14 +69,7 @@ public class UserController {
 			
 		}
 		
-		if(user.getProfile() != null ) {
-			
-			String encodedString = Base64.getEncoder().encodeToString(user.getProfile().getBytes());
-			user.setProfile(encodedString);
-			
-		} else {
-			user.setProfile("");
-		}
+		
 		
 		user = userRepository.save(user);
 		return ResponseEntity.ok(user);

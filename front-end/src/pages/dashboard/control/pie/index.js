@@ -32,7 +32,6 @@ export default function Pie() {
                         backgroundColor: response.data[0].categoriesUtil.map( item => (item.color)),
                         borderColor: 'rgba(0,0,0,0.1)',
                         borderWidth: 1,
-                        hoverBorderColor: 'rgba(0,0,0,0.1)',
                       }
                     ]
                   });
@@ -57,7 +56,7 @@ export default function Pie() {
                         fontColor: '#fff',
                         fontSize: 12,
                         fontStyle: 'bold',
-                        usePointStyle: true
+                        usePointStyle: true,
                       },
                       position: 'right',
                       align: 'center',

@@ -41,6 +41,15 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<User> insert( @RequestBody User user ) {
 		
+		if(user.getProfile() != "" ) {
+			
+			String encodedString = Base64.getEncoder().encodeToString(user.getProfile().getBytes());
+			user.setProfile(encodedString);
+			
+		} else {
+			user.setProfile("");
+		}
+		
 		if( user.getId() != null ) {
 			
 //			Usuário já existe.		
@@ -57,17 +66,11 @@ public class UserController {
 				recipe.setUser(user);
 				recipes.add(recipe);
 			user.setRecipes(recipes);
+			user.setProfile("");
 			
 		}
 		
-		if(user.getProfile() != null ) {
-			
-			String encodedString = Base64.getEncoder().encodeToString(user.getProfile().getBytes());
-			user.setProfile(encodedString);
-			
-		} else {
-			user.setProfile("");
-		}
+		
 		
 		user = userRepository.save(user);
 		return ResponseEntity.ok(user);
